@@ -1,0 +1,1667 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         STRTGY - ENTREGA DE RESULTADOS LUGON ZMM STARTER
+         LocationFit™ Industrial - Auditoría de Ubicación
+         Generado: 2026-02-12
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    
+    <title>Lugon + Letrimex | Entrega de Resultados - Auditoría ZMM</title>
+    <meta name="description" content="Presentación de resultados del análisis LocationFit™ Industrial">
+    <meta name="author" content="STRTGY">
+
+    <!-- Reveal.js CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- STRTGY Theme -->
+    <link rel="stylesheet" href="../../../templates/revealjs/shared/css/strtgy-reveal-theme.css">
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           CUSTOM STYLES - Results Delivery Deck (Lugon ZMM Starter)
+           All colors use CSS variables from the STRTGY design token system.
+           Only data-background-* attributes on <section> use literal values.
+           ═══════════════════════════════════════════════════════════════ */
+        
+        /* Extended palette for multi-phase visuals (not in core tokens) */
+        :root {
+            --strtgy-phase-1:    var(--strtgy-warning);    /* Etapa 1: Arranque */
+            --strtgy-phase-2:    var(--strtgy-success);    /* Etapa 2: Respuesta Rápida */
+            --strtgy-phase-3:    #667eea;                  /* Etapa 3: Red Completa (info purple) */
+        }
+        
+        /* Hero Numbers — gradient text effect
+           NOTE: Should migrate to strtgy-reveal-theme.css once stabilized */
+        .hero-number {
+            font-family: var(--font-heading);
+            font-size: 4em;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--strtgy-accent) 0%, #00ffcc 50%, var(--strtgy-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.4));
+        }
+        
+        .hero-number-warning {
+            background: linear-gradient(135deg, var(--strtgy-warning) 0%, #ffdd57 50%, var(--strtgy-warning) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+        }
+        
+        /* STRTGY Watermark
+           NOTE: Not yet in strtgy-reveal-theme.css — local definition required */
+        .strtgy-watermark {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            opacity: 0.6;
+            transition: opacity var(--transition-fast);
+            pointer-events: none;
+        }
+        
+        .strtgy-watermark img {
+            width: 85px;
+            height: auto;
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+        }
+        
+        /* Verdict Box */
+        .verdict-box {
+            background: rgba(245, 158, 11, 0.15);
+            border: 2px solid var(--strtgy-warning);
+            border-radius: var(--radius-md);
+            padding: 2em;
+            margin: 1.5em auto;
+            max-width: 800px;
+        }
+        
+        .verdict-box.positive {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: var(--strtgy-success);
+        }
+        
+        .verdict-box.negative {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: var(--strtgy-danger);
+        }
+        
+        .verdict-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--strtgy-warning);
+            margin-bottom: 0.5em;
+        }
+        
+        .verdict-text {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        
+        /* Comparison Grid
+           !important required: Reveal.js sets display:flex on direct section children */
+        .comparison-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            margin: 1.5em auto;
+            max-width: 1000px;
+        }
+        
+        .comparison-card {
+            background: var(--strtgy-navy-dim);
+            border: 2px solid var(--strtgy-navy-solid);
+            border-radius: var(--radius-sm);
+            padding: 1.5em;
+            text-align: center;
+        }
+        
+        .comparison-card.winner {
+            border-color: var(--strtgy-accent);
+            background: var(--strtgy-accent-dim);
+        }
+        
+        .comparison-card.challenger {
+            border-color: var(--strtgy-warning);
+        }
+        
+        .comparison-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+        }
+        
+        .comparison-subtitle {
+            font-size: 0.85em;
+            color: var(--strtgy-gray-500);
+            margin-bottom: 1em;
+        }
+        
+        /* Score Display */
+        .score-display {
+            font-size: 3em;
+            font-weight: 700;
+        }
+        
+        .score-display.high { color: var(--strtgy-success); }
+        .score-display.medium { color: var(--strtgy-warning); }
+        .score-display.low { color: var(--strtgy-danger); }
+        
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .results-table th,
+        .results-table td {
+            padding: 0.8em 1em;
+            text-align: center;
+            border-bottom: 1px solid var(--strtgy-navy-solid);
+        }
+        
+        .results-table th {
+            background: rgba(30, 58, 95, 0.4);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .results-table tr:nth-child(even) {
+            background: rgba(30, 58, 95, 0.2);
+        }
+        
+        /* Metric Cards Grid
+           !important required: Reveal.js sets display:flex on direct section children */
+        .metrics-grid-4 {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1em;
+            margin: 1.5em auto;
+            max-width: 1000px;
+        }
+        
+        .metric-card-sm {
+            background: var(--strtgy-navy-dim);
+            border: 1px solid var(--strtgy-navy-solid);
+            border-radius: var(--radius-sm);
+            padding: 1em;
+            text-align: center;
+        }
+        
+        .metric-card-sm .metric-value {
+            font-family: var(--font-heading);
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        .metric-card-sm .metric-label {
+            font-size: 0.8em;
+            color: var(--strtgy-gray-500);
+            margin-top: 0.3em;
+        }
+        
+        /* Recommendation Cards
+           !important required: Reveal.js sets display:flex on direct section children */
+        .recommendation-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            margin: 1.5em auto;
+            max-width: 1000px;
+        }
+        
+        .recommendation-card {
+            background: rgba(30, 58, 95, 0.2);
+            border-left: 4px solid var(--strtgy-accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1em 1.2em;
+            text-align: left;
+        }
+        
+        .recommendation-card.urgent {
+            border-left-color: var(--strtgy-danger);
+        }
+        
+        .rec-title {
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 0.3em;
+        }
+        
+        .rec-desc {
+            font-size: 0.8em;
+            color: var(--strtgy-gray-500);
+        }
+        
+        .rec-priority {
+            display: inline-block;
+            padding: 0.2em 0.6em;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-top: 0.5em;
+        }
+        
+        .rec-priority.high { background: rgba(239, 68, 68, 0.3); color: var(--strtgy-danger); }
+        .rec-priority.medium { background: rgba(245, 158, 11, 0.3); color: var(--strtgy-warning); }
+        
+        /* Pros/Cons Lists
+           !important required: Reveal.js sets display:flex on direct section children */
+        .pros-cons-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5em;
+            margin: 1.5em auto;
+            max-width: 900px;
+        }
+        
+        .pros-list, .cons-list {
+            background: rgba(30, 58, 95, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1.2em;
+            text-align: left;
+        }
+        
+        .pros-list { border-top: 3px solid var(--strtgy-success); }
+        .cons-list { border-top: 3px solid var(--strtgy-danger); }
+        
+        .pros-list h4, .cons-list h4 {
+            font-size: 1em;
+            margin-bottom: 0.8em;
+        }
+        
+        .pros-list li, .cons-list li {
+            font-size: 0.85em;
+            margin: 0.4em 0;
+            padding-left: 1.2em;
+            position: relative;
+        }
+        
+        .pros-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--strtgy-success);
+        }
+        
+        .cons-list li::before {
+            content: '\2717';
+            position: absolute;
+            left: 0;
+            color: var(--strtgy-danger);
+        }
+        
+        /* Agenda Grid for Results
+           !important required: Reveal.js sets display:flex on direct section children */
+        .results-agenda {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            margin: 1.5em auto;
+            max-width: 900px;
+        }
+        
+        .agenda-item-sm {
+            background: rgba(30, 58, 95, 0.2);
+            border-left: 3px solid var(--strtgy-accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1em;
+            text-align: left;
+        }
+        
+        .agenda-num {
+            font-family: var(--font-heading);
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--strtgy-accent);
+            opacity: 0.7;
+        }
+        
+        .agenda-title {
+            font-weight: 600;
+            font-size: 0.9em;
+            margin: 0.2em 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- tsParticles Container -->
+    <div id="tsparticles"></div>
+    
+    <!-- STRTGY Watermark -->
+    <div class="strtgy-watermark">
+        <img src="../../../templates/revealjs/shared/assets/logo-strtgy-white.png" alt="STRTGY">
+    </div>
+    
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 1: PORTADA
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="cover" data-background-gradient="radial-gradient(ellipse at center, #1E3A5F 0%, #0A0F1C 70%)">
+                <div class="cover-content">
+                    <div class="cover-badge">ENTREGA DE RESULTADOS</div>
+                    <h1 class="cover-title r-fit-text">Atlas <span class="accent">LocationFit™</span><br>Industrial</h1>
+                    <p class="cover-subtitle">Auditoría de Ubicación y Optimización de Cobertura</p>
+                    <p style="font-size: 1.3em; font-weight: 600; margin-top: 1.2em;">
+                        Lugon + Letrimex
+                    </p>
+                    <p style="font-size: 1em; color: var(--strtgy-gray-500); margin-top: 0.5em;">
+                        Zona Metropolitana de Monterrey
+                    </p>
+                    <p style="font-size: 0.9em; color: var(--strtgy-gray-500); margin-top: 1.5em;">
+                        <strong>LUGON-ZMM-2026</strong> | 12 de febrero de 2026
+                    </p>
+                    
+                    <!-- Powered by STRTGY -->
+                    <div style="margin-top: 2em; display: flex; align-items: center; justify-content: center; gap: 1.5em;">
+                        <span style="font-size: 0.9em; color: var(--strtgy-gray-500);">Powered by</span>
+                        <img src="../../../templates/revealjs/shared/assets/logo-strtgy-white.png" alt="STRTGY" style="width: 120px; opacity: 0.85;">
+                    </div>
+                </div>
+                <div class="grid-background"></div>
+                <aside class="notes">
+                    <strong>PORTADA — Bienvenida (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Fondo oscuro con gradiente radial azul. Se muestra el badge "ENTREGA DE RESULTADOS" arriba, el título "Atlas LocationFit™ Industrial" (LocationFit™ en color turquesa/accent), subtítulo "Auditoría de Ubicación y Optimización de Cobertura", "Lugon + Letrimex", "Zona Metropolitana de Monterrey", referencia "LUGON-ZMM-2026 | 12 de febrero de 2026", y el logo de STRTGY abajo con "Powered by".</p>
+                    <p>Buenos días/tardes, Eduardo. Gracias por recibirnos.</p>
+                    <p>Hoy les presentamos los resultados del análisis LocationFit™ Industrial que realizamos para evaluar la viabilidad del terreno en General Escobedo para las operaciones de Lugon y Letrimex en la Zona Metropolitana de Monterrey.</p>
+                    <p><strong>Contexto:</strong> Lugon se dedica a la renta de maquinaria pesada y Letrimex ofrece servicios sanitarios portátiles (baños, casetas, fosas sépticas). Ambas empresas operarían desde el mismo terreno.</p>
+                    <p><strong>Pregunta clave del cliente:</strong> "¿Debo comprar este terreno en General Escobedo?"</p>
+                    <p>La presentación dura aproximadamente 30-45 minutos. Al final tendremos tiempo para preguntas.</p>
+                    <p><em>STRTGY es una consultora estratégica enfocada en inteligencia geoespacial y transformación digital para decisiones de negocio.</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 2: AGENDA
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="agenda" data-background-color="#0A0F1C">
+                <h2>AGENDA DE <span class="accent">HOY</span></h2>
+                
+                <div class="results-agenda">
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">01</div>
+                        <div class="agenda-title">Veredicto Ejecutivo</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">02</div>
+                        <div class="agenda-title">Perfil del Terreno</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">03</div>
+                        <div class="agenda-title">Cobertura y Conectividad</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">04</div>
+                        <div class="agenda-title">Benchmark vs Top 10</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">05</div>
+                        <div class="agenda-title">Análisis Económico</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">06</div>
+                        <div class="agenda-title">Plan de Expansión</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">07</div>
+                        <div class="agenda-title">Análisis Letrimex</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">08</div>
+                        <div class="agenda-title">Metodología y Fuentes</div>
+                    </div>
+                    <div class="agenda-item-sm fragment fade-up">
+                        <div class="agenda-num">09</div>
+                        <div class="agenda-title">Recomendaciones</div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1.5em; font-size: 0.9em; color: var(--strtgy-gray-500);">
+                    Duración estimada: 30-45 minutos + Q&A
+                </p>
+                <aside class="notes">
+                    <strong>AGENDA — Estructura de la presentación (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "AGENDA DE HOY" (HOY en turquesa). 9 tarjetas con borde turquesa a la izquierda, numeradas del 01 al 09: (01) Veredicto Ejecutivo, (02) Perfil del Terreno, (03) Cobertura y Conectividad, (04) Benchmark vs Top 10, (05) Análisis Económico, (06) Plan de Expansión, (07) Análisis Letrimex, (08) Metodología y Fuentes, (09) Recomendaciones. Los bloques aparecen uno a uno al hacer clic. Al final dice "Duración estimada: 30-45 minutos + Q&amp;A".</p>
+                    <p>Vamos a cubrir 9 bloques principales. Empezamos con el veredicto ejecutivo — la respuesta directa a su pregunta — y luego profundizamos en los datos que lo sustentan.</p>
+                    <p><strong>Tip de presentación:</strong> Los puntos aparecen uno por uno al hacer clic. Avanza lentamente para que el cliente vea el flujo completo.</p>
+                    <p>Los bloques más importantes para la decisión son: Veredicto (01), Análisis Económico del Flete (05) y Plan de Expansión (06). Si el tiempo es limitado, prioriza estos tres.</p>
+                    <p>Para los mapas interactivos: presiona la flecha ABAJO (↓) en las diapositivas que tienen mapas para mostrar la versión interactiva con zoom y pan.</p>
+                    <p><em>Si preguntan por la duración: "Tenemos 9 bloques, son unos 30-45 minutos, y al final dejamos espacio para preguntas."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 3: VEREDICTO EJECUTIVO
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="verdict" data-background-color="#0A0F1C">
+                <h2>VEREDICTO <span class="accent">EJECUTIVO</span></h2>
+                
+                <div class="verdict-box fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent);">
+                    <div class="verdict-label" style="color: var(--strtgy-accent);">✅ RECOMENDACIÓN</div>
+                    <div class="verdict-text" style="color: var(--strtgy-accent);">SÍ, VIABLE PARA ARRANQUE</div>
+                    <p style="font-size: 0.95em; color: var(--strtgy-gray-300); max-width: 800px; margin: 0.5em auto;">
+                        El terreno en General Escobedo es VIABLE para iniciar operaciones enfocadas 
+                        en contratos de mediano-largo plazo. Para capturar el mercado de respuesta 
+                        rápida, se recomienda abrir una segunda sucursal en zona céntrica.
+                    </p>
+                </div>
+                
+                <div class="metrics-grid-4 fragment fade-up">
+                    <div class="metric-card-sm">
+                        <div class="metric-value" style="color: var(--strtgy-success);">99.3%</div>
+                        <div class="metric-label">Cobertura ZMM<br>60 min</div>
+                    </div>
+                    <div class="metric-card-sm">
+                        <div class="metric-value">Top 6%</div>
+                        <div class="metric-label">Ranking<br>#13 de 203</div>
+                    </div>
+                    <div class="metric-card-sm">
+                        <div class="metric-value" style="color: var(--strtgy-warning);">5-10%</div>
+                        <div class="metric-label">Flete en<br>proyectos largos</div>
+                    </div>
+                    <div class="metric-card-sm">
+                        <div class="metric-value" style="color: var(--strtgy-accent);">19-73%</div>
+                        <div class="metric-label">Ahorro vs<br>alternativas</div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-400);">
+                    <strong style="color: var(--strtgy-accent);">Condición:</strong> Si el terreno cuesta 30%+ menos que alternativas céntricas, la ubicación se justifica plenamente.
+                </p>
+                <aside class="notes">
+                    <strong>VEREDICTO EJECUTIVO — La respuesta (3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "VEREDICTO EJECUTIVO". Un recuadro verde con borde turquesa muestra "✅ RECOMENDACIÓN" y "SÍ, VIABLE PARA ARRANQUE" en turquesa. Debajo, 4 tarjetas métricas en fila: (1) "99.3%" en verde = Cobertura ZMM 60 min, (2) "Top 6%" en blanco = Ranking #13 de 203, (3) "5-10%" en amarillo = Flete en proyectos largos, (4) "19-73%" en turquesa = Ahorro vs alternativas (base: 3,000 m²). Texto inferior: "Condición: Si el terreno cuesta 30%+ menos que alternativas céntricas, la ubicación se justifica plenamente."</p>
+                    <p><strong>Mensaje principal:</strong> "La respuesta corta es SÍ, el terreno ES viable, pero con una condición importante."</p>
+                    <p><strong>Explica los 4 KPIs (señalando cada tarjeta de izquierda a derecha):</strong></p>
+                    <ul>
+                        <li><strong>99.3% Cobertura a 60 min (tarjeta verde):</strong> Desde Escobedo, Lugon puede llegar a prácticamente TODA la ZMM en una hora. Esto es más que suficiente para obras programadas donde se agenda la entrega con días de anticipación.</li>
+                        <li><strong>Top 6% - #13 de 203 (tarjeta blanca):</strong> Evaluamos 203 zonas hexagonales en toda la ZMM. Lugon está en el top 6% en score compuesto (demanda + conectividad + crecimiento). No es la mejor zona, pero está muy por encima del promedio.</li>
+                        <li><strong>5-10% Flete (tarjeta amarilla):</strong> En proyectos de 1+ mes, el flete solo representa entre 5-10% del valor total — un diferencial marginal frente a competidores céntricos.</li>
+                        <li><strong>19-73% Ahorro (tarjeta turquesa):</strong> Comparado con terrenos en zonas alternativas (Santa Catarina $24M, Apodaca $33M, Monterrey Centro $72M), General Escobedo ($19.5M) ahorra entre 19% y 73% en costo de terreno para un lote de 3,000 m².</li>
+                    </ul>
+                    <p><strong>La condición clave (texto inferior en pantalla):</strong> "Si el terreno cuesta 30% o más barato que las alternativas céntricas, la compra se justifica totalmente. El ahorro financia la expansión futura."</p>
+                    <p><em>Si preguntan "¿entonces sí compramos?": "Sí, siempre y cuando el precio confirme el diferencial que estimamos. Ahora vamos a ver el detalle para que tengan toda la información."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 4: CONCLUSIONES CLAVE
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="conclusions" data-background-color="#0A0F1C">
+                <h2>CONCLUSIONES <span class="accent">CLAVE</span></h2>
+                
+                <div style="max-width: 900px; margin: 2em auto; text-align: left;">
+                    <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
+                        <span style="font-size: 1.5em;">✅</span>
+                        <div>
+                            <strong style="font-size: 1.1em;">Cobertura SUFICIENTE para contratos programados</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                                Lugon alcanza 99.3% del mercado ZMM a 60 min — ideal para proyectos de 1+ mes
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
+                        <span style="font-size: 1.5em;">💰</span>
+                        <div>
+                            <strong style="font-size: 1.1em;">Flete ACEPTABLE en proyectos largos</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                                Solo 5-10% del valor en contratos de 1+ mes — diferencial marginal vs competidores céntricos
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(255, 193, 7, 0.1); border-radius: 10px; border: 1px solid rgba(255, 193, 7, 0.3);">
+                        <span style="font-size: 1.5em;">⚠️</span>
+                        <div>
+                            <strong style="font-size: 1.1em;">DESVENTAJA en respuesta rápida</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                                Para proyectos cortos (&lt;1 semana), el flete puede llegar a 25-40% — solución: sucursal céntrica
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
+                        <span style="font-size: 1.5em;">🏆</span>
+                        <div>
+                            <strong style="font-size: 1.1em;">AHORRO del 19-73% en terreno financia la expansión</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                                La diferencia de precio vs zonas céntricas puede pagar la sucursal de respuesta rápida
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>CONCLUSIONES CLAVE — Las 4 verdades (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "CONCLUSIONES CLAVE". Cuatro bloques rectangulares que aparecen uno a uno al hacer clic. Los primeros dos tienen borde verde/turquesa: ✅ Cobertura SUFICIENTE y 💰 Flete ACEPTABLE. El tercero tiene borde amarillo: ⚠️ DESVENTAJA en respuesta rápida. El cuarto vuelve a verde: 🏆 AHORRO del 19-73%. Cada bloque tiene un subtexto en gris con el dato de respaldo.</p>
+                    <p>Los puntos aparecen uno a uno. Lee cada uno brevemente y añade contexto:</p>
+                    <ol>
+                        <li><strong>✅ Cobertura suficiente (recuadro verde):</strong> "El 99.3% significa que de los 4,182 establecimientos industriales en la ZMM, Lugon puede atender 4,152 en una hora. Para obras que se programan con días de anticipación, esto es más que suficiente."</li>
+                        <li><strong>💰 Flete aceptable (recuadro verde):</strong> "Eduardo mencionó que el flete puede ir del 5% al 40%. En proyectos de un mes o más, el flete desde Escobedo es apenas 1-3% más que desde el centro. Esa diferencia es marginal y se puede compensar con el ahorro en terreno."</li>
+                        <li><strong>⚠️ Desventaja en respuesta rápida (recuadro AMARILLO — nótese el cambio de color):</strong> "Aquí está el PERO. Para proyectos cortos de menos de una semana — emergencias, reemplazos urgentes — el flete puede llegar al 25-40%. Un competidor en Monterrey Centro responde más rápido. PERO esto tiene solución." [apunta al siguiente punto]</li>
+                        <li><strong>🏆 El ahorro financia todo (recuadro verde):</strong> "El ahorro de 19-73% en terreno vs alternativas puede pagar la sucursal de respuesta rápida que resolvería el punto anterior. Vs Monterrey Centro se ahorran $52.5M (73%), vs Apodaca $13.5M (41%), e incluso vs Santa Catarina se ahorran $4.5M (19%). Ese ahorro financia la expansión."</li>
+                    </ol>
+                    <p><em>Transición: "Ahora veamos el detalle de cada análisis, empezando por el perfil del terreno."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 5: PERFIL DEL TERRENO LUGON
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="terrain-profile" data-background-color="#0A0F1C">
+                <h2>PERFIL DEL <span class="accent">TERRENO LUGON</span></h2>
+                
+                <div class="comparison-grid">
+                    <div style="text-align: left;">
+                        <h4 style="color: var(--strtgy-accent); margin-bottom: 0.5em;">📍 Ubicación</h4>
+                        <p style="font-size: 1.1em; font-weight: 600; margin-bottom: 0.3em;">General Escobedo, Nuevo León</p>
+                        <p style="font-size: 0.85em; color: var(--strtgy-gray-500);">Av. Benito Juárez</p>
+                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">
+                            Coordenadas: 25.789467, -100.303421
+                        </p>
+                        
+                        <div style="margin-top: 1.5em;">
+                            <h4 style="color: var(--strtgy-accent); margin-bottom: 0.5em;">🛣️ Accesos</h4>
+                            <ul style="font-size: 0.85em; padding-left: 1.2em; color: var(--strtgy-gray-400);">
+                                <li>Autopista a Laredo (norte)</li>
+                                <li>Libramiento Norponiente</li>
+                                <li>~25 km al Aeropuerto del Norte</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <div style="font-size: 0.9em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">Score Demanda H3</div>
+                        <div class="score-display medium">19.3</div>
+                        <div style="font-size: 0.85em; margin-top: 0.5em;">de 100 puntos</div>
+                        
+                        <div style="margin-top: 1.5em; padding: 0.8em; background: rgba(255, 193, 7, 0.15); border-radius: 8px;">
+                            <div style="font-size: 0.8em; color: var(--strtgy-warning);">
+                                Clasificación: <strong>ALTO</strong><br>
+                                Ranking: <strong>#25 de 203</strong> (Top 12%)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>PERFIL DEL TERRENO — Ubicación y Score (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "PERFIL DEL TERRENO LUGON" (TERRENO LUGON en turquesa). Dos columnas: a la izquierda, datos de ubicación (📍 General Escobedo, Nuevo León — Av. Benito Juárez — Coordenadas — 🛣️ Accesos: Autopista a Laredo, Libramiento Norponiente, ~25 km al Aeropuerto del Norte). A la derecha, una tarjeta oscura mostrando "Score Demanda H3" con el número 19.3 en AMARILLO grande (color de advertencia), debajo dice "de 100 puntos", y un recuadro amarillo claro indica "Clasificación: ALTO" y "Ranking: #25 de 203 (Top 12%)".</p>
+                    <p>"Este es el terreno que están evaluando: Avenida Benito Juárez en General Escobedo. Está en la zona norte de la metrópoli, con acceso a la Autopista a Laredo y al Libramiento Norponiente."</p>
+                    <p><strong>El Score Demanda H3 de 19.3 (el número amarillo grande a la derecha):</strong> "Usamos una cuadrícula hexagonal (tecnología de Uber llamada H3) para dividir toda la ZMM en 203 zonas y medir la densidad de clientes potenciales en cada una. El terreno de Lugon tiene un score de 19.3 de 100, lo que lo coloca en la posición #25 de 203 — es decir, Top 12% solo en demanda."</p>
+                    <p><strong>Nota importante:</strong> 19.3 puede sonar bajo en absoluto, pero el ranking (Top 12%) es lo que importa. La mayoría de la ZMM tiene scores cercanos a cero. Estar en Top 12% es clasificación ALTO — como dice el recuadro amarillo en pantalla.</p>
+                    <p><strong>Accesos (sección izquierda inferior con 🛣️):</strong> Destacar que la Autopista a Laredo permite salir rápido al norte (Pesquería, Ciénega de Flores — corredor nearshoring) sin pasar por el tráfico del centro.</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para mostrar el mapa de demanda industrial.</em></p>
+                </aside>
+            </section>
+            <section id="terrain-profile-map" data-background-color="#0A0F1C">
+                <h3>DEMANDA INDUSTRIAL <span class="accent">ZMM</span></h3>
+                <img class="r-stretch" src="../mapas/screenshots/mapa_demanda_zmm.png" 
+                     alt="Mapa de Demanda Industrial ZMM - Hexágonos H3 Resolución 7" 
+                     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Mapa de Demanda Industrial (H3 Res 7) | Fuente: INEGI DENUE — 4,182 establecimientos
+                </p>
+                <aside class="notes">
+                    <strong>MAPA DE DEMANDA — Visualización (2-3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "DEMANDA INDUSTRIAL ZMM" (ZMM en turquesa). Una imagen estática del mapa de demanda con hexágonos H3 coloreados por densidad de establecimientos. Los hexágonos van de colores claros (baja demanda) a verdes oscuros (alta demanda). Subtítulo: "Mapa de Demanda Industrial (H3 Res 7) | Fuente: INEGI DENUE — 4,182 establecimientos".</p>
+                    <p>"Este mapa muestra los 4,182 establecimientos industriales del INEGI DENUE distribuidos en hexágonos coloreados por densidad. Los hexágonos más oscuros/verdes son las zonas con mayor concentración de clientes potenciales para Lugon."</p>
+                    <p>Señala que el epicentro de demanda está en el corredor Monterrey-San Nicolás (zonas oscuras en el centro del mapa), mientras que Lugon (marcador en la zona superior) está en una zona de demanda moderada pero creciente.</p>
+                    <p><strong>¿Qué establecimientos se consideran clientes potenciales de Lugon?</strong> Son los 4,182 negocios del INEGI DENUE clasificados en 5 sectores SCIAN que requieren renta de maquinaria pesada:</p>
+                    <ul>
+                        <li><strong>Manufactura — 3,038 establecimientos (72.7%):</strong> Es el sector más grande. Incluye fábricas de productos metálicos (SCIAN 332: tanques, herrajes, válvulas), maquinaria y equipo industrial (SCIAN 333: maquinaria agrícola, de construcción, industrial) y la industria automotriz (SCIAN 336: autopartes, carrocerías, motores). Estas fábricas requieren maquinaria para mantenimiento, expansión de plantas y proyectos internos.</li>
+                        <li><strong>Edificación — 461 establecimientos (11.0%):</strong> Empresas de construcción residencial y no residencial (SCIAN 236). Incluye desarrolladoras de viviendas y constructoras de plantas industriales, naves y obras comerciales. Demanda recurrente de excavadoras, compactadoras, equipos de concreto.</li>
+                        <li><strong>Trabajos Especializados en Construcción — 383 establecimientos (9.2%):</strong> Empresas de cimentaciones, instalaciones eléctricas, hidrosanitarias, acabados, demolición (SCIAN 238). Proyectos cortos pero frecuentes — cada uno necesita equipo especializado.</li>
+                        <li><strong>Ingeniería Civil — 162 establecimientos (3.9%):</strong> Constructoras de carreteras, puentes, urbanización, drenaje, vías férreas (SCIAN 237). Proyectos de gran envergadura con contratos largos de maquinaria.</li>
+                        <li><strong>Logística/Transporte — 138 establecimientos (3.3%):</strong> Empresas de transporte de carga terrestre y almacenamiento (SCIAN 484/493). Relacionadas con la construcción de bodegas y centros de distribución — complementan la demanda industrial.</li>
+                    </ul>
+                    <p><em>Si preguntan "¿cómo seleccionaron estos sectores?": "Son los 5 sectores SCIAN que más demandan renta de maquinaria pesada según nuestro modelo LocationFit™. El SCIAN es el Sistema de Clasificación Industrial de América del Norte — es el estándar oficial que usa el INEGI para clasificar negocios."</em></p>
+                    <p><em>Transición: "Ahora, ¿cuántos de estos 4,182 establecimientos puede alcanzar Lugon desde Escobedo? Eso lo medimos con isocronas."</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 6: COBERTURA ISOCRONAS LUGON
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="terrain-coverage" data-background-color="#0A0F1C">
+                <h2>COBERTURA <span class="accent">ISOCRONAS LUGON</span></h2>
+                
+                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto;">
+                    <thead>
+                        <tr>
+                            <th>Tiempo</th>
+                            <th>Establecimientos</th>
+                            <th>% ZMM</th>
+                            <th>Ranking</th>
+                            <th>Evaluación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>15 min</strong></td>
+                            <td>307</td>
+                            <td>7.3%</td>
+                            <td>9 de 11</td>
+                            <td style="color: var(--strtgy-danger);">⚠️ Bajo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>30 min</strong></td>
+                            <td>2,016</td>
+                            <td>48.2%</td>
+                            <td>8 de 11</td>
+                            <td style="color: var(--strtgy-warning);">⚡ Medio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>60 min</strong></td>
+                            <td>4,152</td>
+                            <td>99.3%</td>
+                            <td>5 de 11</td>
+                            <td style="color: var(--strtgy-success);">✅ Óptimo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pros-cons-grid fragment fade-up">
+                    <div class="pros-list">
+                        <h4 style="color: var(--strtgy-success);">✅ Ventajas</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>Cobertura competitiva a 60 minutos</li>
+                            <li>Corredor de crecimiento Escobedo-Apodaca-Pesquería</li>
+                            <li>Acceso a autopistas sin congestión</li>
+                            <li>Zona de expansión nearshoring + Tier 1-2</li>
+                        </ul>
+                    </div>
+                    <div class="cons-list">
+                        <h4 style="color: var(--strtgy-danger);">⚠️ Desventajas</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>Baja cobertura en 15 min (307 vs 1,336)</li>
+                            <li>Ranking #9 de 11 en respuesta rápida</li>
+                            <li>10.8 km de zona de máxima demanda</li>
+                            <li>Flete decisivo en proyectos cortos</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>COBERTURA ISOCRONAS — El dato más importante (3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "COBERTURA ISOCRONAS LUGON" (ISOCRONAS LUGON en turquesa). Una tabla con 5 columnas (Tiempo, Establecimientos, % ZMM, Ranking, Evaluación) y 3 filas: 15 min con "⚠️ Bajo" en ROJO, 30 min con "⚡ Medio" en AMARILLO, 60 min con "✅ Óptimo" en VERDE. Debajo, dos columnas: "✅ Ventajas" (borde verde arriba) y "⚠️ Desventajas" (borde rojo arriba), cada una con 4 puntos.</p>
+                    <p>"Una isocrona es el área que puedes alcanzar en cierto tiempo desde un punto. Usamos la API de HERE (la misma que usa Uber) para calcular exactamente a cuántos de los 4,182 establecimientos industriales puede llegar Lugon."</p>
+                    <p><strong>Lee la tabla renglón por renglón (señalando cada fila):</strong></p>
+                    <ul>
+                        <li><strong>15 minutos — 307 establecimientos (7.3%) — Ranking 9 de 11 — BAJO (rojo):</strong> "En respuesta rápida, Lugon solo alcanza el 7% del mercado. Esto es la principal desventaja. Un competidor en zona centro alcanza 1,336 en el mismo tiempo."</li>
+                        <li><strong>30 minutos — 2,016 (48.2%) — Ranking 8 de 11 — MEDIO (amarillo):</strong> "A media hora ya cubrimos casi la mitad. Para la mayoría de entregas programadas, esto es suficiente."</li>
+                        <li><strong>60 minutos — 4,152 (99.3%) — Ranking 5 de 11 — ÓPTIMO (verde):</strong> "A una hora, Lugon cubre prácticamente TODO el mercado. Este es el dato clave: para contratos programados, 60 minutos es completamente aceptable."</li>
+                    </ul>
+                    <p><strong>Ventajas (columna verde izquierda):</strong> Cobertura competitiva a 60 min, corredor de crecimiento Escobedo-Apodaca-Pesquería, acceso a autopistas sin congestión, zona de expansión nearshoring + Tier 1-2.</p>
+                    <p><strong>Desventajas (columna roja derecha):</strong> Baja cobertura en 15 min (307 vs 1,336), ranking #9 de 11 en respuesta rápida, 10.8 km de zona de máxima demanda, flete decisivo en proyectos cortos.</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para mostrar el mapa interactivo de isocronas. Puedes hacer zoom y pan para que el cliente explore.</em></p>
+                </aside>
+            </section>
+            <section id="terrain-coverage-map" data-background-color="#0A0F1C">
+                <h3>ISOCRONAS <span class="accent">15 / 30 / 60 MIN</span> — MAPA INTERACTIVO</h3>
+                <iframe class="r-stretch" data-src="../mapas/mapa_isocronas_multizona.html"
+                        style="width: 100%; border: 2px solid var(--strtgy-navy-solid); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"
+                        sandbox="allow-scripts allow-same-origin"
+                        loading="lazy">
+                    <p style="color: var(--strtgy-gray-500); text-align: center; padding: 2em;">Mapa interactivo no disponible. Abra el archivo <code>mapas/mapa_isocronas_multizona.html</code> directamente.</p>
+                </iframe>
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Isocronas desde Lugon (General Escobedo) | HERE API Isoline Routing v8 | Zoom y pan habilitados
+                </p>
+                <aside class="notes">
+                    <strong>MAPA INTERACTIVO ISOCRONAS — Demo (1-2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "ISOCRONAS 15 / 30 / 60 MIN — MAPA INTERACTIVO" (15/30/60 MIN en turquesa). Un mapa Leaflet interactivo embebido (iframe) con borde azul oscuro y bordes redondeados. El mapa muestra polígonos de isocronas desde múltiples ubicaciones. Subtítulo: "Isocronas desde Lugon (General Escobedo) | HERE API Isoline Routing v8 | Zoom y pan habilitados".</p>
+                    <p>"Este mapa es interactivo — pueden hacer zoom y mover el mapa para explorar exactamente qué zonas caen dentro de cada anillo de tiempo."</p>
+                    <p><strong>Colores de las isocronas:</strong> El anillo más oscuro/pequeño = 15 min, el medio = 30 min, el más grande/claro = 60 min.</p>
+                    <p>Señala visualmente: "Miren cómo a 15 minutos apenas cubrimos la zona inmediata de Escobedo. Pero a 60 minutos, la isocrona cubre desde Saltillo casi hasta Cadereyta."</p>
+                    <p>Pueden ver los marcadores de las otras ubicaciones que evaluamos para comparar. La leyenda muestra Lugon, la mejor alternativa y otras ubicaciones de referencia.</p>
+                    <p><em>Si el cliente quiere explorar: Déjalos interactuar. Si no, avanza con flecha derecha.</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 7: ÍNDICE DE CONECTIVIDAD VIAL (NEW)
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="connectivity" data-background-color="#0A0F1C">
+                <h2>ÍNDICE DE <span class="accent">CONECTIVIDAD VIAL</span></h2>
+                <p class="slide-subtitle">Score normalizado (0-100) por accesibilidad temporal</p>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 750px; margin: 1.5em auto;">
+                    <div class="metric-card-sm" style="padding: 1em;">
+                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-warning);">53.39</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Score Lugon<br>(Ranking #18)</div>
+                    </div>
+                    <div class="metric-card-sm" style="padding: 1em; background: rgba(16, 185, 129, 0.1);">
+                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-success);">100.0</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Máximo ZMM<br>(San Nicolás - Av. Univ.)</div>
+                    </div>
+                    <div class="metric-card-sm" style="padding: 1em; background: rgba(102, 126, 234, 0.1);">
+                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-phase-3);">43.05</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Score Compuesto<br>(Dem 50% + Con 30% + NTL 20%)</div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                    <strong style="color: var(--strtgy-accent);">Interpretación:</strong> 
+                    Lugon tiene conectividad media-alta. Para proyectos urgentes, zonas con score 80+ son superiores.
+                </p>
+                <aside class="notes">
+                    <strong>CONECTIVIDAD VIAL — El Score Compuesto (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "ÍNDICE DE CONECTIVIDAD VIAL" (CONECTIVIDAD VIAL en turquesa), subtítulo "Score normalizado (0-100) por accesibilidad temporal". Tres tarjetas métricas en fila: (1) "53.39" en AMARILLO = Score Lugon (Ranking #18), (2) "100.0" en VERDE (fondo verde claro) = Máximo ZMM (San Nicolás - Av. Univ.), (3) "43.05" en AZUL/MORADO #667eea (fondo azul claro) = Score Compuesto (Demanda 50% + Conectividad 30% + Crecimiento NTL 20%). Texto inferior turquesa: "Interpretación: Lugon tiene conectividad media-alta. Para proyectos urgentes, zonas con score 80+ son superiores."</p>
+                    <p>"Además de contar establecimientos, calculamos un índice de conectividad que mide qué tan rápido puedes llegar a todo el mercado desde cada punto."</p>
+                    <p><strong>Los 3 scores (señalando cada tarjeta de izquierda a derecha):</strong></p>
+                    <ul>
+                        <li><strong>53.39 en amarillo — Score Lugon (Ranking #18 de 203):</strong> "Lugon tiene conectividad media-alta. No es el mejor punto para llegar rápido, pero tampoco es malo."</li>
+                        <li><strong>100.0 en verde — Máximo ZMM (San Nicolás - Av. Universidad):</strong> "El punto más conectado de toda la ZMM es San Nicolás, donde la Av. Universidad tiene acceso a múltiples autopistas. Desde ahí se llega más rápido a cualquier punto."</li>
+                        <li><strong>43.05 en azul/morado — Score Compuesto:</strong> "Este es EL número más importante. Combina tres factores: demanda (cuántos clientes hay cerca, 50%), conectividad (qué tan rápido llegas, 30%) y crecimiento económico medido por iluminación nocturna satelital (20%). Lugon obtiene 43.05 de un máximo de 87.6."</li>
+                    </ul>
+                    <p>"El score compuesto de 43.05 coloca a Lugon en la posición #13 de 203 — Top 6%. Es una ubicación BUENA, no la mejor, pero sí en el quintil superior."</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa de conectividad.</em></p>
+                </aside>
+            </section>
+            <section id="connectivity-map" data-background-color="#0A0F1C">
+                <h3>CONECTIVIDAD VIAL <span class="accent">ZMM</span></h3>
+                <img class="r-stretch" src="../mapas/screenshots/mapa_conectividad_zmm.png" 
+                     alt="Índice de Conectividad Vial ZMM - Score por hexágono H3" 
+                     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Índice de Conectividad por Hexágono H3 | Score: 0-100 (verde = óptimo)
+                </p>
+                <aside class="notes">
+                    <strong>MAPA CONECTIVIDAD — Visualización (30 segundos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "CONECTIVIDAD VIAL ZMM" (ZMM en turquesa). Imagen estática de mapa con hexágonos H3 coloreados por score de conectividad. Subtítulo: "Índice de Conectividad por Hexágono H3 | Score: 0-100 (verde = óptimo)".</p>
+                    <p>"Según indica el subtítulo del mapa, los colores van de rojo (baja conectividad) a verde (alta conectividad, score cercano a 100). Pueden ver cómo el centro de la metrópoli es completamente verde, y Lugon (en la zona superior del mapa) está en una zona amarilla-naranja — conectividad aceptable pero no óptima."</p>
+                    <p>Señala que la zona de Escobedo está más alejada de las arterias principales, pero con el Libramiento Norponiente tiene salida directa sin pasar por el tráfico céntrico.</p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 8: ZONA RETADORA
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="challenger" data-background-color="#0A0F1C">
+                <h2>ZONA <span class="accent">RETADORA</span> IDENTIFICADA</h2>
+                <p class="slide-subtitle">Mejor alternativa en la ZMM</p>
+                
+                <div class="comparison-grid fragment fade-up">
+                    <div class="comparison-card winner">
+                        <div style="font-size: 0.8em; background: var(--strtgy-success); color: white; padding: 0.3em 0.8em; border-radius: 20px; display: inline-block; margin-bottom: 0.8em;">
+                            #1 EN ZMM
+                        </div>
+                        <div class="comparison-title">Corredor Monterrey-San Nicolás</div>
+                        <div class="comparison-subtitle">Monterrey / San Nicolás de los Garza</div>
+                        
+                        <div class="score-display high" style="margin: 0.5em 0;">50.0</div>
+                        <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Score Demanda H3</div>
+                    </div>
+                    
+                    <div style="text-align: left; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin-bottom: 1em;">Comparativa vs Lugon</h4>
+                        
+                        <div style="margin: 1em 0; padding: 0.8em; background: rgba(30, 58, 95, 0.3); border-radius: 8px;">
+                            <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Diferencia de Score</div>
+                            <div style="font-size: 1.5em; font-weight: 700; color: var(--strtgy-success);">+30.7 puntos</div>
+                            <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">+161% más demanda potencial</div>
+                        </div>
+                        
+                        <div style="margin: 1em 0; padding: 0.8em; background: rgba(30, 58, 95, 0.3); border-radius: 8px;">
+                            <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Distancia desde Lugon</div>
+                            <div style="font-size: 1.3em; font-weight: 700;">10.8 km</div>
+                        </div>
+                        
+                        <div style="font-size: 0.85em; color: var(--strtgy-gray-400); margin-top: 1em;">
+                            <strong>Características:</strong><br>
+                            • Epicentro industrial de la ZMM<br>
+                            • Máxima densidad de clientes<br>
+                            • Excelente conectividad vial
+                        </div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>ZONA RETADORA — La mejor alternativa (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "ZONA RETADORA IDENTIFICADA" (RETADORA en turquesa), subtítulo "Mejor alternativa en la ZMM". Dos columnas: A la izquierda, una tarjeta con borde turquesa y badge "#1 EN ZMM" en verde, nombre "Corredor Monterrey-San Nicolás", ubicación "Monterrey / San Nicolás de los Garza", y el número "50.0" en VERDE grande (Score Demanda H3). A la derecha, "Comparativa vs Lugon" con dos recuadros oscuros: "+30.7 puntos" en verde (+161% más demanda potencial) y "10.8 km" (distancia desde Lugon), más 3 características en texto: Epicentro industrial, Máxima densidad, Excelente conectividad.</p>
+                    <p>"Ahora, ¿cuál sería la MEJOR ubicación si no compraran en Escobedo? Nuestro análisis identificó el Corredor Monterrey-San Nicolás como la zona #1 en demanda en toda la ZMM."</p>
+                    <p><strong>Datos clave para mencionar (señalando cada elemento en pantalla):</strong></p>
+                    <ul>
+                        <li>Score Demanda H3 de 50.0 — el máximo de toda la ZMM</li>
+                        <li>+30.7 puntos más que Lugon — es decir, 161% más demanda potencial en esa zona</li>
+                        <li>Está a solo 10.8 km del terreno en Escobedo</li>
+                    </ul>
+                    <p><strong>IMPORTANTE — No asustes al cliente:</strong> "Esto NO significa que Escobedo sea mala ubicación. Significa que si Lugon necesita respuesta rápida (15 min), esta zona tiene 903 establecimientos más a 15 minutos. PERO a 60 minutos, la diferencia desaparece — ambas cubren el 99.3% del mercado."</p>
+                    <p>"Esta zona retadora es candidata perfecta para la sucursal de Etapa 2 — el plan de expansión que veremos más adelante."</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa comparativo.</em></p>
+                </aside>
+            </section>
+            <section id="challenger-map" data-background-color="#0A0F1C">
+                <h3>LUGON vs <span class="accent">ZONA RETADORA</span></h3>
+                <img class="r-stretch" src="../mapas/screenshots/mapa_benchmark_lugon_retador.png" 
+                     alt="Comparación Espacial: Lugon vs Mejor Alternativa en la ZMM" 
+                     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Lugon (Score 19.3) vs Corredor Mty-SN (Score 50.0) — 10.8 km de distancia
+                </p>
+                <aside class="notes">
+                    <strong>MAPA COMPARATIVO — Lugon vs Zona Retadora (30 segundos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "LUGON vs ZONA RETADORA" (ZONA RETADORA en turquesa). Imagen estática de mapa mostrando ambas ubicaciones con hexágonos H3 de fondo. Subtítulo: "Lugon (Score 19.3) vs Corredor Mty-SN (Score 50.0) — 10.8 km de distancia".</p>
+                    <p>"Aquí ven la distancia visual entre ambos puntos. Son apenas 10.8 km — como dice el subtítulo en pantalla — unos 15-20 minutos en coche."</p>
+                    <p>Señala que los hexágonos más oscuros (mayor demanda) están concentrados alrededor de la zona retadora en el centro, mientras que Lugon está en la zona superior del mapa, en una zona de menor densidad pero creciente.</p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 9: BENCHMARK LUGON vs TOP 10
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="benchmark" data-background-color="#0A0F1C">
+                <h2>BENCHMARK: LUGON vs <span class="accent">TOP 10</span></h2>
+                <p class="slide-subtitle">Comparativa completa para planificar expansión</p>
+                
+                <table class="results-table fragment fade-up" style="max-width: 1000px; margin: 1em auto; font-size: 0.8em;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 8px 6px;">#</th>
+                            <th style="padding: 8px 6px; text-align: left;">Zona</th>
+                            <th style="padding: 8px 6px;">Score</th>
+                            <th style="padding: 8px 6px;">Cob 15m</th>
+                            <th style="padding: 8px 6px;">Cob 30m</th>
+                            <th style="padding: 8px 6px;">Dist</th>
+                            <th style="padding: 8px 6px;">Complementa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(255, 193, 7, 0.2); border: 2px solid var(--strtgy-warning);">
+                            <td style="padding: 8px 6px; font-weight: 700;">—</td>
+                            <td style="padding: 8px 6px; font-weight: 700; text-align: left;">LUGON (G. Escobedo)</td>
+                            <td style="padding: 8px 6px; font-weight: 700;">43.05</td>
+                            <td style="padding: 8px 6px;">307</td>
+                            <td style="padding: 8px 6px;">2,016</td>
+                            <td style="padding: 8px 6px;">—</td>
+                            <td style="padding: 8px 6px;">BASE</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px; color: var(--strtgy-success); font-weight: 600;">1</td>
+                            <td style="padding: 6px; text-align: left;">Santa Catarina Industrial</td>
+                            <td style="padding: 6px; color: var(--strtgy-success); font-weight: 600;">87.6</td>
+                            <td style="padding: 6px;">1,698</td>
+                            <td style="padding: 6px;">3,745</td>
+                            <td style="padding: 6px;">7.5 km</td>
+                            <td style="padding: 6px; color: var(--strtgy-success);">✓</td>
+                        </tr>
+                        <tr style="background: rgba(30, 58, 95, 0.2);">
+                            <td style="padding: 6px; color: var(--strtgy-success); font-weight: 600;">2</td>
+                            <td style="padding: 6px; text-align: left;">García - Libramiento</td>
+                            <td style="padding: 6px; color: var(--strtgy-success); font-weight: 600;">84.7</td>
+                            <td style="padding: 6px;">983</td>
+                            <td style="padding: 6px;">3,156</td>
+                            <td style="padding: 6px;">8.8 km</td>
+                            <td style="padding: 6px; color: var(--strtgy-success);">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px; color: var(--strtgy-success); font-weight: 600;">3</td>
+                            <td style="padding: 6px; text-align: left;">Monterrey-San Nicolás</td>
+                            <td style="padding: 6px; font-weight: 600;">82.6</td>
+                            <td style="padding: 6px; font-weight: 600;">1,972</td>
+                            <td style="padding: 6px;">3,887</td>
+                            <td style="padding: 6px;">10.8 km</td>
+                            <td style="padding: 6px; color: var(--strtgy-success);">✓</td>
+                        </tr>
+                        <tr style="background: rgba(30, 58, 95, 0.2);">
+                            <td style="padding: 6px;">4</td>
+                            <td style="padding: 6px; text-align: left;">Guadalupe Industrial</td>
+                            <td style="padding: 6px;">74.7</td>
+                            <td style="padding: 6px;">1,837</td>
+                            <td style="padding: 6px; font-weight: 600;">4,022</td>
+                            <td style="padding: 6px;">11.3 km</td>
+                            <td style="padding: 6px; color: var(--strtgy-success);">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px;">5</td>
+                            <td style="padding: 6px; text-align: left;">San Nicolás - Av. Universidad</td>
+                            <td style="padding: 6px;">69.5</td>
+                            <td style="padding: 6px;">1,940</td>
+                            <td style="padding: 6px;">3,868</td>
+                            <td style="padding: 6px;">9.5 km</td>
+                            <td style="padding: 6px; color: var(--strtgy-success);">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-accent);">✓ Zonas que Complementan</div>
+                        <p style="font-size: 0.8em; margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
+                            Ideales para segunda sucursal de respuesta rápida
+                        </p>
+                    </div>
+                    <div style="background: rgba(102, 126, 234, 0.1); border: 1px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1em;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-3);">📊 Lugon en Ranking</div>
+                        <p style="font-size: 0.8em; margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
+                            #13 de 203 zonas (Top 6%) - Score Compuesto
+                        </p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>BENCHMARK TOP 10 — La tabla comparativa (3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "BENCHMARK: LUGON vs TOP 10" (TOP 10 en turquesa), subtítulo "Comparativa completa para planificar expansión". Una tabla con 7 columnas (#, Zona, Score, Cob 15m, Cob 30m, Dist, Complementa) y 6 filas. La PRIMERA fila es LUGON con fondo AMARILLO y borde amarillo — Score 43.05, Cob 15m 307, Cob 30m 2,016. Las filas siguientes son: #1 Santa Catarina Industrial (Score 87.6 en verde), #2 García - Libramiento (84.7), #3 Monterrey-San Nicolás (82.6), #4 Guadalupe Industrial (74.7), #5 San Nicolás - Av. Universidad (69.5). Todas tienen ✓ verde en la columna "Complementa". Debajo hay dos recuadros: uno turquesa "✓ Zonas que Complementan" y uno azul/morado "📊 Lugon en Ranking — #13 de 203 zonas (Top 6%)".</p>
+                    <p>"Esta tabla compara a Lugon (la fila amarilla resaltada) contra las 5 mejores zonas de la ZMM."</p>
+                    <p><strong>Puntos clave para cada columna (señalando la tabla):</strong></p>
+                    <ul>
+                        <li><strong>Score:</strong> "Lugon tiene 43.05 vs el líder Santa Catarina con 87.6 (en verde). No es el mejor score, pero está en Top 6%."</li>
+                        <li><strong>Cob 15m:</strong> "Lugon solo alcanza 307 establecimientos en 15 min. Santa Catarina alcanza 1,698 — casi 6 veces más. ESTA es la desventaja principal."</li>
+                        <li><strong>Cob 30m:</strong> "A 30 min, Lugon cubre 2,016 vs Guadalupe con 4,022 (el valor más alto, en negritas). La brecha se reduce pero sigue siendo significativa."</li>
+                        <li><strong>Dist:</strong> "Todas las alternativas están a menos de 12 km. Son zonas accesibles para una futura sucursal."</li>
+                        <li><strong>Complementa:</strong> "Las zonas con ✓ verde son las que complementan a Lugon — si abres ahí, mejoras tu cobertura donde Lugon es débil."</li>
+                    </ul>
+                    <p><strong>Insight clave (señalando los recuadros inferiores):</strong> "5 de 5 zonas top complementan a Lugon. Esto confirma que el plan de 2 sucursales tiene sentido: Lugon para operaciones base + una sucursal céntrica para respuesta rápida. El recuadro azul confirma: Lugon está en posición #13 de 203 zonas — Top 6%."</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa interactivo con las Top 10.</em></p>
+                </aside>
+            </section>
+            <section id="benchmark-map" data-background-color="#0A0F1C">
+                <h3>TOP 10 ALTERNATIVAS vs <span class="accent">LUGON</span> — MAPA INTERACTIVO</h3>
+                <iframe class="r-stretch" data-src="../mapas/mapa_top10_alternativas.html"
+                        style="width: 100%; border: 2px solid var(--strtgy-navy-solid); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"
+                        sandbox="allow-scripts allow-same-origin"
+                        loading="lazy">
+                    <p style="color: var(--strtgy-gray-500); text-align: center; padding: 2em;">Mapa interactivo no disponible. Abra el archivo <code>mapas/mapa_top10_alternativas.html</code> directamente.</p>
+                </iframe>
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Distribución Espacial: Top 10 Alternativas vs Lugon (Score Compuesto) | H3 Res 7 | Zoom y pan habilitados
+                </p>
+                <aside class="notes">
+                    <strong>MAPA INTERACTIVO TOP 10 — Demo (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "TOP 10 ALTERNATIVAS vs LUGON — MAPA INTERACTIVO" (LUGON en turquesa). Un mapa Leaflet interactivo embebido (iframe) con borde azul oscuro. Subtítulo: "Distribución Espacial: Top 10 Alternativas vs Lugon (Score Compuesto) | H3 Res 7 | Zoom y pan habilitados".</p>
+                    <p>"Este mapa es interactivo. Pueden hacer zoom para ver exactamente dónde están las Top 10 alternativas vs Lugon."</p>
+                    <p>Los marcadores y hexágonos de colores indican el score compuesto de cada zona. Los más verdes/oscuros son las zonas con mejor score, los más claros tienen menor score.</p>
+                    <p>Si el cliente quiere explorar, permítelo. Si preguntan por una zona específica, puedes hacer zoom ahí.</p>
+                    <p><em>Transición: "Ahora que conocemos las alternativas, la gran pregunta es: ¿cuánto impacta la distancia en el costo del flete?"</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 10: IMPACTO DEL FLETE
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="freight" data-background-color="#0A0F1C">
+                <h2>IMPACTO DEL <span class="accent">FLETE</span></h2>
+                <p class="slide-subtitle">¿Cuándo Escobedo es competitivo?</p>
+                
+                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto; font-size: 0.8em;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Tipo de Proyecto</th>
+                            <th>Flete Escobedo</th>
+                            <th>Flete Centro</th>
+                            <th>Diferencial</th>
+                            <th>Competitividad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(0, 212, 170, 0.1);">
+                            <td style="text-align: left;"><strong>Largo (2+ meses)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">60-180 días</span></td>
+                            <td>3-8%</td>
+                            <td>2-5%</td>
+                            <td>~2%</td>
+                            <td><span style="background: var(--strtgy-success); color: white; padding: 3px 8px; border-radius: 4px;">ALTA</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;"><strong>Medio (1 mes)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">20-40 días</span></td>
+                            <td>8-15%</td>
+                            <td>5-10%</td>
+                            <td>~4%</td>
+                            <td><span style="background: var(--strtgy-warning); color: white; padding: 3px 8px; border-radius: 4px;">MEDIA</span></td>
+                        </tr>
+                        <tr style="background: rgba(239, 68, 68, 0.1);">
+                            <td style="text-align: left;"><strong>Corto (&lt;2 sem)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">5-15 días</span></td>
+                            <td>15-25%</td>
+                            <td>8-15%</td>
+                            <td>~8%</td>
+                            <td><span style="background: var(--strtgy-danger); color: white; padding: 3px 8px; border-radius: 4px;">BAJA</span></td>
+                        </tr>
+                        <tr style="background: rgba(239, 68, 68, 0.2);">
+                            <td style="text-align: left;"><strong>Emergencia</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">1-3 días</span></td>
+                            <td>25-40%</td>
+                            <td>10-20%</td>
+                            <td>~18%</td>
+                            <td><span style="background: var(--strtgy-gray-700); color: white; padding: 3px 8px; border-radius: 4px;">NO COMPETIR</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 800px; margin: 1em auto;">
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em; text-align: center;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-accent);">🎯 ENFOQUE PRINCIPAL</div>
+                        <div style="font-size: 1.3em; font-weight: 700; margin: 0.3em 0;">Proyectos 1+ mes</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-400);">60-70% del volumen ZMM</div>
+                    </div>
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--strtgy-warning); border-radius: 10px; padding: 1em; text-align: center;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-warning);">📈 SOLUCIÓN PROYECTOS CORTOS</div>
+                        <div style="font-size: 1.3em; font-weight: 700; margin: 0.3em 0;">Sucursal céntrica</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-400);">A 6-12 meses de arranque</div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>IMPACTO DEL FLETE — Slide clave para la decisión (3-4 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "IMPACTO DEL FLETE" (FLETE en turquesa), subtítulo "¿Cuándo Escobedo es competitivo?". Tabla con 5 columnas (Tipo de Proyecto, Flete Escobedo, Flete Centro, Diferencial, Competitividad) y 4 filas con colores semáforo: (1) "Largo 2+ meses" con fondo VERDE claro y badge "ALTA" en verde, (2) "Medio 1 mes" sin fondo y badge "MEDIA" en amarillo, (3) "Corto &lt;2 sem" con fondo ROJO claro y badge "BAJA" en rojo, (4) "Emergencia" con fondo ROJO más oscuro y badge "NO COMPETIR" en gris oscuro. Debajo, dos recuadros: uno turquesa "🎯 ENFOQUE PRINCIPAL — Proyectos 1+ mes — 60-70% del volumen ZMM" y otro amarillo "📈 SOLUCIÓN PROYECTOS CORTOS — Sucursal céntrica — A 6-12 meses de arranque".</p>
+                    <p><strong>Contexto:</strong> "Eduardo mencionó que el flete puede ir del 5% al 40% del valor del proyecto. Cuantificamos exactamente cuándo Escobedo es competitivo y cuándo no."</p>
+                    <p><strong>Lee cada fila de la tabla (señalando el color del badge a la derecha):</strong></p>
+                    <ul>
+                        <li><strong>Largo (2+ meses) — ALTA en verde:</strong> "En obras grandes de 2+ meses, el flete desde Escobedo es solo 3-8% del valor total — apenas 2% más que un competidor céntrico. A esos volúmenes, la diferencia es IRRELEVANTE. Este es el mercado donde Lugon GANA."</li>
+                        <li><strong>Medio (1 mes) — MEDIA en amarillo:</strong> "En proyectos de un mes, el diferencial sube a 4%. Se puede compensar con un 5% de descuento en flete y aún tener margen."</li>
+                        <li><strong>Corto (&lt;2 semanas) — BAJA en rojo:</strong> "Aquí empieza a doler. 15-25% de flete vs 8-15% desde centro. El diferencial de 8% puede perder cotizaciones. Recomendación: cotizar selectivamente, solo si el margen es alto."</li>
+                        <li><strong>Emergencia — NO COMPETIR en gris oscuro:</strong> "Emergencias de 1-3 días con flete del 25-40% son terreno de los céntricos. No vale la pena cotizar — mejor derivar o no participar."</li>
+                    </ul>
+                    <p><strong>Los dos cuadros inferiores (señalando cada uno):</strong></p>
+                    <ul>
+                        <li><strong>Recuadro turquesa:</strong> "El enfoque principal debe ser proyectos de 1+ mes — eso es el 60-70% del volumen de mercado."</li>
+                        <li><strong>Recuadro amarillo:</strong> "Para proyectos cortos, la solución es una sucursal céntrica a 6-12 meses de arrancar."</li>
+                    </ul>
+                    <p><em>Si preguntan "¿y si nos urge cotizar proyectos cortos?": "Pueden cotizarlos con un margen mayor o usando un punto intermedio de acopio. Pero el enfoque principal debe ser el mercado programado."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 8D: AHORRO EN TERRENO
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="terrain-cost" data-background-color="#0A0F1C">
+                <h2>AHORRO EN <span class="accent">TERRENO</span></h2>
+                <p class="slide-subtitle">Factor decisivo para la compra</p>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 900px; margin: 1.5em auto;">
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-warning); border-radius: 10px; padding: 1.2em; text-align: center;">
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Santa Catarina</div>
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--strtgy-warning);">19%</div>
+                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$4.5M MXN</div>
+                    </div>
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1.2em; text-align: center;">
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Monterrey Centro</div>
+                        <div class="hero-number" style="font-size: 2.5em;">73%</div>
+                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$52.5M MXN</div>
+                    </div>
+                    <div style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1.2em; text-align: center;">
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Apodaca</div>
+                        <div style="font-size: 2.5em; font-weight: 700; color: var(--strtgy-phase-3);">41%</div>
+                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$13.5M MXN</div>
+                    </div>
+                </div>
+                
+                <div class="fragment fade-up" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.2em; max-width: 800px; margin: 1em auto;">
+                    <div style="font-size: 0.9em; font-weight: 600; color: var(--strtgy-accent); margin-bottom: 0.8em;">📊 UMBRAL DE DECISIÓN</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8em; text-align: center; font-size: 0.8em;">
+                        <div style="padding: 0.8em; background: rgba(0, 212, 170, 0.2); border-radius: 6px;">
+                            <div style="font-weight: 700; color: var(--strtgy-accent);">&gt;50%</div>
+                            <div style="color: var(--strtgy-gray-400);">COMPRAR SIN DUDAS</div>
+                        </div>
+                        <div style="padding: 0.8em; background: rgba(0, 212, 170, 0.1); border-radius: 6px;">
+                            <div style="font-weight: 700;">30-50%</div>
+                            <div style="color: var(--strtgy-gray-400);">BUENA DECISIÓN</div>
+                        </div>
+                        <div style="padding: 0.8em; background: rgba(255, 193, 7, 0.1); border-radius: 6px;">
+                            <div style="font-weight: 700; color: var(--strtgy-warning);">15-30%</div>
+                            <div style="color: var(--strtgy-gray-400);">EVALUAR</div>
+                        </div>
+                        <div style="padding: 0.8em; background: rgba(239, 68, 68, 0.1); border-radius: 6px;">
+                            <div style="font-weight: 700; color: var(--strtgy-danger);">&lt;15%</div>
+                            <div style="color: var(--strtgy-gray-400);">CONSIDERAR ALTS</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                    <strong style="color: var(--strtgy-accent);">💡 El ahorro en terreno puede financiar:</strong> 
+                    Sucursal de respuesta rápida + flotilla dedicada + marketing
+                </p>
+                <aside class="notes">
+                    <strong>AHORRO EN TERRENO — El argumento financiero (2-3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "AHORRO EN TERRENO" (TERRENO en turquesa), subtítulo "Factor decisivo para la compra". Tres tarjetas grandes en fila: (1) "vs Santa Catarina" con "19%" en AMARILLO (color de advertencia, menor ahorro) y "$4.5M MXN" en gris — borde amarillo, (2) "vs Monterrey Centro" con "73%" en TURQUESA gradiente y "$52.5M MXN" — borde turquesa, (3) "vs Apodaca" con "41%" en AZUL/MORADO #667eea y "$13.5M MXN" — borde azul. Debajo, el cuadro "📊 UMBRAL DE DECISIÓN" con 4 segmentos semáforo: ">50% COMPRAR SIN DUDAS" (verde oscuro), "30-50% BUENA DECISIÓN" (verde claro), "15-30% EVALUAR" (amarillo), "&lt;15% CONSIDERAR ALTS" (rojo). Al final: "El ahorro en terreno puede financiar: Sucursal de respuesta rápida + flotilla dedicada + marketing".</p>
+                    <p>"Ahora la pregunta clave: ¿cuánto se ahorra comprando en Escobedo vs las alternativas?"</p>
+                    <p><strong>Los 3 escenarios (señalando cada tarjeta, base: terreno de 3,000 m²):</strong></p>
+                    <ul>
+                        <li><strong>vs Santa Catarina — 19% ahorro en amarillo ($4.5M MXN):</strong> "Santa Catarina Industrial es la zona #1 en score compuesto (87.6). El terreno ahí cuesta $24M vs $19.5M en Escobedo para un lote de 3,000 m². Se ahorran $4.5 millones — el 19%. Noten que esta tarjeta es AMARILLA — porque el ahorro es menor, cae en la categoría EVALUAR."</li>
+                        <li><strong>vs Monterrey Centro — 73% ahorro en turquesa ($52.5M MXN):</strong> "Monterrey Centro tiene la máxima demanda pero el terreno está por las nubes: $72M. El ahorro es de $52.5 millones — casi el triple de lo que cuesta el terreno en Escobedo."</li>
+                        <li><strong>vs Apodaca — 41% ahorro en AZUL ($13.5M MXN):</strong> "Apodaca es más accesible ($33M), pero aún así el ahorro es de $13.5M — 41%. Es BUENA DECISIÓN según nuestros umbrales."</li>
+                    </ul>
+                    <p><strong>Umbral de decisión (señalando el cuadro con 4 segmentos):</strong> "Este cuadro muestra nuestros umbrales. Vs Monterrey Centro (73%) cae en COMPRAR SIN DUDAS. Vs Apodaca (41%) es BUENA DECISIÓN. Vs Santa Catarina (19%) cae en EVALUAR — por eso esa tarjeta es amarilla. Lo importante: contra las zonas más caras, el ahorro es contundente y financia la sucursal céntrica de Etapa 2."</p>
+                    <p><strong>El remate (texto inferior):</strong> "Como dice el texto en pantalla: el ahorro en terreno financia la expansión: sucursal de respuesta rápida + flotilla dedicada + marketing."</p>
+                    <p><em>Si preguntan precios exactos: "Estos estimados se basan en un lote de 3,000 m² y precios de mercado industriales 2025-2026 (fuentes: CBRE, The Latinvestor, Prodensa). Recomendamos validar con un corredor inmobiliario industrial. El rango de ahorro de 19-73% refleja desde la alternativa más cercana en precio (Santa Catarina a $8,000/m²) hasta la más cara (Monterrey Centro a $24,000/m²). Escobedo está en $6,500/m²."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 8E: PLAN DE EXPANSIÓN POR ETAPAS
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="expansion" data-background-color="#0A0F1C">
+                <h2>PLAN DE <span class="accent">EXPANSIÓN</span> POR ETAPAS</h2>
+                
+                <div style="display: flex; justify-content: space-between; margin: 1.5em auto; max-width: 800px; position: relative;">
+                    <div style="position: absolute; top: 25px; left: 15%; right: 15%; height: 4px; background: linear-gradient(90deg, var(--strtgy-phase-1), var(--strtgy-phase-2), var(--strtgy-phase-3));"></div>
+                    
+                    <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-1); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">1</div>
+                        <div style="font-weight: 600; font-size: 0.85em;">Arranque</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Lugon (hoy)</div>
+                    </div>
+                    <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-2); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">2</div>
+                        <div style="font-weight: 600; font-size: 0.85em;">Respuesta Rápida</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">6-12 meses</div>
+                    </div>
+                    <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-3); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">3</div>
+                        <div style="font-weight: 600; font-size: 0.85em;">Red Completa</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">18-24 meses</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 950px; margin: 1.5em auto;">
+                    <div class="fragment fade-up" style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-phase-1); border-radius: 10px; padding: 1em;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-1); margin-bottom: 0.5em;">ETAPA 1: LUGON</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">99.3%</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura 60 min</div>
+                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                            Contratos programados y obras de largo plazo
+                        </p>
+                    </div>
+                    <div class="fragment fade-up" style="background: rgba(16, 185, 129, 0.1); border: 2px solid var(--strtgy-phase-2); border-radius: 10px; padding: 1em;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-2); margin-bottom: 0.5em;">ETAPA 2: +SUCURSAL</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">+29%</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura 15 min</div>
+                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                            Captura mercado emergencias y respuesta rápida
+                        </p>
+                    </div>
+                    <div class="fragment fade-up" style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1em;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-3); margin-bottom: 0.5em;">ETAPA 3: RED 3-4</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">+95%</div>
+                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura total ZMM</div>
+                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                            Líder de mercado en cualquier tiempo de respuesta
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-400);">
+                    <strong>Recomendación:</strong> Iniciar con Lugon para contratos programados, 
+                    evaluar sucursal de respuesta rápida a los 6-12 meses
+                </p>
+                <aside class="notes">
+                    <strong>PLAN DE EXPANSIÓN — La hoja de ruta (3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "PLAN DE EXPANSIÓN POR ETAPAS" (EXPANSIÓN en turquesa). Arriba, un timeline horizontal con 3 círculos numerados conectados por una línea degradada: (1) AMARILLO = "Arranque / Lugon (hoy)", (2) VERDE = "Respuesta Rápida / 6-12 meses", (3) AZUL/MORADO = "Red Completa / 18-24 meses". Debajo, 3 tarjetas con el mismo código de color: Etapa 1 (borde amarillo) "99.3% Cobertura 60 min", Etapa 2 (borde verde) "+29% Cobertura 15 min", Etapa 3 (borde azul) "+95% Cobertura total ZMM". Texto inferior: "Recomendación: Iniciar con Lugon para contratos programados, evaluar sucursal de respuesta rápida a los 6-12 meses".</p>
+                    <p>"Propusimos un plan de expansión en 3 etapas que transforma la desventaja de ubicación en una ventaja estratégica."</p>
+                    <p><strong>Timeline visual (los 3 círculos de colores arriba):</strong> Aparecen uno por uno. Señala cada círculo y su tarjeta correspondiente abajo:</p>
+                    <ul>
+                        <li><strong>Etapa 1 — Arranque (Hoy):</strong> "Compran el terreno, arrancan operaciones desde Escobedo. Se enfocan en contratos programados de 1+ mes. Ya cubren el 99.3% del mercado a 60 minutos. Costo: solo el terreno."</li>
+                        <li><strong>Etapa 2 — Sucursal Rápida (6-12 meses):</strong> "Cuando ya tengan flujo estable, abren un punto en zona céntrica — no necesitan comprar, pueden rentar una bodega pequeña con 2-3 camiones. Esto les da +29% de cobertura en 15 minutos. Ubicaciones candidatas: Santa Catarina Industrial o Monterrey-San Nicolás (las #1 y #3 del benchmark)."</li>
+                        <li><strong>Etapa 3 — Red Completa (18-24 meses):</strong> "Si el crecimiento lo justifica, 3-4 puntos estratégicos les dan +95% de cobertura total ZMM a cualquier tiempo. Configuración sugerida: Lugon (norte) + Santa Catarina (centro-oeste) + Guadalupe (sur-este) + opcional Apodaca (hub logístico nearshoring)."</li>
+                    </ul>
+                    <p><strong>Mensaje clave:</strong> "No están comprando UN terreno. Están comprando la BASE de una red logística. El ahorro en Escobedo financia las etapas 2 y 3."</p>
+                    <p><em>Si preguntan costos de Etapa 2: "Una bodega de renta en Santa Catarina o San Nicolás puede costar $30-50K MXN/mes. Con 2-3 camiones pequeños, la inversión inicial sería de $500K-1M MXN, muy accesible vs los $4.5-52.5M de ahorro en terreno."</em></p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa del plan de expansión.</em></p>
+                </aside>
+            </section>
+            <section id="expansion-map" data-background-color="#0A0F1C">
+                <h3>EXPANSIÓN POR <span class="accent">ETAPAS</span></h3>
+                <img class="r-stretch" src="../mapas/screenshots/mapa_expansion_etapas.png" 
+                     alt="Visualización Espacial del Plan de Expansión por Etapas" 
+                     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Etapa 1 (Lugon) → Etapa 2 (Sucursal Céntrica) → Etapa 3 (Red Completa)
+                </p>
+                <aside class="notes">
+                    <strong>MAPA EXPANSIÓN — Visualización de etapas (30 segundos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "EXPANSIÓN POR ETAPAS" (ETAPAS en turquesa). Imagen estática del mapa mostrando las zonas de cobertura por etapa. Subtítulo: "Etapa 1 (Lugon) → Etapa 2 (Sucursal Céntrica) → Etapa 3 (Red Completa)".</p>
+                    <p>El mapa muestra las 3 etapas geográficamente, con los mismos colores del timeline anterior (amarillo, verde, azul).</p>
+                    <p>Señala cómo la Etapa 1 (Lugon, amarillo) cubre el norte, la Etapa 2 (verde) cierra la brecha en el centro, y la Etapa 3 (azul) da cobertura total.</p>
+                    <p><em>Transición: "Ahora veamos qué significa esto para Letrimex, la empresa hermana de servicios sanitarios."</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 13: ANÁLISIS LETRIMEX
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="letrimex" data-background-color="#0A0F1C">
+                <h2>ANÁLISIS <span class="accent">LETRIMEX</span></h2>
+                <p class="slide-subtitle">¿Es General Escobedo viable para servicios sanitarios?</p>
+                
+                <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1em 1.5em; max-width: 600px; margin: 1em auto; text-align: center;">
+                    <div style="font-size: 0.85em; color: var(--strtgy-gray-400);">¿Es buena ubicación para Letrimex?</div>
+                    <div style="font-size: 1.5em; font-weight: 700; color: var(--strtgy-accent);">SÍ, CON ENFOQUE DIFERENCIADO</div>
+                </div>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.8em 0; font-size: 0.9em;">✅ MERCADO FAVORABLE</h4>
+                        <ul style="font-size: 0.8em; padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
+                            <li><strong>Corredor norte</strong> - Nearshoring, naves en Pesquería</li>
+                            <li><strong>Obras largas</strong> - Proyectos 1+ mes</li>
+                            <li><strong>Expansión ZMM</strong> - García, Salinas Victoria</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--strtgy-warning); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-warning); margin: 0 0 0.8em 0; font-size: 0.9em;">⚠️ EVITAR COMPETIR EN</h4>
+                        <ul style="font-size: 0.8em; padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
+                            <li><strong>Eventos centro</strong> - WC Móvil domina</li>
+                            <li><strong>Emergencias</strong> - Velocidad crítica</li>
+                            <li><strong>Proyectos puntuales</strong> - Flete alto</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; max-width: 750px; margin: 1em auto;">
+                    <div class="metric-card-sm" style="padding: 1em;">
+                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-accent);">291</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Competidores ZMM</div>
+                    </div>
+                    <div class="metric-card-sm" style="padding: 1em; background: rgba(239, 68, 68, 0.1);">
+                        <div class="metric-value" style="font-size: 1.2em; color: var(--strtgy-danger);">WC Móvil</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Tier 1 - Eventos</div>
+                    </div>
+                    <div class="metric-card-sm" style="padding: 1em; background: rgba(102, 126, 234, 0.1);">
+                        <div class="metric-value" style="font-size: 1em; color: var(--strtgy-phase-3);">Paquetes L+L</div>
+                        <div class="metric-label" style="font-size: 0.8em;">Diferenciación clave</div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 0.8em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                    <strong style="color: var(--strtgy-accent);">Estrategia:</strong> Construir sobre Lugon, diferenciarse por precio y servicio integral
+                </p>
+                <aside class="notes">
+                    <strong>ANÁLISIS LETRIMEX — Empresa hermana (3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "ANÁLISIS LETRIMEX" (LETRIMEX en turquesa), subtítulo "¿Es General Escobedo viable para servicios sanitarios?". Recuadro verde con "SÍ, CON ENFOQUE DIFERENCIADO" en turquesa. Dos columnas: la izquierda en VERDE "✅ MERCADO FAVORABLE" con 3 bullets (Corredor norte, Obras largas, Expansión ZMM) y la derecha en AMARILLO "⚠️ EVITAR COMPETIR EN" con 3 bullets (Eventos centro, Emergencias, Proyectos puntuales). Abajo, 3 tarjetas métricas: "291" en turquesa (Competidores ZMM), "WC Móvil" en ROJO (Tier 1 - Eventos), "Paquetes L+L" en AZUL/MORADO (Diferenciación clave). Texto inferior: "Estrategia: Construir sobre Lugon, diferenciarse por precio y servicio integral".</p>
+                    <p>"Letrimex ofrece baños portátiles, casetas para construcción, limpieza de fosas sépticas y contenedores. Opera desde el mismo terreno que Lugon en General Escobedo."</p>
+                    <p><strong>Veredicto Letrimex:</strong> "SÍ, es buena ubicación para Letrimex, PERO con enfoque diferenciado."</p>
+                    <p><strong>Mercado favorable (columna verde):</strong></p>
+                    <ul>
+                        <li><strong>Corredor norte (Nearshoring, Pesquería):</strong> "Las nuevas naves industriales en el corredor norte necesitan sanitarios portátiles durante construcción. Letrimex llegaría PRIMERO que los competidores céntricos a estas obras."</li>
+                        <li><strong>Obras largas (1+ mes):</strong> "Igual que Lugon — en obras programadas, el flete se diluye."</li>
+                        <li><strong>Expansión ZMM (García, Salinas Victoria):</strong> "Zonas emergentes SIN cobertura actual. Letrimex puede ser primer entrante."</li>
+                    </ul>
+                    <p><strong>Evitar (columna amarilla):</strong></p>
+                    <ul>
+                        <li><strong>Eventos centro:</strong> "WC Móvil domina el mercado de eventos (conciertos, ferias). No vale la pena competir ahí."</li>
+                        <li><strong>Emergencias:</strong> "Reemplazo urgente de equipos — competidores céntricos responden en 5 min vs 15+ de Letrimex."</li>
+                    </ul>
+                    <p><strong>Los 3 KPIs:</strong></p>
+                    <ul>
+                        <li><strong>291 competidores:</strong> "Identificamos 291 empresas competidoras (117 en DENUE, 174 en Google Places). Es un mercado competido pero fragmentado."</li>
+                        <li><strong>WC Móvil (Tier 1):</strong> "Es el principal competidor en eventos, con amenaza MUY ALTA. Pero tiene reseñas mixtas (3.8★)."</li>
+                        <li><strong>Paquetes L+L:</strong> "La diferenciación clave es ofrecer paquetes integrados Lugon + Letrimex: maquinaria + sanitarios. Ningún competidor ofrece esto."</li>
+                    </ul>
+                    <p><em>Presiona FLECHA ABAJO (↓) para los mapas de competencia y gaps.</em></p>
+                </aside>
+            </section>
+            <section id="letrimex-maps" data-background-color="#0A0F1C">
+                <h3>LETRIMEX: <span class="accent">COMPETENCIA Y OPORTUNIDAD</span></h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; max-width: 900px; margin: 1em auto;">
+                    <div>
+                        <img src="../mapas/screenshots/mapa_competidores_letrimex.png" 
+                             alt="291 Competidores de Letrimex identificados en la ZMM" 
+                             style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                            291 Competidores (DENUE + Google Places)
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../mapas/screenshots/mapa_gaps_letrimex.png" 
+                             alt="Zonas de Oportunidad para Letrimex - Mercado Subatendido" 
+                             style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                            Mercado Subatendido — Zonas sin cobertura
+                        </p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>MAPAS LETRIMEX — Competencia y Oportunidad (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "LETRIMEX: COMPETENCIA Y OPORTUNIDAD" (COMPETENCIA Y OPORTUNIDAD en turquesa). Dos mapas estáticos lado a lado: a la IZQUIERDA "291 Competidores (DENUE + Google Places)", a la DERECHA "Mercado Subatendido — Zonas sin cobertura".</p>
+                    <p><strong>Mapa izquierdo — 291 Competidores:</strong> "Cada punto es un competidor identificado — 117 del INEGI DENUE y 174 de Google Places. Fíjense cómo la mayoría están concentrados en el centro de la ZMM. La zona norte de Escobedo tiene relativamente pocos — eso es una oportunidad para Letrimex."</p>
+                    <p><strong>Mapa derecho — Mercado Subatendido:</strong> "Las zonas oscuras son áreas con demanda de construcción pero SIN cobertura de servicios sanitarios. Hay gaps significativos en el corredor norte (Pesquería, García, Salinas Victoria) — exactamente donde Letrimex tendría ventaja geográfica desde Escobedo."</p>
+                    <p><em>Transición: "Para cerrar la parte analítica, déjenme mostrarles brevemente la metodología que utilizamos."</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 14: METODOLOGÍA LOCATIONFIT™ (NEW)
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="methodology" data-background-color="#0A0F1C">
+                <h2>METODOLOGÍA <span class="accent">LOCATIONFIT™</span> INDUSTRIAL</h2>
+                <p class="slide-subtitle">Análisis multiescala de demanda, conectividad, crecimiento y saturación</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; max-width: 900px; margin: 1em auto;">
+                    <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 1: Detección de Demanda</h4>
+                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                            <strong>4,182 establecimientos</strong> INEGI DENUE<br>
+                            5 sectores SCIAN · Grid H3 Resolución 7<br>
+                            879 hexágonos, 248 activos
+                        </p>
+                    </div>
+                    <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 2: Fricción Logística</h4>
+                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                            <strong>HERE API</strong> Isoline Routing v8<br>
+                            Isocronas 15 / 30 / 60 minutos<br>
+                            11 ubicaciones — 33 isocronas (11 × 3 tiempos)
+                        </p>
+                    </div>
+                    <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 3: Saturación Competitiva</h4>
+                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                            <strong>H3 Multi-Resolución</strong> (Uber)<br>
+                            Análisis Res 7/8/9 — 248 zonas activas<br>
+                            Benchmark competitivo 11 ubicaciones
+                        </p>
+                    </div>
+                    <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 4: Ranking de Rentabilidad</h4>
+                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                            <strong>Composite Score</strong> = Demanda 50% + Conectividad 30% + Crec. NTL 20%<br>
+                            203 zonas evaluadas<br>
+                            20 zonas óptimas — Score máx: 87.6
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.8em; color: var(--strtgy-gray-500);">
+                    Fuentes: <strong>INEGI DENUE</strong> · <strong>HERE API v8</strong> · <strong>Uber H3</strong> · <strong>NASA NTL</strong> · 
+                    Área: <strong>3,456 km²</strong> · 12 municipios ZMM
+                </p>
+                <aside class="notes">
+                    <strong>METODOLOGÍA LOCATIONFIT™ — Credibilidad técnica (2-3 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "METODOLOGÍA LOCATIONFIT™ INDUSTRIAL" (LOCATIONFIT™ en turquesa), subtítulo "Análisis multiescala de demanda, conectividad, crecimiento y saturación". Cuatro tarjetas en cuadrícula 2x2, todas con borde turquesa y fondo turquesa muy tenue, que aparecen una por una: FASE 1 (Detección de Demanda), FASE 2 (Fricción Logística), FASE 3 (Saturación Competitiva), FASE 4 (Ranking de Rentabilidad). Texto inferior: "Fuentes: INEGI DENUE · HERE API v8 · Uber H3 · NASA NTL · Área: 3,456 km² · 12 municipios ZMM".</p>
+                    <p>"Esta diapositiva muestra el rigor técnico detrás de los números que acaban de ver. LocationFit™ es la metodología propietaria de STRTGY para análisis de ubicación industrial."</p>
+                    <p><strong>Las 4 fases (aparecen una por una, señalando cada tarjeta):</strong></p>
+                    <ul>
+                        <li><strong>Fase 1 — Detección de Demanda (tarjeta superior izquierda):</strong> "Descargamos los 4,182 establecimientos industriales del INEGI DENUE. En pantalla dice '5 sectores SCIAN' — estos son los 5 tipos de negocio que son clientes potenciales de maquinaria pesada: Manufactura (72.7% — fábricas de productos metálicos, maquinaria, automotriz), Edificación (11% — constructoras residenciales e industriales), Trabajos Especializados (9.2% — cimentaciones, instalaciones, demolición), Ingeniería Civil (3.9% — carreteras, puentes, urbanización) y Logística/Transporte (3.3% — almacenes y transporte de carga). Los distribuimos en la cuadrícula hexagonal H3 (cada hexágono cubre ~5 km²). De 879 hexágonos, 248 tienen actividad industrial."</li>
+                        <li><strong>Fase 2 — Fricción Logística (tarjeta superior derecha):</strong> "Calculamos isocronas reales usando la API de HERE (la misma que usa Uber para calcular tiempos). 11 ubicaciones evaluadas, 11 llamadas API que generan 33 isocronas (3 tiempos: 15/30/60 min). Estos NO son radios de distancia — son tiempos reales considerando tráfico y tipo de vialidad."</li>
+                        <li><strong>Fase 3 — Saturación Competitiva (tarjeta inferior izquierda):</strong> "Usamos el sistema hexagonal H3 de Uber en 3 resoluciones diferentes para medir la densidad competitiva. Esto permite ver tanto el panorama macro (resolución 7) como el detalle micro (resolución 9)."</li>
+                        <li><strong>Fase 4 — Ranking de Rentabilidad (tarjeta inferior derecha):</strong> "Combinamos tres factores: demanda (50%), conectividad vial (30%) y crecimiento económico NTL (20%) en un Score Compuesto. De 203 zonas evaluadas, identificamos 20 zonas óptimas con el score más alto: 87.6."</li>
+                    </ul>
+                    <p><strong>Fuentes (texto inferior en pantalla):</strong> "Todos los datos son de fuentes oficiales y APIs de grado empresarial: INEGI DENUE (Directorio Estadístico Nacional de Unidades Económicas), HERE API v8 (isocronas de tiempo real), Uber H3 (sistema de indexación hexagonal), y NASA NTL (imágenes satelitales de iluminación nocturna para medir crecimiento económico). El análisis cubre 3,456 km² y 12 municipios de la ZMM."</p>
+                    <p><em>Si preguntan "¿qué es SCIAN?": "Es el Sistema de Clasificación Industrial de América del Norte — el estándar oficial del INEGI para clasificar todos los negocios del país. Cada establecimiento tiene un código de 6 dígitos que dice exactamente a qué se dedica."</em></p>
+                    <p><em>Si preguntan "¿por qué 50/30/20?": "La demanda pesa más (50%) porque indica dónde ESTÁN los clientes. La conectividad (30%) indica qué tan rápido puedes llegar. Y el crecimiento NTL (20%) mide la dinámica económica de la zona — si está creciendo o estancada — usando imágenes satelitales nocturnas de la NASA. Las zonas que se iluminan más año con año son las que están atrayendo inversión."</em></p>
+                    <p><em>Si preguntan "¿por qué esos 5 sectores?": "Porque son los sectores que requieren maquinaria pesada: las fábricas para expansión y mantenimiento, las constructoras para obra nueva, y la logística para construir bodegas. Cubren prácticamente todo el mercado de renta industrial."</em></p>
+                    <p><em>Si preguntan "¿qué es NTL?": "NTL significa Nighttime Lights — imágenes satelitales nocturnas de la NASA/NOAA. Medimos cómo cambia la iluminación de cada zona año con año. Si una zona se ilumina más, significa que hay más actividad económica: más naves industriales, más urbanización, más inversión. Es un indicador objetivo y verificable de crecimiento económico. El corredor norte de la ZMM (Escobedo, Apodaca, Pesquería) muestra crecimiento acelerado en NTL por el efecto nearshoring."</em></p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa interactivo del Score Compuesto.</em></p>
+                </aside>
+            </section>
+            <section id="methodology-map" data-background-color="#0A0F1C">
+                <h3>SCORE COMPUESTO <span class="accent">ZMM</span> — MAPA INTERACTIVO</h3>
+                <p class="slide-subtitle">Demanda (50%) + Conectividad (30%) + Crecimiento NTL (20%) — 203 zonas evaluadas | Zoom y pan habilitados</p>
+                <iframe class="r-stretch" data-src="../mapas/mapa_score_compuesto.html"
+                        style="width: 100%; border: 2px solid var(--strtgy-navy-solid); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"
+                        sandbox="allow-scripts allow-same-origin"
+                        loading="lazy">
+                    <p style="color: var(--strtgy-gray-500); text-align: center; padding: 2em;">Mapa interactivo no disponible. Abra el archivo <code>mapas/mapa_score_compuesto.html</code> directamente.</p>
+                </iframe>
+                <aside class="notes">
+                    <strong>MAPA INTERACTIVO SCORE COMPUESTO — Demo final (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "SCORE COMPUESTO ZMM — MAPA INTERACTIVO" (ZMM en turquesa), subtítulo "Demanda (50%) + Conectividad (30%) + Crecimiento NTL (20%) — 203 zonas evaluadas | Zoom y pan habilitados". Un mapa Leaflet interactivo embebido (iframe) con borde azul oscuro.</p>
+                    <p>"Este mapa es interactivo y muestra el resultado final de toda la metodología. Cada hexágono tiene un color que va de rojo (bajo score) a verde (alto score)."</p>
+                    <p>"Pueden hacer zoom para ver exactamente cómo se distribuye el score compuesto en toda la ZMM. Las zonas verdes son las más óptimas para operaciones de renta industrial."</p>
+                    <p>Si hacen zoom al centro, verán los hexágonos verdes concentrados en el corredor Monterrey-San Nicolás-Santa Catarina. Si hacen zoom hacia Escobedo (arriba), verán que Lugon está en una zona amarilla — no la mejor, pero claramente por encima del promedio.</p>
+                    <p><em>Transición: "Con todos estos datos sobre la mesa, estas son nuestras recomendaciones concretas."</em></p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 15: RECOMENDACIONES
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="recommendations" data-background-color="#0A0F1C">
+                <h2>RECOMENDACIONES <span class="accent">ESTRATÉGICAS</span></h2>
+                
+                <h4 style="color: var(--strtgy-danger); margin: 1.5em 0 0.8em 0;">🔴 Corto Plazo</h4>
+                <div class="recommendation-grid fragment fade-up">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-title">Validar costo del terreno</div>
+                        <div class="rec-desc">Si el precio es significativamente menor que alternativas céntricas, comprar puede ser viable</div>
+                        <span class="rec-priority high">ALTA</span>
+                    </div>
+                    <div class="recommendation-card urgent">
+                        <div class="rec-title">Evaluar Top 3 alternativas</div>
+                        <div class="rec-desc">Zonas con composite score 82-87 a menos de 11 km</div>
+                        <span class="rec-priority high">ALTA</span>
+                    </div>
+                </div>
+                
+                <h4 style="color: var(--strtgy-accent); margin: 1.5em 0 0.8em 0;">🟢 Mediano Plazo</h4>
+                <div class="recommendation-grid fragment fade-up">
+                    <div class="recommendation-card">
+                        <div class="rec-title">Modelo de 2 sucursales</div>
+                        <div class="rec-desc">Escobedo (norte/Pesquería) + zona céntrica (Monterrey-San Nicolás)</div>
+                        <span class="rec-priority medium">MEDIA</span>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="rec-title">Paquetes Lugon + Letrimex</div>
+                        <div class="rec-desc">Venta cruzada de maquinaria + servicios sanitarios</div>
+                        <span class="rec-priority high">ALTA</span>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <strong>RECOMENDACIONES ESTRATÉGICAS — Pasos concretos (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "RECOMENDACIONES ESTRATÉGICAS" (ESTRATÉGICAS en turquesa). Dos secciones: "🔴 Corto Plazo" (título en rojo) con 2 tarjetas con borde ROJO a la izquierda y badge "ALTA" en rojo, y "🟢 Mediano Plazo" (título en turquesa) con 2 tarjetas con borde turquesa a la izquierda — una con badge "MEDIA" en amarillo y otra con badge "ALTA" en rojo.</p>
+                    <p>"Estos son los pasos que recomendamos, divididos en corto y mediano plazo."</p>
+                    <p><strong>Corto Plazo (sección roja — urgente, señalando las tarjetas con borde rojo):</strong></p>
+                    <ul>
+                        <li><strong>Validar costo del terreno — ALTA:</strong> "Lo primero es confirmar el precio real del terreno en Escobedo y compararlo con las alternativas. Si el ahorro es >30%, la decisión está tomada. Recomendamos contactar un corredor inmobiliario industrial esta semana."</li>
+                        <li><strong>Evaluar Top 3 alternativas — ALTA:</strong> "Las zonas 1 (Santa Catarina, score 87.6), 2 (García, 84.7) y 3 (Monterrey-San Nicolás, 82.6) están todas a menos de 11 km. Vale la pena conocer los precios para comparar."</li>
+                    </ul>
+                    <p><strong>Mediano Plazo (verde):</strong></p>
+                    <ul>
+                        <li><strong>Modelo de 2 sucursales — MEDIA:</strong> "Cuando ya estén operando desde Escobedo, evaluar una bodega de renta en zona céntrica para respuesta rápida."</li>
+                        <li><strong>Paquetes Lugon + Letrimex — ALTA:</strong> "La diferenciación más poderosa es ofrecer maquinaria + servicios sanitarios como paquete integrado. Ningún competidor ofrece esto. Pueden armar paquetes de precio para obras completas."</li>
+                    </ul>
+                    <p><em>Transición: "Para cerrar, estos son los entregables que van a recibir hoy."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 12: ENTREGABLES
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="deliverables" data-background-color="#0A0F1C">
+                <h2>SUS <span class="accent">ENTREGABLES</span></h2>
+                
+                <div class="recommendation-grid" style="max-width: 1000px;">
+                    <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
+                        <div style="display: flex; align-items: center; gap: 0.8em;">
+                            <span style="font-size: 1.8em;">📄</span>
+                            <div>
+                                <div class="rec-title">Atlas PDF LocationFit™</div>
+                                <div class="rec-desc">Documento ejecutivo con análisis completo</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
+                        <div style="display: flex; align-items: center; gap: 0.8em;">
+                            <span style="font-size: 1.8em;">🗺️</span>
+                            <div>
+                                <div class="rec-title">13 Mapas Interactivos HTML</div>
+                                <div class="rec-desc">Demanda, Isocronas, Conectividad, Benchmark, Score, Competidores, Gaps, Expansión y más</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
+                        <div style="display: flex; align-items: center; gap: 0.8em;">
+                            <span style="font-size: 1.8em;">📊</span>
+                            <div>
+                                <div class="rec-title">Capas GIS (GeoPackage)</div>
+                                <div class="rec-desc">6 capas para análisis en QGIS/ArcGIS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
+                        <div style="display: flex; align-items: center; gap: 0.8em;">
+                            <span style="font-size: 1.8em;">📑</span>
+                            <div>
+                                <div class="rec-title">Datos Tabulares</div>
+                                <div class="rec-desc">Rankings, scores y métricas en CSV</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1.5em; font-size: 0.9em;">
+                    📁 Todos los archivos se entregarán vía <strong>Google Drive</strong> hoy mismo
+                </p>
+                <aside class="notes">
+                    <strong>ENTREGABLES — Lo que reciben (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "SUS ENTREGABLES" (ENTREGABLES en turquesa). Cuatro tarjetas con borde VERDE a la izquierda, cada una con un emoji y dos líneas de texto, que aparecen una por una: (1) 📄 Atlas PDF LocationFit™, (2) 🗺️ 13 Mapas Interactivos HTML, (3) 📊 Capas GIS (GeoPackage), (4) 📑 Datos Tabulares. Texto inferior: "📁 Todos los archivos se entregarán vía Google Drive hoy mismo".</p>
+                    <p>"Estos son los archivos que van a recibir hoy. Todo se entrega vía Google Drive como dice al final."</p>
+                    <p><strong>Menciona cada entregable brevemente (señalando cada tarjeta al aparecer):</strong></p>
+                    <ul>
+                        <li><strong>Atlas PDF LocationFit™:</strong> "El documento ejecutivo completo — 35 páginas con todo el análisis, mapas, tablas y conclusiones. Es el documento que pueden compartir con socios o inversionistas."</li>
+                        <li><strong>13 Mapas Interactivos HTML:</strong> "Todos los mapas que vieron hoy y más: Demanda por sectores, Quintiles, Isocronas, Conectividad, Score Compuesto, Benchmark, Competidores Letrimex, Gaps de mercado, Expansión por etapas, Cobertura óptima, Crecimiento H3 y Top 10 alternativas. Los pueden abrir en cualquier navegador y explorar con zoom."</li>
+                        <li><strong>Capas GIS (GeoPackage):</strong> "6 capas de datos geoespaciales que pueden abrir en QGIS o ArcGIS. Si tienen equipo técnico que quiera analizar más a fondo, estos archivos contienen toda la data."</li>
+                        <li><strong>Datos Tabulares (CSV):</strong> "Rankings, scores y métricas en formato de hoja de cálculo. Pueden filtrar, ordenar y hacer sus propios análisis."</li>
+                    </ul>
+                    <p><em>Si preguntan "¿cuándo los recibimos?": "Hoy mismo. Después de esta sesión les comparto el enlace de Drive."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 13: UPGRADE PATH / ESCALAMIENTO
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="upgrade-path" data-background-color="#0A0F1C">
+                <div style="display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em;">
+                    <img src="../../../templates/revealjs/shared/assets/logo-strtgy-white.png" alt="STRTGY" style="height: 28px; opacity: 0.6;">
+                    <span style="font-size: 0.7em; color: var(--strtgy-accent); font-weight: 600; letter-spacing: 2px;">ESCALAMIENTO</span>
+                </div>
+                <h2 class="slide-title" style="font-size: 1.6em;">Próximos Pasos con <span class="accent">STRTGY</span></h2>
+                <p style="font-size: 0.75em; opacity: 0.7; margin-bottom: 1.2em;">Su análisis Starter fue el primer paso. Estas opciones profundizan el análisis.</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; text-align: left;">
+                    <!-- Growth Plan -->
+                    <div class="fragment fade-up" style="background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.3); border-radius: 12px; padding: 1.2em;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8em;">
+                            <span style="font-size: 1.1em; font-weight: 700; color: var(--strtgy-accent);">🚀 Growth</span>
+                            <span style="font-size: 0.9em; font-weight: 600; color: var(--strtgy-accent);">$145K MXN</span>
+                        </div>
+                        <ul style="font-size: 0.65em; line-height: 1.6; list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.4em;">✓ Dashboard interactivo actualizable</li>
+                            <li style="margin-bottom: 0.4em;">✓ Monitoreo trimestral de indicadores</li>
+                            <li style="margin-bottom: 0.4em;">✓ Análisis multi-sucursal (Etapa 2)</li>
+                            <li style="margin-bottom: 0.4em;">✓ Benchmark competitivo profundo</li>
+                            <li>✓ 2 sesiones de consultoría estratégica</li>
+                        </ul>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="fragment fade-up" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 1.2em;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8em;">
+                            <span style="font-size: 1.1em; font-weight: 700;">⚡ Enterprise</span>
+                            <span style="font-size: 0.9em; font-weight: 600;">$215K MXN</span>
+                        </div>
+                        <ul style="font-size: 0.65em; line-height: 1.6; list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.4em;">✓ Todo Growth +</li>
+                            <li style="margin-bottom: 0.4em;">✓ Modelo predictivo de demanda</li>
+                            <li style="margin-bottom: 0.4em;">✓ Simulador de escenarios de expansión</li>
+                            <li style="margin-bottom: 0.4em;">✓ Integración con datos propios</li>
+                            <li>✓ Soporte prioritario 12 meses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="fragment fade-up" style="font-size: 0.7em; margin-top: 1em; opacity: 0.8; text-align: center;">
+                    💡 <em>Ambos planes incluyen el valor de su inversión Starter como crédito.</em>
+                </p>
+                <aside class="notes">
+                    <strong>UPGRADE PATH — Escalamiento (1-2 minutos)</strong>
+                    <p>Presentar brevemente las opciones de profundización. No presionar — dejar que la calidad del Starter hable por sí misma.</p>
+                    <p>"Esto es lo que sigue si quieren profundizar. Growth es ideal para la Etapa 2 — encontrar la sucursal de respuesta rápida. Enterprise agrega predicción de demanda y simulador."</p>
+                    <p><em>Cerrar con: "Su inversión Starter se acredita en cualquier upgrade."</em></p>
+                </aside>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 14: CTA / CIERRE
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section id="cta" data-background-gradient="radial-gradient(ellipse at center, rgba(0,212,170,0.15) 0%, #0A0F1C 70%)">
+                <div class="cta-slide">
+                    <img src="../../../templates/revealjs/shared/assets/logo-strtgy-white.png" alt="STRTGY" class="cta-logo">
+                    <h1 class="cta-title r-fit-text">¿<span class="accent">PREGUNTAS</span>?</h1>
+                    <p class="cta-subtitle">"En STRTGY, no adivinamos. Predecimos."</p>
+                    
+                    <div class="cta-contact fragment fade-up">
+                        <p style="font-size: 1.2em; margin-bottom: 1em;">
+                            ¡Gracias por su confianza!<br>
+                            El Atlas y archivos están <span class="accent">listos para entrega</span>.
+                        </p>
+                        <p class="cta-email">contacto@strtgy.io | strtgy.io</p>
+                    </div>
+                </div>
+                <div class="grid-background"></div>
+                <aside class="notes">
+                    <strong>CIERRE Y PREGUNTAS — Despedida (5-10 minutos Q&amp;A)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Fondo oscuro con gradiente radial turquesa tenue. Logo de STRTGY arriba, título grande "¿PREGUNTAS?" (PREGUNTAS en turquesa), tagline "En STRTGY, no adivinamos. Predecimos." Al hacer clic aparece: "¡Gracias por su confianza! El Atlas y archivos están listos para entrega." y "contacto@strtgy.io | strtgy.io".</p>
+                    <p>"Gracias por su tiempo y confianza. El Atlas y todos los archivos están listos — se los comparto hoy por Drive."</p>
+                    <p><strong>Resumen en 30 segundos si piden síntesis:</strong></p>
+                    <p>"El terreno en General Escobedo ES viable para Lugon y Letrimex. Cubre el 99.3% del mercado a 60 minutos, está en el Top 6% de la ZMM, y el ahorro estimado de 19-73% vs alternativas (basado en un lote de 3,000 m²) financia el plan de expansión. Vs Monterrey Centro se ahorran $52.5M (73%), vs Apodaca $13.5M (41%), vs Santa Catarina $4.5M (19%). La recomendación es: comprar si el precio confirma el diferencial, arrancar con contratos programados de 1+ mes, y evaluar sucursal céntrica a los 6-12 meses."</p>
+                    <p><strong>Preguntas frecuentes anticipadas:</strong></p>
+                    <ul>
+                        <li><strong>"¿Y si NO ahorramos 30%+":</strong> "Si el precio en Escobedo es similar al centro, entonces las zonas con score 82-87 serían mejor opción porque dan más cobertura inmediata por un precio similar."</li>
+                        <li><strong>"¿Cuánto tiempo tarda la Etapa 2?":</strong> "Buscar bodega de renta: 1-2 meses. Equipar: 1 mes. Total: 3-4 meses cuando decidan activarla."</li>
+                        <li><strong>"¿Qué pasa con Pesquería y el corredor norte?":</strong> "Es una zona de crecimiento acelerado por nearshoring. La llegada continua de plantas automotrices y proveedores Tier 1-2 genera un boom de construcción que beneficia DIRECTAMENTE a Lugon y Letrimex desde Escobedo."</li>
+                        <li><strong>"¿Estos datos son actuales?":</strong> "El DENUE se actualiza cada 5 años con censos intermedios. Los datos son de la última actualización. Las isocronas de HERE son en tiempo real. Para datos más frescos, la opción Growth incluye dashboard con actualizaciones."</li>
+                        <li><strong>"¿Podemos usar los mapas para mostrar a inversionistas?":</strong> "Sí, todos los entregables son de su propiedad. El Atlas PDF está diseñado para compartir con socios e inversionistas."</li>
+                    </ul>
+                    <p><strong>Cierre:</strong> "Cualquier duda que surja después, estamos a una llamada de distancia. contacto@strtgy.io"</p>
+                    <p><em>Después de Q&A, comparte el enlace de Google Drive con los entregables.</em></p>
+                </aside>
+            </section>
+
+        </div><!-- /slides -->
+    </div><!-- /reveal -->
+
+    <!-- Reveal.js Core (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/zoom/zoom.min.js"></script>
+
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    
+    <!-- STRTGY Particles Controller -->
+    <script src="../../../templates/revealjs/shared/js/strtgy-particles.js"></script>
+
+    <!-- STRTGY Reveal Configuration (from design tokens) -->
+    <script src="../../../templates/revealjs/shared/tokens/reveal-config.js"></script>
+
+    <script>
+        Reveal.initialize({
+            ...STRTGY_REVEAL_CONFIG,
+            plugins: [RevealNotes, RevealZoom]
+        });
+    </script>
+</body>
+</html>
