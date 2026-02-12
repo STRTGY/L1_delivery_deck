@@ -1658,9 +1658,24 @@
     <script src="./tokens/reveal-config.js"></script>
 
     <script>
-        Reveal.initialize({
-            ...STRTGY_REVEAL_CONFIG,
-            plugins: [RevealNotes, RevealZoom]
+        // Wait for STRTGY_REVEAL_CONFIG to load, then initialize
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof STRTGY_REVEAL_CONFIG !== 'undefined') {
+                Reveal.initialize({
+                    ...STRTGY_REVEAL_CONFIG,
+                    plugins: [RevealNotes, RevealZoom]
+                });
+            } else {
+                // Fallback config if tokens fail to load
+                console.warn('STRTGY_REVEAL_CONFIG not loaded, using fallback');
+                Reveal.initialize({
+                    width: 1920,
+                    height: 1080,
+                    margin: 0.08,
+                    transition: 'fade',
+                    plugins: [RevealNotes, RevealZoom]
+                });
+            }
         });
     </script>
 </body>
