@@ -181,7 +181,7 @@ body,
 
 .reveal {
     font-family: var(--font-body);
-    /* font-size definido en _tokens.css (32px desde tokens) */
+    /* font-size definido en _tokens.css (--fs-base) */
     font-weight: 400;
     color: var(--strtgy-white);
 }
@@ -219,7 +219,7 @@ body,
 /* .reveal h1, h2, h3, h4, p están definidos en _tokens.css */
 
 .reveal p {
-    /* font-size definido en _tokens.css (0.8em desde tokens) */
+    /* font-size definido en _tokens.css (--fs-base) */
     line-height: 1.65;
     color: var(--strtgy-gray-300);
 }
@@ -245,8 +245,19 @@ body,
 .warning { color: var(--strtgy-warning); }
 .muted { color: var(--strtgy-gray-500); }
 
+/* Typography utilities — use instead of inline font-size */
+.reveal .text-hero { font-size: var(--fs-hero) !important; }
+.reveal .text-3xl  { font-size: var(--fs-3xl) !important; }
+.reveal .text-2xl  { font-size: var(--fs-2xl) !important; }
+.reveal .text-xl   { font-size: var(--fs-xl) !important; }
+.reveal .text-lg   { font-size: var(--fs-lg) !important; }
+.reveal .text-md   { font-size: var(--fs-md) !important; }
+.reveal .text-base { font-size: var(--fs-base) !important; }
+.reveal .text-sm   { font-size: var(--fs-sm) !important; }
+.reveal .text-xs   { font-size: var(--fs-xs) !important; }
+
 .slide-subtitle {
-    font-size: 1.2em;
+    font-size: var(--fs-lg);
     color: var(--strtgy-gray-500);
     margin-top: -0.5em;
     margin-bottom: 1.5em;
@@ -254,7 +265,7 @@ body,
 
 .sublabel {
     color: var(--strtgy-gray-500);
-    font-size: 0.85em;
+    font-size: var(--fs-base);
 }
 
 
@@ -295,7 +306,7 @@ body,
     border: 1px solid var(--strtgy-accent);
     border-radius: var(--radius-full);
     font-family: var(--font-heading);
-    font-size: 0.85em;
+    font-size: var(--fs-base);
     font-weight: 600;
     color: var(--strtgy-accent);
     letter-spacing: 0.15em;
@@ -310,7 +321,7 @@ body,
 }
 
 .cover-subtitle {
-    font-size: 1.0em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-500);
     margin-bottom: 1.5em;
     font-weight: 400;
@@ -340,14 +351,14 @@ body,
 
 .impact-quote p {
     font-family: var(--font-heading);
-    font-size: 1.1em;
+    font-size: var(--fs-lg);
     font-weight: 700;
     line-height: 1.3;
     text-align: center;
 }
 
 .quote-attribution {
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-500);
     text-align: center;
     margin-top: 1.2em;
@@ -377,13 +388,13 @@ body,
 }
 
 .problem-icon {
-    font-size: 2.5em;
+    font-size: var(--fs-3xl);
     margin-bottom: 0.3em;
 }
 
 .problem-stat {
     font-family: var(--font-heading);
-    font-size: 2.2em;
+    font-size: var(--fs-3xl);
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0.2em;
@@ -395,7 +406,7 @@ body,
 }
 
 .problem-label {
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-300);
     line-height: 1.4;
 }
@@ -405,7 +416,7 @@ body,
     background: none;
     box-shadow: none;
     margin-top: 1.5em;
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-300);
     font-style: italic;
     text-align: center;
@@ -441,18 +452,18 @@ body,
 }
 
 .diff-icon {
-    font-size: 2.5em;
+    font-size: var(--fs-3xl);
     margin-bottom: 0.4em;
 }
 
 .diff-card h3 {
-    font-size: 1.0em;
+    font-size: var(--fs-md);
     letter-spacing: 0.1em;
     margin-bottom: 0.5em;
 }
 
 .diff-card p {
-    font-size: 0.8em;
+    font-size: var(--fs-base);
     color: var(--strtgy-gray-300);
     line-height: 1.5;
 }
@@ -483,19 +494,19 @@ body,
 .comparison-old {
     flex: 1;
     text-align: right;
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-500);
 }
 
 .comparison-arrow {
-    font-size: 1.2em;
+    font-size: var(--fs-lg);
     color: var(--strtgy-accent);
 }
 
 .comparison-new {
     flex: 1;
     text-align: left;
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-white);
 }
 
@@ -527,23 +538,23 @@ body,
 }
 
 .service-icon {
-    font-size: 1.8em;
+    font-size: var(--fs-2xl);
     margin-bottom: 0.4em;
 }
 
 .service-card h4 {
-    font-size: 0.95em;
+    font-size: var(--fs-md);
     margin-bottom: 0.3em;
 }
 
 .service-card p {
-    font-size: 0.75em;
+    font-size: var(--fs-sm);
     color: var(--strtgy-gray-500);
     margin-bottom: 0.8em;
 }
 
 .service-price {
-    font-size: 0.75em;
+    font-size: var(--fs-sm);
     color: var(--strtgy-accent);
     font-weight: 600;
 }
@@ -568,7 +579,7 @@ body,
     padding: 0.3em 1em;
     background: var(--strtgy-accent-dim);
     border-radius: var(--radius-full);
-    font-size: 0.8em;
+    font-size: var(--fs-base);
     font-weight: 600;
     color: var(--strtgy-accent);
     letter-spacing: 0.1em;
@@ -577,7 +588,7 @@ body,
 
 .case-context {
     color: var(--strtgy-gray-500);
-    font-size: 1.2em;
+    font-size: var(--fs-lg);
 }
 
 .case-grid {
@@ -596,7 +607,7 @@ body,
 
 .case-stat {
     font-family: var(--font-heading);
-    font-size: 2.5em;
+    font-size: var(--fs-3xl);
     font-weight: 700;
     color: var(--strtgy-accent);
     text-shadow: var(--shadow-accent);
@@ -604,7 +615,7 @@ body,
 }
 
 .case-stat-label {
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     color: var(--strtgy-gray-300);
     margin-top: 0.5em;
     line-height: 1.4;
@@ -619,14 +630,14 @@ body,
 }
 
 .case-section h4 {
-    font-size: 0.85em;
+    font-size: var(--fs-base);
     color: var(--strtgy-accent);
     margin-bottom: 0.3em;
     letter-spacing: 0.05em;
 }
 
 .case-section p {
-    font-size: 0.85em;
+    font-size: var(--fs-base);
     color: var(--strtgy-white);
     line-height: 1.5;
 }
@@ -675,7 +686,7 @@ body,
 
 .clients-summary {
     text-align: center;
-    font-size: 1.2em;
+    font-size: var(--fs-lg);
     color: var(--strtgy-gray-300);
     margin-top: 1.5em;
 }
@@ -711,7 +722,7 @@ body,
 
 .metric-value {
     font-family: var(--font-heading);
-    font-size: 1.6em;
+    font-size: var(--fs-2xl);
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0.2em;
@@ -723,7 +734,7 @@ body,
 }
 
 .metric-label {
-    font-size: 0.75em;
+    font-size: var(--fs-sm);
     color: var(--strtgy-white);
     line-height: 1.3;
 }
@@ -758,7 +769,7 @@ body,
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
-    font-size: 1.6em;
+    font-size: var(--fs-2xl);
     font-weight: 700;
     color: var(--strtgy-white);
     margin: 0 auto 0.8em;
@@ -772,12 +783,12 @@ body,
 }
 
 .process-step h4 {
-    font-size: 0.95em;
+    font-size: var(--fs-md);
     margin-bottom: 0.3em;
 }
 
 .process-step p {
-    font-size: 0.75em;
+    font-size: var(--fs-sm);
     color: var(--strtgy-gray-500);
     line-height: 1.4;
 }
@@ -855,7 +866,7 @@ body,
 }
 
 .cta-subtitle {
-    font-size: 1.1em;
+    font-size: var(--fs-lg);
     color: var(--strtgy-white);
     font-style: italic;
     margin-bottom: 1.5em;
@@ -873,7 +884,7 @@ body,
     background: transparent;
     color: var(--strtgy-accent);
     font-family: var(--font-heading);
-    font-size: 0.9em;
+    font-size: var(--fs-md);
     font-weight: 600;
     letter-spacing: 0.05em;
     text-decoration: none;
@@ -892,13 +903,13 @@ body,
 .cta-email {
     margin-top: 1.5em;
     color: var(--strtgy-gray-500);
-    font-size: 1em;
+    font-size: var(--fs-md);
 }
 
 .cta-podcast {
     margin-top: 2em;
     color: var(--strtgy-gray-500);
-    font-size: 1em;
+    font-size: var(--fs-md);
 }
 
 
@@ -997,68 +1008,4 @@ body.blackout .reveal .slides {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE ADJUSTMENTS
-   ═══════════════════════════════════════════════════════════════ */
-
-@media screen and (max-width: 1400px) {
-    /* Tamaños de fuente ajustados para pantallas medianas */
-    .reveal h1 { font-size: 1.7em; }  /* Reducido desde 1.9em */
-    .reveal h2 { font-size: 1.4em; }  /* Reducido desde 1.5em */
-    
-    .cover-title { font-size: 2.0em !important; }  /* Reducido desde 2.3em */
-    .metric-value { font-size: 1.4em; }
-    .case-stat { font-size: 2em; }
-    
-    .capabilities-grid,
-    .services-grid {
-        gap: 1em;
-    }
-    
-    .differentiators-grid {
-        flex-wrap: wrap;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .metrics-grid,
-    .differentiators-grid,
-    .problem-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .clients-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .case-grid {
-        grid-template-columns: 1fr;
-        gap: 2em;
-    }
-    
-    .comparison-row {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .comparison-old,
-    .comparison-new {
-        text-align: center;
-    }
-    
-    .process-timeline {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .process-connector {
-        width: 3px;
-        height: 40px;
-        margin: 0;
-    }
-}
+/* Responsive scaling handled by RevealJS transform system; no viewport media queries. */

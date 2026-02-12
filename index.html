@@ -44,7 +44,7 @@
            NOTE: Should migrate to strtgy-reveal-theme.css once stabilized */
         .hero-number {
             font-family: var(--font-heading);
-            font-size: 4em;
+            font-size: var(--fs-hero);
             font-weight: 700;
             line-height: 1;
             background: linear-gradient(135deg, var(--strtgy-accent) 0%, #00ffcc 50%, var(--strtgy-accent) 100%);
@@ -101,7 +101,7 @@
         }
         
         .verdict-label {
-            font-size: 0.9em;
+            font-size: var(--fs-md);
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--strtgy-warning);
@@ -109,7 +109,7 @@
         }
         
         .verdict-text {
-            font-size: 1.6em;
+            font-size: var(--fs-2xl);
             font-weight: 700;
             margin-bottom: 0.5em;
         }
@@ -142,20 +142,20 @@
         }
         
         .comparison-title {
-            font-size: 1.2em;
+            font-size: var(--fs-lg);
             font-weight: 700;
             margin-bottom: 0.3em;
         }
         
         .comparison-subtitle {
-            font-size: 0.85em;
+            font-size: var(--fs-base);
             color: var(--strtgy-gray-500);
             margin-bottom: 1em;
         }
         
         /* Score Display */
         .score-display {
-            font-size: 3em;
+            font-size: var(--fs-3xl);
             font-weight: 700;
         }
         
@@ -180,7 +180,7 @@
         .results-table th {
             background: rgba(30, 58, 95, 0.4);
             font-weight: 600;
-            font-size: 0.9em;
+            font-size: var(--fs-md);
         }
         
         .results-table tr:nth-child(even) {
@@ -207,12 +207,12 @@
         
         .metric-card-sm .metric-value {
             font-family: var(--font-heading);
-            font-size: 2em;
+            font-size: var(--fs-2xl);
             font-weight: 700;
         }
         
         .metric-card-sm .metric-label {
-            font-size: 0.8em;
+            font-size: var(--fs-base);
             color: var(--strtgy-gray-500);
             margin-top: 0.3em;
         }
@@ -241,12 +241,12 @@
         
         .rec-title {
             font-weight: 600;
-            font-size: 0.95em;
+            font-size: var(--fs-md);
             margin-bottom: 0.3em;
         }
         
         .rec-desc {
-            font-size: 0.8em;
+            font-size: var(--fs-base);
             color: var(--strtgy-gray-500);
         }
         
@@ -254,7 +254,7 @@
             display: inline-block;
             padding: 0.2em 0.6em;
             border-radius: 4px;
-            font-size: 0.7em;
+            font-size: var(--fs-sm);
             font-weight: 600;
             margin-top: 0.5em;
         }
@@ -283,12 +283,12 @@
         .cons-list { border-top: 3px solid var(--strtgy-danger); }
         
         .pros-list h4, .cons-list h4 {
-            font-size: 1em;
+            font-size: var(--fs-md);
             margin-bottom: 0.8em;
         }
         
         .pros-list li, .cons-list li {
-            font-size: 0.85em;
+            font-size: var(--fs-base);
             margin: 0.4em 0;
             padding-left: 1.2em;
             position: relative;
@@ -328,7 +328,7 @@
         
         .agenda-num {
             font-family: var(--font-heading);
-            font-size: 1.2em;
+            font-size: var(--fs-lg);
             font-weight: 700;
             color: var(--strtgy-accent);
             opacity: 0.7;
@@ -336,7 +336,7 @@
         
         .agenda-title {
             font-weight: 600;
-            font-size: 0.9em;
+            font-size: var(--fs-md);
             margin: 0.2em 0;
         }
     </style>
@@ -361,19 +361,19 @@
                     <div class="cover-badge">ENTREGA DE RESULTADOS</div>
                     <h1 class="cover-title r-fit-text">Atlas <span class="accent">LocationFit™</span><br>Industrial</h1>
                     <p class="cover-subtitle">Auditoría de Ubicación y Optimización de Cobertura</p>
-                    <p style="font-size: 1.3em; font-weight: 600; margin-top: 1.2em;">
+                    <p class="text-xl" style="font-weight: 600; margin-top: 1.2em;">
                         Lugon + Letrimex
                     </p>
-                    <p style="font-size: 1em; color: var(--strtgy-gray-500); margin-top: 0.5em;">
+                    <p class="text-md" style="color: var(--strtgy-gray-500); margin-top: 0.5em;">
                         Zona Metropolitana de Monterrey
                     </p>
-                    <p style="font-size: 0.9em; color: var(--strtgy-gray-500); margin-top: 1.5em;">
+                    <p class="text-md" style="color: var(--strtgy-gray-500); margin-top: 1.5em;">
                         <strong>LUGON-ZMM-2026</strong> | 12 de febrero de 2026
                     </p>
                     
                     <!-- Powered by STRTGY -->
                     <div style="margin-top: 2em; display: flex; align-items: center; justify-content: center; gap: 1.5em;">
-                        <span style="font-size: 0.9em; color: var(--strtgy-gray-500);">Powered by</span>
+                        <span class="text-md" style="color: var(--strtgy-gray-500);">Powered by</span>
                         <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="width: 120px; opacity: 0.85;">
                     </div>
                 </div>
@@ -435,7 +435,7 @@
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1.5em; font-size: 0.9em; color: var(--strtgy-gray-500);">
+                <p class="fragment fade-up text-md" style="text-align: center; margin-top: 1.5em; color: var(--strtgy-gray-500);">
                     Duración estimada: 30-45 minutos + Q&A
                 </p>
                 <aside class="notes">
@@ -458,7 +458,7 @@
                 <div class="verdict-box fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent);">
                     <div class="verdict-label" style="color: var(--strtgy-accent);">✅ RECOMENDACIÓN</div>
                     <div class="verdict-text" style="color: var(--strtgy-accent);">SÍ, VIABLE PARA ARRANQUE</div>
-                    <p style="font-size: 0.95em; color: var(--strtgy-gray-300); max-width: 800px; margin: 0.5em auto;">
+                    <p style="font-size: var(--fs-md); color: var(--strtgy-gray-300); max-width: 800px; margin: 0.5em auto;">
                         El terreno en General Escobedo es VIABLE para iniciar operaciones enfocadas 
                         en contratos de mediano-largo plazo. Para capturar el mercado de respuesta 
                         rápida, se recomienda abrir una segunda sucursal en zona céntrica.
@@ -484,7 +484,7 @@
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-400);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-400);">
                     <strong style="color: var(--strtgy-accent);">Condición:</strong> Si el terreno cuesta 30%+ menos que alternativas céntricas, la ubicación se justifica plenamente.
                 </p>
                 <aside class="notes">
@@ -511,40 +511,40 @@
                 
                 <div style="max-width: 900px; margin: 2em auto; text-align: left;">
                     <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
-                        <span style="font-size: 1.5em;">✅</span>
+                        <span style="font-size: var(--fs-xl);">✅</span>
                         <div>
-                            <strong style="font-size: 1.1em;">Cobertura SUFICIENTE para contratos programados</strong>
-                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                            <strong style="font-size: var(--fs-lg);">Cobertura SUFICIENTE para contratos programados</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: var(--fs-base); margin: 0.3em 0 0 0;">
                                 Lugon alcanza 99.3% del mercado ZMM a 60 min — ideal para proyectos de 1+ mes
                             </p>
                         </div>
                     </div>
                     
                     <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
-                        <span style="font-size: 1.5em;">💰</span>
+                        <span style="font-size: var(--fs-xl);">💰</span>
                         <div>
-                            <strong style="font-size: 1.1em;">Flete ACEPTABLE en proyectos largos</strong>
-                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                            <strong style="font-size: var(--fs-lg);">Flete ACEPTABLE en proyectos largos</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: var(--fs-base); margin: 0.3em 0 0 0;">
                                 Solo 5-10% del valor en contratos de 1+ mes — diferencial marginal vs competidores céntricos
                             </p>
                         </div>
                     </div>
                     
                     <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(255, 193, 7, 0.1); border-radius: 10px; border: 1px solid rgba(255, 193, 7, 0.3);">
-                        <span style="font-size: 1.5em;">⚠️</span>
+                        <span style="font-size: var(--fs-xl);">⚠️</span>
                         <div>
-                            <strong style="font-size: 1.1em;">DESVENTAJA en respuesta rápida</strong>
-                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                            <strong style="font-size: var(--fs-lg);">DESVENTAJA en respuesta rápida</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: var(--fs-base); margin: 0.3em 0 0 0;">
                                 Para proyectos cortos (&lt;1 semana), el flete puede llegar a 25-40% — solución: sucursal céntrica
                             </p>
                         </div>
                     </div>
                     
                     <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
-                        <span style="font-size: 1.5em;">🏆</span>
+                        <span style="font-size: var(--fs-xl);">🏆</span>
                         <div>
-                            <strong style="font-size: 1.1em;">AHORRO del 19-73% en terreno financia la expansión</strong>
-                            <p style="color: var(--strtgy-gray-500); font-size: 0.85em; margin: 0.3em 0 0 0;">
+                            <strong style="font-size: var(--fs-lg);">AHORRO del 19-73% en terreno financia la expansión</strong>
+                            <p style="color: var(--strtgy-gray-500); font-size: var(--fs-base); margin: 0.3em 0 0 0;">
                                 La diferencia de precio vs zonas céntricas puede pagar la sucursal de respuesta rápida
                             </p>
                         </div>
@@ -574,15 +574,15 @@
                 <div class="comparison-grid">
                     <div style="text-align: left;">
                         <h4 style="color: var(--strtgy-accent); margin-bottom: 0.5em;">📍 Ubicación</h4>
-                        <p style="font-size: 1.1em; font-weight: 600; margin-bottom: 0.3em;">General Escobedo, Nuevo León</p>
-                        <p style="font-size: 0.85em; color: var(--strtgy-gray-500);">Av. Benito Juárez</p>
-                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">
+                        <p style="font-size: var(--fs-lg); font-weight: 600; margin-bottom: 0.3em;">General Escobedo, Nuevo León</p>
+                        <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Av. Benito Juárez</p>
+                        <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">
                             Coordenadas: 25.789467, -100.303421
                         </p>
                         
                         <div style="margin-top: 1.5em;">
                             <h4 style="color: var(--strtgy-accent); margin-bottom: 0.5em;">🛣️ Accesos</h4>
-                            <ul style="font-size: 0.85em; padding-left: 1.2em; color: var(--strtgy-gray-400);">
+                            <ul style="font-size: var(--fs-base); padding-left: 1.2em; color: var(--strtgy-gray-400);">
                                 <li>Autopista a Laredo (norte)</li>
                                 <li>Libramiento Norponiente</li>
                                 <li>~25 km al Aeropuerto del Norte</li>
@@ -591,12 +591,12 @@
                     </div>
                     
                     <div class="comparison-card">
-                        <div style="font-size: 0.9em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">Score Demanda H3</div>
+                        <div style="font-size: var(--fs-md); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">Score Demanda H3</div>
                         <div class="score-display medium">19.3</div>
-                        <div style="font-size: 0.85em; margin-top: 0.5em;">de 100 puntos</div>
+                        <div style="font-size: var(--fs-base); margin-top: 0.5em;">de 100 puntos</div>
                         
                         <div style="margin-top: 1.5em; padding: 0.8em; background: rgba(255, 193, 7, 0.15); border-radius: 8px;">
-                            <div style="font-size: 0.8em; color: var(--strtgy-warning);">
+                            <div style="font-size: var(--fs-base); color: var(--strtgy-warning);">
                                 Clasificación: <strong>ALTO</strong><br>
                                 Ranking: <strong>#25 de 203</strong> (Top 12%)
                             </div>
@@ -618,7 +618,7 @@
                 <img class="r-stretch" src="./mapas/screenshots/mapa_demanda_zmm.png" 
                      alt="Mapa de Demanda Industrial ZMM - Hexágonos H3 Resolución 7" 
                      style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Mapa de Demanda Industrial (H3 Res 7) | Fuente: INEGI DENUE — 4,182 establecimientos
                 </p>
                 <aside class="notes">
@@ -725,7 +725,7 @@
                         loading="lazy">
                     <p style="color: var(--strtgy-gray-500); text-align: center; padding: 2em;">Mapa interactivo no disponible. Abra el archivo <code>mapas/mapa_isocronas_multizona.html</code> directamente.</p>
                 </iframe>
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Isocronas desde Lugon (General Escobedo) | HERE API Isoline Routing v8 | Zoom y pan habilitados
                 </p>
                 <aside class="notes">
@@ -750,20 +750,20 @@
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 750px; margin: 1.5em auto;">
                     <div class="metric-card-sm" style="padding: 1em;">
-                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-warning);">53.39</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Score Lugon<br>(Ranking #18)</div>
+                        <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-warning);">53.39</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Score Lugon<br>(Ranking #18)</div>
                     </div>
                     <div class="metric-card-sm" style="padding: 1em; background: rgba(16, 185, 129, 0.1);">
-                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-success);">100.0</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Máximo ZMM<br>(San Nicolás - Av. Univ.)</div>
+                        <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-success);">100.0</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Máximo ZMM<br>(San Nicolás - Av. Univ.)</div>
                     </div>
                     <div class="metric-card-sm" style="padding: 1em; background: rgba(102, 126, 234, 0.1);">
-                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-phase-3);">43.05</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Score Compuesto<br>(Dem 50% + Con 30% + NTL 20%)</div>
+                        <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-phase-3);">43.05</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Score Compuesto<br>(Dem 50% + Con 30% + NTL 20%)</div>
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-300);">
                     <strong style="color: var(--strtgy-accent);">Interpretación:</strong> 
                     Lugon tiene conectividad media-alta. Para proyectos urgentes, zonas con score 80+ son superiores.
                 </p>
@@ -786,7 +786,7 @@
                 <img class="r-stretch" src="./mapas/screenshots/mapa_conectividad_zmm.png" 
                      alt="Índice de Conectividad Vial ZMM - Score por hexágono H3" 
                      style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Índice de Conectividad por Hexágono H3 | Score: 0-100 (verde = óptimo)
                 </p>
                 <aside class="notes">
@@ -808,31 +808,31 @@
                 
                 <div class="comparison-grid fragment fade-up">
                     <div class="comparison-card winner">
-                        <div style="font-size: 0.8em; background: var(--strtgy-success); color: white; padding: 0.3em 0.8em; border-radius: 20px; display: inline-block; margin-bottom: 0.8em;">
+                        <div style="font-size: var(--fs-base); background: var(--strtgy-success); color: white; padding: 0.3em 0.8em; border-radius: 20px; display: inline-block; margin-bottom: 0.8em;">
                             #1 EN ZMM
                         </div>
                         <div class="comparison-title">Corredor Monterrey-San Nicolás</div>
                         <div class="comparison-subtitle">Monterrey / San Nicolás de los Garza</div>
                         
                         <div class="score-display high" style="margin: 0.5em 0;">50.0</div>
-                        <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Score Demanda H3</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Score Demanda H3</div>
                     </div>
                     
                     <div style="text-align: left; padding: 1em;">
                         <h4 style="color: var(--strtgy-accent); margin-bottom: 1em;">Comparativa vs Lugon</h4>
                         
                         <div style="margin: 1em 0; padding: 0.8em; background: rgba(30, 58, 95, 0.3); border-radius: 8px;">
-                            <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Diferencia de Score</div>
-                            <div style="font-size: 1.5em; font-weight: 700; color: var(--strtgy-success);">+30.7 puntos</div>
-                            <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">+161% más demanda potencial</div>
+                            <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Diferencia de Score</div>
+                            <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-success);">+30.7 puntos</div>
+                            <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">+161% más demanda potencial</div>
                         </div>
                         
                         <div style="margin: 1em 0; padding: 0.8em; background: rgba(30, 58, 95, 0.3); border-radius: 8px;">
-                            <div style="font-size: 0.85em; color: var(--strtgy-gray-500);">Distancia desde Lugon</div>
-                            <div style="font-size: 1.3em; font-weight: 700;">10.8 km</div>
+                            <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Distancia desde Lugon</div>
+                            <div style="font-size: var(--fs-xl); font-weight: 700;">10.8 km</div>
                         </div>
                         
-                        <div style="font-size: 0.85em; color: var(--strtgy-gray-400); margin-top: 1em;">
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-400); margin-top: 1em;">
                             <strong>Características:</strong><br>
                             • Epicentro industrial de la ZMM<br>
                             • Máxima densidad de clientes<br>
@@ -860,7 +860,7 @@
                 <img class="r-stretch" src="./mapas/screenshots/mapa_benchmark_lugon_retador.png" 
                      alt="Comparación Espacial: Lugon vs Mejor Alternativa en la ZMM" 
                      style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Lugon (Score 19.3) vs Corredor Mty-SN (Score 50.0) — 10.8 km de distancia
                 </p>
                 <aside class="notes">
@@ -880,7 +880,7 @@
                 <h2>BENCHMARK: LUGON vs <span class="accent">TOP 10</span></h2>
                 <p class="slide-subtitle">Comparativa completa para planificar expansión</p>
                 
-                <table class="results-table fragment fade-up" style="max-width: 1000px; margin: 1em auto; font-size: 0.8em;">
+                <table class="results-table fragment fade-up" style="max-width: 1000px; margin: 1em auto; font-size: var(--fs-base);">
                     <thead>
                         <tr>
                             <th style="padding: 8px 6px;">#</th>
@@ -952,14 +952,14 @@
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-accent);">✓ Zonas que Complementan</div>
-                        <p style="font-size: 0.8em; margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-accent);">✓ Zonas que Complementan</div>
+                        <p style="font-size: var(--fs-base); margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
                             Ideales para segunda sucursal de respuesta rápida
                         </p>
                     </div>
                     <div style="background: rgba(102, 126, 234, 0.1); border: 1px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1em;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-3);">📊 Lugon en Ranking</div>
-                        <p style="font-size: 0.8em; margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-phase-3);">📊 Lugon en Ranking</div>
+                        <p style="font-size: var(--fs-base); margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
                             #13 de 203 zonas (Top 6%) - Score Compuesto
                         </p>
                     </div>
@@ -988,7 +988,7 @@
                         loading="lazy">
                     <p style="color: var(--strtgy-gray-500); text-align: center; padding: 2em;">Mapa interactivo no disponible. Abra el archivo <code>mapas/mapa_top10_alternativas.html</code> directamente.</p>
                 </iframe>
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Distribución Espacial: Top 10 Alternativas vs Lugon (Score Compuesto) | H3 Res 7 | Zoom y pan habilitados
                 </p>
                 <aside class="notes">
@@ -1009,7 +1009,7 @@
                 <h2>IMPACTO DEL <span class="accent">FLETE</span></h2>
                 <p class="slide-subtitle">¿Cuándo Escobedo es competitivo?</p>
                 
-                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto; font-size: 0.8em;">
+                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto; font-size: var(--fs-base);">
                     <thead>
                         <tr>
                             <th style="text-align: left;">Tipo de Proyecto</th>
@@ -1021,28 +1021,28 @@
                     </thead>
                     <tbody>
                         <tr style="background: rgba(0, 212, 170, 0.1);">
-                            <td style="text-align: left;"><strong>Largo (2+ meses)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">60-180 días</span></td>
+                            <td style="text-align: left;"><strong>Largo (2+ meses)</strong><br><span style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">60-180 días</span></td>
                             <td>3-8%</td>
                             <td>2-5%</td>
                             <td>~2%</td>
                             <td><span style="background: var(--strtgy-success); color: white; padding: 3px 8px; border-radius: 4px;">ALTA</span></td>
                         </tr>
                         <tr>
-                            <td style="text-align: left;"><strong>Medio (1 mes)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">20-40 días</span></td>
+                            <td style="text-align: left;"><strong>Medio (1 mes)</strong><br><span style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">20-40 días</span></td>
                             <td>8-15%</td>
                             <td>5-10%</td>
                             <td>~4%</td>
                             <td><span style="background: var(--strtgy-warning); color: white; padding: 3px 8px; border-radius: 4px;">MEDIA</span></td>
                         </tr>
                         <tr style="background: rgba(239, 68, 68, 0.1);">
-                            <td style="text-align: left;"><strong>Corto (&lt;2 sem)</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">5-15 días</span></td>
+                            <td style="text-align: left;"><strong>Corto (&lt;2 sem)</strong><br><span style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">5-15 días</span></td>
                             <td>15-25%</td>
                             <td>8-15%</td>
                             <td>~8%</td>
                             <td><span style="background: var(--strtgy-danger); color: white; padding: 3px 8px; border-radius: 4px;">BAJA</span></td>
                         </tr>
                         <tr style="background: rgba(239, 68, 68, 0.2);">
-                            <td style="text-align: left;"><strong>Emergencia</strong><br><span style="font-size: 0.85em; color: var(--strtgy-gray-500);">1-3 días</span></td>
+                            <td style="text-align: left;"><strong>Emergencia</strong><br><span style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">1-3 días</span></td>
                             <td>25-40%</td>
                             <td>10-20%</td>
                             <td>~18%</td>
@@ -1053,14 +1053,14 @@
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 800px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em; text-align: center;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-accent);">🎯 ENFOQUE PRINCIPAL</div>
-                        <div style="font-size: 1.3em; font-weight: 700; margin: 0.3em 0;">Proyectos 1+ mes</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-400);">60-70% del volumen ZMM</div>
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-accent);">🎯 ENFOQUE PRINCIPAL</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 700; margin: 0.3em 0;">Proyectos 1+ mes</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-400);">60-70% del volumen ZMM</div>
                     </div>
                     <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--strtgy-warning); border-radius: 10px; padding: 1em; text-align: center;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-warning);">📈 SOLUCIÓN PROYECTOS CORTOS</div>
-                        <div style="font-size: 1.3em; font-weight: 700; margin: 0.3em 0;">Sucursal céntrica</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-400);">A 6-12 meses de arranque</div>
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-warning);">📈 SOLUCIÓN PROYECTOS CORTOS</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 700; margin: 0.3em 0;">Sucursal céntrica</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-400);">A 6-12 meses de arranque</div>
                     </div>
                 </div>
                 <aside class="notes">
@@ -1092,28 +1092,28 @@
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 900px; margin: 1.5em auto;">
                     <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-warning); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Santa Catarina</div>
-                        <div style="font-size: 2.5em; font-weight: 700; color: var(--strtgy-warning);">19%</div>
-                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$4.5M MXN</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Santa Catarina</div>
+                        <div style="font-size: var(--fs-3xl); font-weight: 700; color: var(--strtgy-warning);">19%</div>
+                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$4.5M MXN</div>
                     </div>
                     <div style="background: rgba(0, 212, 170, 0.1); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Monterrey Centro</div>
-                        <div class="hero-number" style="font-size: 2.5em;">73%</div>
-                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$52.5M MXN</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Monterrey Centro</div>
+                        <div class="hero-number" style="font-size: var(--fs-3xl);">73%</div>
+                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$52.5M MXN</div>
                     </div>
                     <div style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Apodaca</div>
-                        <div style="font-size: 2.5em; font-weight: 700; color: var(--strtgy-phase-3);">41%</div>
-                        <div style="font-size: 0.85em; font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500); margin-top: 0.5em;">$13.5M MXN</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Apodaca</div>
+                        <div style="font-size: var(--fs-3xl); font-weight: 700; color: var(--strtgy-phase-3);">41%</div>
+                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$13.5M MXN</div>
                     </div>
                 </div>
                 
                 <div class="fragment fade-up" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.2em; max-width: 800px; margin: 1em auto;">
-                    <div style="font-size: 0.9em; font-weight: 600; color: var(--strtgy-accent); margin-bottom: 0.8em;">📊 UMBRAL DE DECISIÓN</div>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8em; text-align: center; font-size: 0.8em;">
+                    <div style="font-size: var(--fs-md); font-weight: 600; color: var(--strtgy-accent); margin-bottom: 0.8em;">📊 UMBRAL DE DECISIÓN</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8em; text-align: center; font-size: var(--fs-base);">
                         <div style="padding: 0.8em; background: rgba(0, 212, 170, 0.2); border-radius: 6px;">
                             <div style="font-weight: 700; color: var(--strtgy-accent);">&gt;50%</div>
                             <div style="color: var(--strtgy-gray-400);">COMPRAR SIN DUDAS</div>
@@ -1133,7 +1133,7 @@
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-300);">
                     <strong style="color: var(--strtgy-accent);">💡 El ahorro en terreno puede financiar:</strong> 
                     Sucursal de respuesta rápida + flotilla dedicada + marketing
                 </p>
@@ -1164,50 +1164,50 @@
                     <div style="position: absolute; top: 25px; left: 15%; right: 15%; height: 4px; background: linear-gradient(90deg, var(--strtgy-phase-1), var(--strtgy-phase-2), var(--strtgy-phase-3));"></div>
                     
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-1); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">1</div>
-                        <div style="font-weight: 600; font-size: 0.85em;">Arranque</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Lugon (hoy)</div>
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-1); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">1</div>
+                        <div style="font-weight: 600; font-size: var(--fs-base);">Arranque</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Lugon (hoy)</div>
                     </div>
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-2); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">2</div>
-                        <div style="font-weight: 600; font-size: 0.85em;">Respuesta Rápida</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">6-12 meses</div>
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-2); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">2</div>
+                        <div style="font-weight: 600; font-size: var(--fs-base);">Respuesta Rápida</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">6-12 meses</div>
                     </div>
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-3); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2em;">3</div>
-                        <div style="font-weight: 600; font-size: 0.85em;">Red Completa</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">18-24 meses</div>
+                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-3); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">3</div>
+                        <div style="font-weight: 600; font-size: var(--fs-base);">Red Completa</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">18-24 meses</div>
                     </div>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 950px; margin: 1.5em auto;">
                     <div class="fragment fade-up" style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-phase-1); border-radius: 10px; padding: 1em;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-1); margin-bottom: 0.5em;">ETAPA 1: LUGON</div>
-                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">99.3%</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura 60 min</div>
-                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-phase-1); margin-bottom: 0.5em;">ETAPA 1: LUGON</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">99.3%</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Cobertura 60 min</div>
+                        <p style="font-size: var(--fs-base); margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
                             Contratos programados y obras de largo plazo
                         </p>
                     </div>
                     <div class="fragment fade-up" style="background: rgba(16, 185, 129, 0.1); border: 2px solid var(--strtgy-phase-2); border-radius: 10px; padding: 1em;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-2); margin-bottom: 0.5em;">ETAPA 2: +SUCURSAL</div>
-                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">+29%</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura 15 min</div>
-                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-phase-2); margin-bottom: 0.5em;">ETAPA 2: +SUCURSAL</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">+29%</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Cobertura 15 min</div>
+                        <p style="font-size: var(--fs-base); margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
                             Captura mercado emergencias y respuesta rápida
                         </p>
                     </div>
                     <div class="fragment fade-up" style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1em;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: var(--strtgy-phase-3); margin-bottom: 0.5em;">ETAPA 3: RED 3-4</div>
-                        <div style="font-size: 1.3em; font-weight: 700; color: var(--strtgy-accent);">+95%</div>
-                        <div style="font-size: 0.8em; color: var(--strtgy-gray-500);">Cobertura total ZMM</div>
-                        <p style="font-size: 0.8em; margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
+                        <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-phase-3); margin-bottom: 0.5em;">ETAPA 3: RED 3-4</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">+95%</div>
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Cobertura total ZMM</div>
+                        <p style="font-size: var(--fs-base); margin: 0.8em 0 0 0; color: var(--strtgy-gray-400);">
                             Líder de mercado en cualquier tiempo de respuesta
                         </p>
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.85em; color: var(--strtgy-gray-400);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-400);">
                     <strong>Recomendación:</strong> Iniciar con Lugon para contratos programados, 
                     evaluar sucursal de respuesta rápida a los 6-12 meses
                 </p>
@@ -1231,7 +1231,7 @@
                 <img class="r-stretch" src="./mapas/screenshots/mapa_expansion_etapas.png" 
                      alt="Visualización Espacial del Plan de Expansión por Etapas" 
                      style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                     Etapa 1 (Lugon) → Etapa 2 (Sucursal Céntrica) → Etapa 3 (Red Completa)
                 </p>
                 <aside class="notes">
@@ -1253,22 +1253,22 @@
                 <p class="slide-subtitle">¿Es General Escobedo viable para servicios sanitarios?</p>
                 
                 <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1em 1.5em; max-width: 600px; margin: 1em auto; text-align: center;">
-                    <div style="font-size: 0.85em; color: var(--strtgy-gray-400);">¿Es buena ubicación para Letrimex?</div>
-                    <div style="font-size: 1.5em; font-weight: 700; color: var(--strtgy-accent);">SÍ, CON ENFOQUE DIFERENCIADO</div>
+                    <div style="font-size: var(--fs-base); color: var(--strtgy-gray-400);">¿Es buena ubicación para Letrimex?</div>
+                    <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">SÍ, CON ENFOQUE DIFERENCIADO</div>
                 </div>
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.8em 0; font-size: 0.9em;">✅ MERCADO FAVORABLE</h4>
-                        <ul style="font-size: 0.8em; padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.8em 0; font-size: var(--fs-md);">✅ MERCADO FAVORABLE</h4>
+                        <ul style="font-size: var(--fs-base); padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
                             <li><strong>Corredor norte</strong> - Nearshoring, naves en Pesquería</li>
                             <li><strong>Obras largas</strong> - Proyectos 1+ mes</li>
                             <li><strong>Expansión ZMM</strong> - García, Salinas Victoria</li>
                         </ul>
                     </div>
                     <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--strtgy-warning); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-warning); margin: 0 0 0.8em 0; font-size: 0.9em;">⚠️ EVITAR COMPETIR EN</h4>
-                        <ul style="font-size: 0.8em; padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
+                        <h4 style="color: var(--strtgy-warning); margin: 0 0 0.8em 0; font-size: var(--fs-md);">⚠️ EVITAR COMPETIR EN</h4>
+                        <ul style="font-size: var(--fs-base); padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
                             <li><strong>Eventos centro</strong> - WC Móvil domina</li>
                             <li><strong>Emergencias</strong> - Velocidad crítica</li>
                             <li><strong>Proyectos puntuales</strong> - Flete alto</li>
@@ -1278,20 +1278,20 @@
                 
                 <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; max-width: 750px; margin: 1em auto;">
                     <div class="metric-card-sm" style="padding: 1em;">
-                        <div class="metric-value" style="font-size: 2em; color: var(--strtgy-accent);">291</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Competidores ZMM</div>
+                        <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-accent);">291</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Competidores ZMM</div>
                     </div>
                     <div class="metric-card-sm" style="padding: 1em; background: rgba(239, 68, 68, 0.1);">
-                        <div class="metric-value" style="font-size: 1.2em; color: var(--strtgy-danger);">WC Móvil</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Tier 1 - Eventos</div>
+                        <div class="metric-value" style="font-size: var(--fs-lg); color: var(--strtgy-danger);">WC Móvil</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Tier 1 - Eventos</div>
                     </div>
                     <div class="metric-card-sm" style="padding: 1em; background: rgba(102, 126, 234, 0.1);">
-                        <div class="metric-value" style="font-size: 1em; color: var(--strtgy-phase-3);">Paquetes L+L</div>
-                        <div class="metric-label" style="font-size: 0.8em;">Diferenciación clave</div>
+                        <div class="metric-value" style="font-size: var(--fs-md); color: var(--strtgy-phase-3);">Paquetes L+L</div>
+                        <div class="metric-label" style="font-size: var(--fs-base);">Diferenciación clave</div>
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 0.8em; font-size: 0.85em; color: var(--strtgy-gray-300);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 0.8em; font-size: var(--fs-base); color: var(--strtgy-gray-300);">
                     <strong style="color: var(--strtgy-accent);">Estrategia:</strong> Construir sobre Lugon, diferenciarse por precio y servicio integral
                 </p>
                 <aside class="notes">
@@ -1326,7 +1326,7 @@
                         <img src="./mapas/screenshots/mapa_competidores_letrimex.png" 
                              alt="291 Competidores de Letrimex identificados en la ZMM" 
                              style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                        <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                             291 Competidores (DENUE + Google Places)
                         </p>
                     </div>
@@ -1334,7 +1334,7 @@
                         <img src="./mapas/screenshots/mapa_gaps_letrimex.png" 
                              alt="Zonas de Oportunidad para Letrimex - Mercado Subatendido" 
                              style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                        <p style="font-size: 0.8em; color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                        <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
                             Mercado Subatendido — Zonas sin cobertura
                         </p>
                     </div>
@@ -1359,32 +1359,32 @@
                 
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; max-width: 900px; margin: 1em auto;">
                     <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 1: Detección de Demanda</h4>
-                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: var(--fs-md);">FASE 1: Detección de Demanda</h4>
+                        <p style="font-size: var(--fs-base); margin: 0; color: var(--strtgy-gray-400);">
                             <strong>4,182 establecimientos</strong> INEGI DENUE<br>
                             5 sectores SCIAN · Grid H3 Resolución 7<br>
                             879 hexágonos, 248 activos
                         </p>
                     </div>
                     <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 2: Fricción Logística</h4>
-                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: var(--fs-md);">FASE 2: Fricción Logística</h4>
+                        <p style="font-size: var(--fs-base); margin: 0; color: var(--strtgy-gray-400);">
                             <strong>HERE API</strong> Isoline Routing v8<br>
                             Isocronas 15 / 30 / 60 minutos<br>
                             11 ubicaciones — 33 isocronas (11 × 3 tiempos)
                         </p>
                     </div>
                     <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 3: Saturación Competitiva</h4>
-                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: var(--fs-md);">FASE 3: Saturación Competitiva</h4>
+                        <p style="font-size: var(--fs-base); margin: 0; color: var(--strtgy-gray-400);">
                             <strong>H3 Multi-Resolución</strong> (Uber)<br>
                             Análisis Res 7/8/9 — 248 zonas activas<br>
                             Benchmark competitivo 11 ubicaciones
                         </p>
                     </div>
                     <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
-                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: 0.9em;">FASE 4: Ranking de Rentabilidad</h4>
-                        <p style="font-size: 0.8em; margin: 0; color: var(--strtgy-gray-400);">
+                        <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: var(--fs-md);">FASE 4: Ranking de Rentabilidad</h4>
+                        <p style="font-size: var(--fs-base); margin: 0; color: var(--strtgy-gray-400);">
                             <strong>Composite Score</strong> = Demanda 50% + Conectividad 30% + Crec. NTL 20%<br>
                             203 zonas evaluadas<br>
                             20 zonas óptimas — Score máx: 87.6
@@ -1392,7 +1392,7 @@
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: 0.8em; color: var(--strtgy-gray-500);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-500);">
                     Fuentes: <strong>INEGI DENUE</strong> · <strong>HERE API v8</strong> · <strong>Uber H3</strong> · <strong>NASA NTL</strong> · 
                     Área: <strong>3,456 km²</strong> · 12 municipios ZMM
                 </p>
@@ -1495,7 +1495,7 @@
                 <div class="recommendation-grid" style="max-width: 1000px;">
                     <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
                         <div style="display: flex; align-items: center; gap: 0.8em;">
-                            <span style="font-size: 1.8em;">📄</span>
+                            <span style="font-size: var(--fs-2xl);">📄</span>
                             <div>
                                 <div class="rec-title">Atlas PDF LocationFit™</div>
                                 <div class="rec-desc">Documento ejecutivo con análisis completo</div>
@@ -1504,7 +1504,7 @@
                     </div>
                     <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
                         <div style="display: flex; align-items: center; gap: 0.8em;">
-                            <span style="font-size: 1.8em;">🗺️</span>
+                            <span style="font-size: var(--fs-2xl);">🗺️</span>
                             <div>
                                 <div class="rec-title">13 Mapas Interactivos HTML</div>
                                 <div class="rec-desc">Demanda, Isocronas, Conectividad, Benchmark, Score, Competidores, Gaps, Expansión y más</div>
@@ -1513,7 +1513,7 @@
                     </div>
                     <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
                         <div style="display: flex; align-items: center; gap: 0.8em;">
-                            <span style="font-size: 1.8em;">📊</span>
+                            <span style="font-size: var(--fs-2xl);">📊</span>
                             <div>
                                 <div class="rec-title">Capas GIS (GeoPackage)</div>
                                 <div class="rec-desc">6 capas para análisis en QGIS/ArcGIS</div>
@@ -1522,7 +1522,7 @@
                     </div>
                     <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
                         <div style="display: flex; align-items: center; gap: 0.8em;">
-                            <span style="font-size: 1.8em;">📑</span>
+                            <span style="font-size: var(--fs-2xl);">📑</span>
                             <div>
                                 <div class="rec-title">Datos Tabulares</div>
                                 <div class="rec-desc">Rankings, scores y métricas en CSV</div>
@@ -1531,7 +1531,7 @@
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1.5em; font-size: 0.9em;">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1.5em; font-size: var(--fs-md);">
                     📁 Todos los archivos se entregarán vía <strong>Google Drive</strong> hoy mismo
                 </p>
                 <aside class="notes">
@@ -1555,19 +1555,19 @@
             <section id="upgrade-path" data-background-color="#0A0F1C">
                 <div style="display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em;">
                     <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="height: 28px; opacity: 0.6;">
-                    <span style="font-size: 0.7em; color: var(--strtgy-accent); font-weight: 600; letter-spacing: 2px;">ESCALAMIENTO</span>
+                    <span style="font-size: var(--fs-sm); color: var(--strtgy-accent); font-weight: 600; letter-spacing: 2px;">ESCALAMIENTO</span>
                 </div>
-                <h2 class="slide-title" style="font-size: 1.6em;">Próximos Pasos con <span class="accent">STRTGY</span></h2>
-                <p style="font-size: 0.75em; opacity: 0.7; margin-bottom: 1.2em;">Su análisis Starter fue el primer paso. Estas opciones profundizan el análisis.</p>
+                <h2 class="slide-title" style="font-size: var(--fs-2xl);">Próximos Pasos con <span class="accent">STRTGY</span></h2>
+                <p style="font-size: var(--fs-sm); opacity: 0.7; margin-bottom: 1.2em;">Su análisis Starter fue el primer paso. Estas opciones profundizan el análisis.</p>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; text-align: left;">
                     <!-- Growth Plan -->
                     <div class="fragment fade-up" style="background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.3); border-radius: 12px; padding: 1.2em;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8em;">
-                            <span style="font-size: 1.1em; font-weight: 700; color: var(--strtgy-accent);">🚀 Growth</span>
-                            <span style="font-size: 0.9em; font-weight: 600; color: var(--strtgy-accent);">$145K MXN</span>
+                            <span style="font-size: var(--fs-lg); font-weight: 700; color: var(--strtgy-accent);">🚀 Growth</span>
+                            <span style="font-size: var(--fs-md); font-weight: 600; color: var(--strtgy-accent);">$145K MXN</span>
                         </div>
-                        <ul style="font-size: 0.65em; line-height: 1.6; list-style: none; padding: 0; margin: 0;">
+                        <ul style="font-size: var(--fs-xs); line-height: 1.6; list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 0.4em;">✓ Dashboard interactivo actualizable</li>
                             <li style="margin-bottom: 0.4em;">✓ Monitoreo trimestral de indicadores</li>
                             <li style="margin-bottom: 0.4em;">✓ Análisis multi-sucursal (Etapa 2)</li>
@@ -1579,10 +1579,10 @@
                     <!-- Enterprise Plan -->
                     <div class="fragment fade-up" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 1.2em;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8em;">
-                            <span style="font-size: 1.1em; font-weight: 700;">⚡ Enterprise</span>
-                            <span style="font-size: 0.9em; font-weight: 600;">$215K MXN</span>
+                            <span style="font-size: var(--fs-lg); font-weight: 700;">⚡ Enterprise</span>
+                            <span style="font-size: var(--fs-md); font-weight: 600;">$215K MXN</span>
                         </div>
-                        <ul style="font-size: 0.65em; line-height: 1.6; list-style: none; padding: 0; margin: 0;">
+                        <ul style="font-size: var(--fs-xs); line-height: 1.6; list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 0.4em;">✓ Todo Growth +</li>
                             <li style="margin-bottom: 0.4em;">✓ Modelo predictivo de demanda</li>
                             <li style="margin-bottom: 0.4em;">✓ Simulador de escenarios de expansión</li>
@@ -1592,7 +1592,7 @@
                     </div>
                 </div>
 
-                <p class="fragment fade-up" style="font-size: 0.7em; margin-top: 1em; opacity: 0.8; text-align: center;">
+                <p class="fragment fade-up" style="font-size: var(--fs-sm); margin-top: 1em; opacity: 0.8; text-align: center;">
                     💡 <em>Ambos planes incluyen el valor de su inversión Starter como crédito.</em>
                 </p>
                 <aside class="notes">
@@ -1613,7 +1613,7 @@
                     <p class="cta-subtitle">"En STRTGY, no adivinamos. Predecimos."</p>
                     
                     <div class="cta-contact fragment fade-up">
-                        <p style="font-size: 1.2em; margin-bottom: 1em;">
+                        <p style="font-size: var(--fs-lg); margin-bottom: 1em;">
                             ¡Gracias por su confianza!<br>
                             El Atlas y archivos están <span class="accent">listos para entrega</span>.
                         </p>
@@ -1672,6 +1672,8 @@
                     width: 1920,
                     height: 1080,
                     margin: 0.08,
+                    minScale: 0.6,
+                    maxScale: 1.5,
                     transition: 'fade',
                     plugins: [RevealNotes, RevealZoom]
                 });
