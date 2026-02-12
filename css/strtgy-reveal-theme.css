@@ -19,10 +19,9 @@
  * CONFIGURACIÓN RECOMENDADA DE REVEAL.JS:
  * Usar STRTGY_REVEAL_CONFIG de shared/tokens/reveal-config.js
  * o aplicar manualmente:
- *   - width: 1920, height: 1080
- *   - margin: 0.08 (8%)
- *   - minScale: 0.5, maxScale: 1.2
- *   - transition: 'fade'
+ *   - Viewport: usar defaults de Reveal.js (960x700) — NO sobreescribir
+ *   - hash: true, history: true (navegación)
+ *   - slideNumber: "c/t", showSlideNumber: "speaker"
  * 
  * ESCALA TIPOGRÁFICA (base: 32px desde tokens):
  *   h1: 1.9em (~61px)  | h2: 1.5em (~48px)
@@ -138,14 +137,14 @@ body,
 /* Performance Mode indicator */
 .performance-mode-indicator {
     position: fixed;
-    bottom: 60px;
-    left: 20px;
+    bottom: 30px;
+    left: 10px;
     background: rgba(0, 212, 170, 0.9);
     color: var(--strtgy-dark);
     padding: 8px 16px;
     border-radius: 8px;
     font-family: var(--font-heading);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     z-index: 1000;
     opacity: 0;
@@ -171,7 +170,9 @@ body,
 }
 
 .reveal .slides {
-    position: relative;
+    /* z-index works because Reveal.js sets position: absolute on .slides internally.
+       Do NOT set position: relative here — it breaks Reveal.js's
+       inset: 50% auto auto 50% + translate(-50%, -50%) centering. */
     z-index: 2;
 }
 
@@ -328,8 +329,8 @@ body,
 }
 
 .cover-logo {
-    width: 180px;
-    max-width: 180px;
+    width: 90px;
+    max-width: 90px;
     height: auto;
     opacity: 0.85;
     margin-top: 1.5em;
@@ -383,8 +384,8 @@ body,
     border-radius: var(--radius-lg);
     padding: 3em;
     text-align: center;
-    min-width: 380px;
-    max-width: 480px;
+    min-width: 190px;
+    max-width: 240px;
 }
 
 .problem-icon {
@@ -440,8 +441,8 @@ body,
     border-radius: var(--radius-lg);
     padding: 2.5em 3em;
     text-align: center;
-    min-width: 340px;
-    max-width: 400px;
+    min-width: 170px;
+    max-width: 200px;
     transition: all var(--transition-normal);
 }
 
@@ -474,7 +475,7 @@ body,
    ═══════════════════════════════════════════════════════════════ */
 
 .comparison-table {
-    max-width: 1000px;
+    max-width: 500px;
     margin: 1.5em auto;
 }
 
@@ -519,7 +520,7 @@ body,
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5em;
-    max-width: 1200px;
+    max-width: 600px;
     margin: 1.5em auto;
 }
 
@@ -565,7 +566,7 @@ body,
    ═══════════════════════════════════════════════════════════════ */
 
 .case-study {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -651,7 +652,7 @@ body,
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
-    max-width: 900px;
+    max-width: 450px;
     margin: 2em auto;
 }
 
@@ -710,7 +711,7 @@ body,
     border-radius: var(--radius-md);
     padding: 1.5em 2em;
     text-align: center;
-    min-width: 200px;
+    min-width: 100px;
     transition: all var(--transition-normal);
 }
 
@@ -750,18 +751,18 @@ body,
     align-items: flex-start;
     gap: 0;
     margin: 2em auto;
-    max-width: 1000px;
+    max-width: 500px;
 }
 
 .process-step {
     text-align: center;
     flex: 1;
-    max-width: 250px;
+    max-width: 125px;
 }
 
 .step-circle {
-    width: 70px;
-    height: 70px;
+    width: 35px;
+    height: 35px;
     background: var(--strtgy-navy-dim);
     border: 3px solid var(--strtgy-navy);
     border-radius: 50%;
@@ -794,8 +795,8 @@ body,
 }
 
 .process-connector {
-    width: 80px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background: linear-gradient(90deg, var(--strtgy-navy) 0%, var(--strtgy-accent) 100%);
     margin-top: 45px;
     flex-shrink: 0;
@@ -808,7 +809,7 @@ body,
     background: var(--strtgy-accent-dim);
     border: 1px solid var(--strtgy-accent);
     border-radius: var(--radius-md);
-    max-width: 600px;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -843,8 +844,8 @@ body,
 }
 
 .cta-logo {
-    width: 200px;
-    max-width: 200px;
+    width: 100px;
+    max-width: 100px;
     height: auto;
     margin-bottom: 1.5em;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 1)) 
@@ -936,13 +937,13 @@ body,
 /* Slide Number */
 .reveal .slide-number {
     font-family: var(--font-heading);
-    font-size: 14px;
+    font-size: 11px;
     background: var(--strtgy-navy-dim);
     color: var(--strtgy-white);
     padding: 8px 14px;
     border-radius: var(--radius-sm);
-    right: 20px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 10px;
 }
 
 /* Progress Bar */

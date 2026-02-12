@@ -43,16 +43,16 @@
     --font-body: 'DM Sans', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* === ESCALA TIPOGRÁFICA (px - no compounding) === */
-    --fs-hero: 96px;
-    --fs-3xl: 72px;
-    --fs-2xl: 56px;
-    --fs-xl: 44px;
-    --fs-lg: 36px;
-    --fs-md: 30px;
-    --fs-base: 26px;
-    --fs-sm: 22px;
-    --fs-xs: 18px;
+    /* === ESCALA TIPOGRÁFICA (px - scaled for 960x700 viewport, ~0.6x) === */
+    --fs-hero: 58px;
+    --fs-3xl: 43px;
+    --fs-2xl: 34px;
+    --fs-xl: 26px;
+    --fs-lg: 22px;
+    --fs-md: 18px;
+    --fs-base: 16px;
+    --fs-sm: 13px;
+    --fs-xs: 11px;
 
     /* === ESPACIADO === */
     --space-xs: 0.25rem;

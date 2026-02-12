@@ -1,30 +1,23 @@
 /**
- * STRTGY RevealJS Configuration - Auto-generated from Design Tokens
- * Generated: 2026-01-29 16:12:30
- * Source: revealjs-design-tokens.json
+ * STRTGY RevealJS Configuration — Lugon ZMM Starter Deck
+ * 
+ * Only overrides navigation. Viewport (960x700), margin, transitions,
+ * scaling, and autoAnimate all use Reveal.js defaults.
+ * See: https://revealjs.com/config/
  */
 
 const STRTGY_REVEAL_CONFIG = {
-    "width": 1920,
-    "height": 1080,
-    "margin": 0.08,
-    "minScale": 0.6,
-    "maxScale": 1.5,
-    "center": true,
-    "disableLayout": false,
-    "transition": "fade",
-    "transitionSpeed": "default",
-    "backgroundTransition": "fade",
-    "autoAnimate": true,
-    "autoAnimateEasing": "ease-in-out",
-    "autoAnimateDuration": 0.8,
-    "autoAnimateUnmatched": false,
-    "controls": true,
-    "progress": true,
-    "slideNumber": "c/t",
-    "showSlideNumber": "speaker",
-    "hash": true,
-    "history": true
+    // --- Navigation enhancements (the ONLY overrides) ---
+    hash: true,
+    history: true,
+    slideNumber: "c/t",
+    showSlideNumber: "speaker",
+
+    // --- Everything else inherits Reveal.js defaults ---
+    // width: 960,    height: 700     (default — do NOT override)
+    // margin: 0.04                   (default — do NOT override)
+    // transition: "slide"            (default)
+    // minScale: 0.2, maxScale: 2.0   (default)
 };
 
 // Usage: Reveal.initialize({ ...STRTGY_REVEAL_CONFIG, plugins: [...] });

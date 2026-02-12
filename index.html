@@ -66,8 +66,8 @@
            NOTE: Not yet in strtgy-reveal-theme.css — local definition required */
         .strtgy-watermark {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 10px;
+            left: 10px;
             z-index: 1000;
             opacity: 0.6;
             transition: opacity var(--transition-fast);
@@ -75,7 +75,7 @@
         }
         
 .strtgy-watermark img {
-    width: 100px;
+    width: 50px;
     height: auto;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
 }
@@ -87,7 +87,7 @@
             border-radius: var(--radius-md);
             padding: 2em;
             margin: 1.5em auto;
-            max-width: 800px;
+            max-width: 400px;
         }
         
         .verdict-box.positive {
@@ -115,13 +115,14 @@
         }
         
         /* Comparison Grid
-           !important required: Reveal.js sets display:flex on direct section children */
+           !important required: Reveal.js sets display:flex on direct section children
+           Fixed centering: Use margin-left calc to center without transform conflicts */
         .comparison-grid {
             display: grid !important;
             grid-template-columns: 1fr 1fr;
             gap: 2em;
             margin: 1.5em auto;
-            max-width: 1000px;
+            max-width: 500px;
         }
         
         .comparison-card {
@@ -188,13 +189,14 @@
         }
         
         /* Metric Cards Grid
-           !important required: Reveal.js sets display:flex on direct section children */
+           !important required: Reveal.js sets display:flex on direct section children
+           Fixed centering: Use margin: auto which works with inline-styled grids */
         .metrics-grid-4 {
             display: grid !important;
             grid-template-columns: repeat(4, 1fr);
             gap: 1em;
             margin: 1.5em auto;
-            max-width: 1000px;
+            max-width: 500px;
         }
         
         .metric-card-sm {
@@ -218,13 +220,14 @@
         }
         
         /* Recommendation Cards
-           !important required: Reveal.js sets display:flex on direct section children */
+           !important required: Reveal.js sets display:flex on direct section children
+           Fixed centering: Use margin: auto which works with inline-styled grids */
         .recommendation-grid {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr);
             gap: 1em;
             margin: 1.5em auto;
-            max-width: 1000px;
+            max-width: 500px;
         }
         
         .recommendation-card {
@@ -269,7 +272,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 1.5em;
             margin: 1.5em auto;
-            max-width: 900px;
+            max-width: 450px;
         }
         
         .pros-list, .cons-list {
@@ -315,7 +318,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 1em;
             margin: 1.5em auto;
-            max-width: 900px;
+            max-width: 450px;
         }
         
         .agenda-item-sm {
@@ -374,7 +377,7 @@
                     <!-- Powered by STRTGY -->
                     <div style="margin-top: 2em; display: flex; align-items: center; justify-content: center; gap: 1.5em;">
                         <span class="text-md" style="color: var(--strtgy-gray-500);">Powered by</span>
-                        <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="width: 120px; opacity: 0.85;">
+                        <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="width: 60px; opacity: 0.85;">
                     </div>
                 </div>
                 <div class="grid-background"></div>
@@ -458,7 +461,7 @@
                 <div class="verdict-box fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent);">
                     <div class="verdict-label" style="color: var(--strtgy-accent);">✅ RECOMENDACIÓN</div>
                     <div class="verdict-text" style="color: var(--strtgy-accent);">SÍ, VIABLE PARA ARRANQUE</div>
-                    <p style="font-size: var(--fs-md); color: var(--strtgy-gray-300); max-width: 800px; margin: 0.5em auto;">
+                    <p style="font-size: var(--fs-md); color: var(--strtgy-gray-300); max-width: 400px; margin: 0.5em auto;">
                         El terreno en General Escobedo es VIABLE para iniciar operaciones enfocadas 
                         en contratos de mediano-largo plazo. Para capturar el mercado de respuesta 
                         rápida, se recomienda abrir una segunda sucursal en zona céntrica.
@@ -509,7 +512,7 @@
             <section id="conclusions" data-background-color="#0A0F1C">
                 <h2>CONCLUSIONES <span class="accent">CLAVE</span></h2>
                 
-                <div style="max-width: 900px; margin: 2em auto; text-align: left;">
+                <div style="max-width: 450px; margin: 2em auto; text-align: left;">
                     <div class="fragment fade-up" style="display: flex; align-items: flex-start; gap: 1em; margin: 1.2em 0; padding: 1em; background: rgba(0, 212, 170, 0.1); border-radius: 10px; border: 1px solid rgba(0, 212, 170, 0.3);">
                         <span style="font-size: var(--fs-xl);">✅</span>
                         <div>
@@ -647,7 +650,7 @@
             <section id="terrain-coverage" data-background-color="#0A0F1C">
                 <h2>COBERTURA <span class="accent">ISOCRONAS LUGON</span></h2>
                 
-                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto;">
+                <table class="results-table fragment fade-up" style="max-width: 450px; margin: 1em auto;">
                     <thead>
                         <tr>
                             <th>Tiempo</th>
@@ -748,7 +751,7 @@
                 <h2>ÍNDICE DE <span class="accent">CONECTIVIDAD VIAL</span></h2>
                 <p class="slide-subtitle">Score normalizado (0-100) por accesibilidad temporal</p>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 750px; margin: 1.5em auto;">
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 375px; margin: 1.5em auto;">
                     <div class="metric-card-sm" style="padding: 1em;">
                         <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-warning);">53.39</div>
                         <div class="metric-label" style="font-size: var(--fs-base);">Score Lugon<br>(Ranking #18)</div>
@@ -794,6 +797,72 @@
                     <p><strong>[EN PANTALLA]</strong> Título "CONECTIVIDAD VIAL ZMM" (ZMM en turquesa). Imagen estática de mapa con hexágonos H3 coloreados por score de conectividad. Subtítulo: "Índice de Conectividad por Hexágono H3 | Score: 0-100 (verde = óptimo)".</p>
                     <p>"Según indica el subtítulo del mapa, los colores van de rojo (baja conectividad) a verde (alta conectividad, score cercano a 100). Pueden ver cómo el centro de la metrópoli es completamente verde, y Lugon (en la zona superior del mapa) está en una zona amarilla-naranja — conectividad aceptable pero no óptima."</p>
                     <p>Señala que la zona de Escobedo está más alejada de las arterias principales, pero con el Libramiento Norponiente tiene salida directa sin pasar por el tráfico céntrico.</p>
+                </aside>
+            </section>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 SLIDE 7B: CRECIMIENTO URBANO (ANÁLISIS SATELITAL)
+                 ═══════════════════════════════════════════════════════════════ -->
+            <section>
+            <section id="urban-growth" data-background-color="#0A0F1C">
+                <h2>CRECIMIENTO <span class="accent">URBANO</span></h2>
+                <p class="slide-subtitle">Análisis Satelital de Iluminación Nocturna (NASA NTL)</p>
+                
+                <div class="fragment fade-up" style="max-width: 450px; margin: 1.5em auto;">
+                    <p style="font-size: var(--fs-base); color: var(--strtgy-gray-300); text-align: left; line-height: 1.6;">
+                        Utilizamos imágenes satelitales <strong style="color: var(--strtgy-accent);">NASA/NOAA Nighttime Lights (NTL)</strong> 
+                        para medir el crecimiento económico de cada zona. Las áreas que aumentan su iluminación nocturna año con año 
+                        indican <strong style="color: var(--strtgy-accent);">mayor actividad económica</strong>: nuevas naves industriales, 
+                        urbanización y desarrollo de infraestructura.
+                    </p>
+                </div>
+
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; max-width: 450px; margin: 1.5em auto;">
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1em; text-align: center;">
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">Peso en Score</div>
+                        <div style="font-size: var(--fs-2xl); font-weight: 700; color: var(--strtgy-accent);">20%</div>
+                        <div style="font-size: var(--fs-base); margin-top: 0.3em;">Crecimiento NTL</div>
+                    </div>
+                    <div style="background: rgba(30, 58, 95, 0.3); border: 1px solid var(--strtgy-navy-solid); border-radius: 10px; padding: 1em; text-align: center;">
+                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">Zona de Mayor Crecimiento</div>
+                        <div style="font-size: var(--fs-lg); font-weight: 700; color: var(--strtgy-accent);">Corredor Norte</div>
+                        <div style="font-size: var(--fs-sm); color: var(--strtgy-gray-400); margin-top: 0.3em;">Escobedo-Apodaca-Pesquería</div>
+                    </div>
+                </div>
+
+                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-300);">
+                    <strong style="color: var(--strtgy-accent);">Resultado:</strong> 
+                    El corredor norte muestra crecimiento acelerado por el efecto <strong style="color: var(--strtgy-accent);">nearshoring</strong>.
+                </p>
+                <aside class="notes">
+                    <strong>CRECIMIENTO URBANO — Análisis Satelital (2 minutos)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "CRECIMIENTO URBANO" (URBANO en turquesa), subtítulo "Análisis Satelital de Iluminación Nocturna (NASA NTL)". Descripción del método NTL, dos tarjetas métricas: "20%" (peso en score compuesto) y "Corredor Norte" (zona de mayor crecimiento).</p>
+                    <p>"Para identificar zonas de crecimiento económico, usamos un indicador objetivo: las imágenes satelitales de iluminación nocturna de la NASA y NOAA."</p>
+                    <p><strong>¿Qué es NTL?</strong> "NTL significa Nighttime Lights — imágenes satelitales nocturnas. Medimos cómo cambia la iluminación de cada zona año con año. Si una zona se ilumina más, significa que hay más actividad económica: más naves industriales, más urbanización, más inversión."</p>
+                    <p><strong>Las 2 tarjetas métricas:</strong></p>
+                    <ul>
+                        <li><strong>20% en turquesa:</strong> "El crecimiento NTL representa el 20% del Score Compuesto. Los otros factores son demanda (50%) y conectividad (30%)."</li>
+                        <li><strong>Corredor Norte:</strong> "El corredor Escobedo-Apodaca-Pesquería muestra el mayor crecimiento en iluminación nocturna de toda la ZMM. Esto se debe al efecto nearshoring: la llegada continua de plantas automotrices y proveedores Tier 1-2."</li>
+                    </ul>
+                    <p>"Este análisis satelital confirma que Lugon está en una zona de expansión económica acelerada, no en una zona estancada."</p>
+                    <p><em>Presiona FLECHA ABAJO (↓) para el mapa de crecimiento.</em></p>
+                </aside>
+            </section>
+            <section id="urban-growth-map" data-background-color="#0A0F1C">
+                <h3>CRECIMIENTO URBANO <span class="accent">H3 ZMM</span></h3>
+                <img class="r-stretch" src="./mapas/screenshots/mapa_crecimiento_h3_zmm.png" 
+                     alt="Mapa de Crecimiento Urbano - Análisis Satelital H3 ZMM" 
+                     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <p style="font-size: var(--fs-base); color: var(--strtgy-gray-500); text-align: center; margin-top: 0.5em;">
+                    Crecimiento por Iluminación Nocturna Satelital | NASA/NOAA NTL | Hexágonos H3 Res 7
+                </p>
+                <aside class="notes">
+                    <strong>MAPA CRECIMIENTO — Visualización (1 minuto)</strong>
+                    <p><strong>[EN PANTALLA]</strong> Título "CRECIMIENTO URBANO H3 ZMM" (H3 ZMM en turquesa). Imagen estática del mapa con hexágonos H3 coloreados por tasa de crecimiento en iluminación nocturna. Subtítulo: "Crecimiento por Iluminación Nocturna Satelital | NASA/NOAA NTL | Hexágonos H3 Res 7".</p>
+                    <p>"Este mapa muestra el crecimiento económico medido por cambios en iluminación nocturna. Los colores van de rojo/oscuro (sin crecimiento o decrecimiento) a verde/amarillo brillante (alto crecimiento)."</p>
+                    <p>Señala visualmente: "Pueden ver cómo el corredor norte (donde está Lugon) muestra los tonos más brillantes — alto crecimiento. Esto contrasta con zonas del centro que ya están consolidadas y muestran menor dinamismo."</p>
+                    <p>"Este es un indicador objetivo y verificable. No es una proyección o estimación — son datos satelitales reales que muestran dónde está creciendo la actividad económica."</p>
                 </aside>
             </section>
             </section>
@@ -880,7 +949,7 @@
                 <h2>BENCHMARK: LUGON vs <span class="accent">TOP 10</span></h2>
                 <p class="slide-subtitle">Comparativa completa para planificar expansión</p>
                 
-                <table class="results-table fragment fade-up" style="max-width: 1000px; margin: 1em auto; font-size: var(--fs-base);">
+                <table class="results-table fragment fade-up" style="max-width: 500px; margin: 1em auto; font-size: var(--fs-base);">
                     <thead>
                         <tr>
                             <th style="padding: 8px 6px;">#</th>
@@ -950,7 +1019,7 @@
                     </tbody>
                 </table>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 450px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
                         <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-accent);">✓ Zonas que Complementan</div>
                         <p style="font-size: var(--fs-base); margin: 0.5em 0 0 0; color: var(--strtgy-gray-400);">
@@ -1009,7 +1078,7 @@
                 <h2>IMPACTO DEL <span class="accent">FLETE</span></h2>
                 <p class="slide-subtitle">¿Cuándo Escobedo es competitivo?</p>
                 
-                <table class="results-table fragment fade-up" style="max-width: 900px; margin: 1em auto; font-size: var(--fs-base);">
+                <table class="results-table fragment fade-up" style="max-width: 450px; margin: 1em auto; font-size: var(--fs-base);">
                     <thead>
                         <tr>
                             <th style="text-align: left;">Tipo de Proyecto</th>
@@ -1051,7 +1120,7 @@
                     </tbody>
                 </table>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 800px; margin: 1em auto;">
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 400px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em; text-align: center;">
                         <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-accent);">🎯 ENFOQUE PRINCIPAL</div>
                         <div style="font-size: var(--fs-xl); font-weight: 700; margin: 0.3em 0;">Proyectos 1+ mes</div>
@@ -1088,52 +1157,52 @@
                  ═══════════════════════════════════════════════════════════════ -->
             <section id="terrain-cost" data-background-color="#0A0F1C">
                 <h2>AHORRO EN <span class="accent">TERRENO</span></h2>
-                <p class="slide-subtitle">Factor decisivo para la compra</p>
+                <p class="slide-subtitle" style="margin-bottom: 0.4em;">Factor decisivo para la compra</p>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 900px; margin: 1.5em auto;">
-                    <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-warning); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Santa Catarina</div>
-                        <div style="font-size: var(--fs-3xl); font-weight: 700; color: var(--strtgy-warning);">19%</div>
-                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$4.5M MXN</div>
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7em; max-width: 480px; margin: 0.6em auto;">
+                    <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-warning); border-radius: 10px; padding: 0.7em 0.5em; text-align: center;">
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-bottom: 0.3em;">vs Santa Catarina</div>
+                        <div style="font-size: 36px; font-weight: 700; color: var(--strtgy-warning); line-height: 1.1;">19%</div>
+                        <div style="font-size: 13px; font-weight: 600; margin-top: 0.2em;">AHORRO</div>
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-top: 0.2em;">$4.5M MXN</div>
                     </div>
-                    <div style="background: rgba(0, 212, 170, 0.1); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Monterrey Centro</div>
-                        <div style="font-size: var(--fs-3xl); font-weight: 700; color: var(--strtgy-accent);">73%</div>
-                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$52.5M MXN</div>
+                    <div style="background: rgba(0, 212, 170, 0.1); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 0.7em 0.5em; text-align: center;">
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-bottom: 0.3em;">vs Monterrey Centro</div>
+                        <div style="font-size: 36px; font-weight: 700; color: var(--strtgy-accent); line-height: 1.1;">73%</div>
+                        <div style="font-size: 13px; font-weight: 600; margin-top: 0.2em;">AHORRO</div>
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-top: 0.2em;">$52.5M MXN</div>
                     </div>
-                    <div style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 1.2em; text-align: center;">
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-bottom: 0.5em;">vs Apodaca</div>
-                        <div style="font-size: var(--fs-3xl); font-weight: 700; color: var(--strtgy-phase-3);">41%</div>
-                        <div style="font-size: var(--fs-base); font-weight: 600; margin-top: 0.3em;">AHORRO</div>
-                        <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500); margin-top: 0.5em;">$13.5M MXN</div>
+                    <div style="background: rgba(102, 126, 234, 0.1); border: 2px solid var(--strtgy-phase-3); border-radius: 10px; padding: 0.7em 0.5em; text-align: center;">
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-bottom: 0.3em;">vs Apodaca</div>
+                        <div style="font-size: 36px; font-weight: 700; color: var(--strtgy-phase-3); line-height: 1.1;">41%</div>
+                        <div style="font-size: 13px; font-weight: 600; margin-top: 0.2em;">AHORRO</div>
+                        <div style="font-size: 13px; color: var(--strtgy-gray-500); margin-top: 0.2em;">$13.5M MXN</div>
                     </div>
                 </div>
                 
-                <div class="fragment fade-up" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.2em; max-width: 800px; margin: 1em auto;">
-                    <div style="font-size: var(--fs-md); font-weight: 600; color: var(--strtgy-accent); margin-bottom: 0.8em;">📊 UMBRAL DE DECISIÓN</div>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8em; text-align: center; font-size: var(--fs-base);">
-                        <div style="padding: 0.8em; background: rgba(0, 212, 170, 0.2); border-radius: 6px;">
+                <div class="fragment fade-up" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.7em 1em; max-width: 480px; margin: 0.6em auto;">
+                    <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-accent); margin-bottom: 0.5em;">📊 UMBRAL DE DECISIÓN</div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5em; text-align: center; font-size: 13px;">
+                        <div style="padding: 0.5em 0.3em; background: rgba(0, 212, 170, 0.2); border-radius: 6px;">
                             <div style="font-weight: 700; color: var(--strtgy-accent);">&gt;50%</div>
-                            <div style="color: var(--strtgy-gray-400);">COMPRAR SIN DUDAS</div>
+                            <div style="color: var(--strtgy-gray-400); line-height: 1.2;">COMPRAR SIN DUDAS</div>
                         </div>
-                        <div style="padding: 0.8em; background: rgba(0, 212, 170, 0.1); border-radius: 6px;">
+                        <div style="padding: 0.5em 0.3em; background: rgba(0, 212, 170, 0.1); border-radius: 6px;">
                             <div style="font-weight: 700;">30-50%</div>
-                            <div style="color: var(--strtgy-gray-400);">BUENA DECISIÓN</div>
+                            <div style="color: var(--strtgy-gray-400); line-height: 1.2;">BUENA DECISIÓN</div>
                         </div>
-                        <div style="padding: 0.8em; background: rgba(255, 193, 7, 0.1); border-radius: 6px;">
+                        <div style="padding: 0.5em 0.3em; background: rgba(255, 193, 7, 0.1); border-radius: 6px;">
                             <div style="font-weight: 700; color: var(--strtgy-warning);">15-30%</div>
-                            <div style="color: var(--strtgy-gray-400);">EVALUAR</div>
+                            <div style="color: var(--strtgy-gray-400); line-height: 1.2;">EVALUAR</div>
                         </div>
-                        <div style="padding: 0.8em; background: rgba(239, 68, 68, 0.1); border-radius: 6px;">
+                        <div style="padding: 0.5em 0.3em; background: rgba(239, 68, 68, 0.1); border-radius: 6px;">
                             <div style="font-weight: 700; color: var(--strtgy-danger);">&lt;15%</div>
-                            <div style="color: var(--strtgy-gray-400);">CONSIDERAR ALTS</div>
+                            <div style="color: var(--strtgy-gray-400); line-height: 1.2;">CONSIDERAR ALTS</div>
                         </div>
                     </div>
                 </div>
                 
-                <p class="fragment fade-up" style="text-align: center; margin-top: 1em; font-size: var(--fs-base); color: var(--strtgy-gray-300);">
+                <p class="fragment fade-up" style="text-align: center; margin-top: 0.6em; font-size: 14px; color: var(--strtgy-gray-300);">
                     <strong style="color: var(--strtgy-accent);">💡 El ahorro en terreno puede financiar:</strong> 
                     Sucursal de respuesta rápida + flotilla dedicada + marketing
                 </p>
@@ -1160,27 +1229,27 @@
             <section id="expansion" data-background-color="#0A0F1C">
                 <h2>PLAN DE <span class="accent">EXPANSIÓN</span> POR ETAPAS</h2>
                 
-                <div style="display: flex; justify-content: space-between; margin: 1.5em auto; max-width: 800px; position: relative;">
-                    <div style="position: absolute; top: 25px; left: 15%; right: 15%; height: 4px; background: linear-gradient(90deg, var(--strtgy-phase-1), var(--strtgy-phase-2), var(--strtgy-phase-3));"></div>
+                <div style="display: flex; justify-content: space-between; margin: 1.5em auto; max-width: 400px; position: relative;">
+                    <div style="position: absolute; top: 12px; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, var(--strtgy-phase-1), var(--strtgy-phase-2), var(--strtgy-phase-3));"></div>
                     
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-1); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">1</div>
+                        <div style="width: 25px; height: 25px; background: var(--strtgy-phase-1); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">1</div>
                         <div style="font-weight: 600; font-size: var(--fs-base);">Arranque</div>
                         <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">Lugon (hoy)</div>
                     </div>
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-2); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">2</div>
+                        <div style="width: 25px; height: 25px; background: var(--strtgy-phase-2); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">2</div>
                         <div style="font-weight: 600; font-size: var(--fs-base);">Respuesta Rápida</div>
                         <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">6-12 meses</div>
                     </div>
                     <div class="fragment fade-up" style="text-align: center; z-index: 1; flex: 1;">
-                        <div style="width: 50px; height: 50px; background: var(--strtgy-phase-3); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">3</div>
+                        <div style="width: 25px; height: 25px; background: var(--strtgy-phase-3); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: var(--fs-lg);">3</div>
                         <div style="font-weight: 600; font-size: var(--fs-base);">Red Completa</div>
                         <div style="font-size: var(--fs-base); color: var(--strtgy-gray-500);">18-24 meses</div>
                     </div>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 950px; margin: 1.5em auto;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; max-width: 475px; margin: 1.5em auto;">
                     <div class="fragment fade-up" style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--strtgy-phase-1); border-radius: 10px; padding: 1em;">
                         <div style="font-size: var(--fs-base); font-weight: 600; color: var(--strtgy-phase-1); margin-bottom: 0.5em;">ETAPA 1: LUGON</div>
                         <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">99.3%</div>
@@ -1252,12 +1321,12 @@
                 <h2>ANÁLISIS <span class="accent">LETRIMEX</span></h2>
                 <p class="slide-subtitle">¿Es General Escobedo viable para servicios sanitarios?</p>
                 
-                <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1em 1.5em; max-width: 600px; margin: 1em auto; text-align: center;">
+                <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.15); border: 2px solid var(--strtgy-accent); border-radius: 10px; padding: 1em 1.5em; max-width: 300px; margin: 1em auto; text-align: center;">
                     <div style="font-size: var(--fs-base); color: var(--strtgy-gray-400);">¿Es buena ubicación para Letrimex?</div>
                     <div style="font-size: var(--fs-xl); font-weight: 700; color: var(--strtgy-accent);">SÍ, CON ENFOQUE DIFERENCIADO</div>
                 </div>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 900px; margin: 1em auto;">
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; max-width: 450px; margin: 1em auto;">
                     <div style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
                         <h4 style="color: var(--strtgy-accent); margin: 0 0 0.8em 0; font-size: var(--fs-md);">✅ MERCADO FAVORABLE</h4>
                         <ul style="font-size: var(--fs-base); padding-left: 1em; color: var(--strtgy-gray-400); margin: 0;">
@@ -1276,7 +1345,7 @@
                     </div>
                 </div>
                 
-                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; max-width: 750px; margin: 1em auto;">
+                <div class="fragment fade-up" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; max-width: 375px; margin: 1em auto;">
                     <div class="metric-card-sm" style="padding: 1em;">
                         <div class="metric-value" style="font-size: var(--fs-2xl); color: var(--strtgy-accent);">291</div>
                         <div class="metric-label" style="font-size: var(--fs-base);">Competidores ZMM</div>
@@ -1321,7 +1390,7 @@
             </section>
             <section id="letrimex-maps" data-background-color="#0A0F1C">
                 <h3>LETRIMEX: <span class="accent">COMPETENCIA Y OPORTUNIDAD</span></h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; max-width: 900px; margin: 1em auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; max-width: 450px; margin: 1em auto;">
                     <div>
                         <img src="./mapas/screenshots/mapa_competidores_letrimex.png" 
                              alt="291 Competidores de Letrimex identificados en la ZMM" 
@@ -1357,7 +1426,7 @@
                 <h2>METODOLOGÍA <span class="accent">LOCATIONFIT™</span> INDUSTRIAL</h2>
                 <p class="slide-subtitle">Análisis multiescala de demanda, conectividad, crecimiento y saturación</p>
                 
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; max-width: 900px; margin: 1em auto;">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; max-width: 450px; margin: 1em auto;">
                     <div class="fragment fade-up" style="background: rgba(0, 212, 170, 0.1); border: 1px solid var(--strtgy-accent); border-radius: 10px; padding: 1em;">
                         <h4 style="color: var(--strtgy-accent); margin: 0 0 0.5em 0; font-size: var(--fs-md);">FASE 1: Detección de Demanda</h4>
                         <p style="font-size: var(--fs-base); margin: 0; color: var(--strtgy-gray-400);">
@@ -1492,7 +1561,7 @@
             <section id="deliverables" data-background-color="#0A0F1C">
                 <h2>SUS <span class="accent">ENTREGABLES</span></h2>
                 
-                <div class="recommendation-grid" style="max-width: 1000px;">
+                <div class="recommendation-grid" style="max-width: 500px;">
                     <div class="recommendation-card fragment fade-up" style="border-left-color: var(--strtgy-success);">
                         <div style="display: flex; align-items: center; gap: 0.8em;">
                             <span style="font-size: var(--fs-2xl);">📄</span>
@@ -1554,7 +1623,7 @@
                  ═══════════════════════════════════════════════════════════════ -->
             <section id="upgrade-path" data-background-color="#0A0F1C">
                 <div style="display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em;">
-                    <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="height: 28px; opacity: 0.6;">
+                    <img src="./assets/logo-strtgy-white.png" alt="STRTGY" style="height: 14px; opacity: 0.6;">
                     <span style="font-size: var(--fs-sm); color: var(--strtgy-accent); font-weight: 600; letter-spacing: 2px;">ESCALAMIENTO</span>
                 </div>
                 <h2 class="slide-title" style="font-size: var(--fs-2xl);">Próximos Pasos con <span class="accent">STRTGY</span></h2>
@@ -1666,18 +1735,17 @@
                     plugins: [RevealNotes, RevealZoom]
                 });
             } else {
-                // Fallback config if tokens fail to load
+                // Fallback config if tokens fail to load — navigation only, all else defaults
                 console.warn('STRTGY_REVEAL_CONFIG not loaded, using fallback');
                 Reveal.initialize({
-                    width: 1920,
-                    height: 1080,
-                    margin: 0.08,
-                    minScale: 0.6,
-                    maxScale: 1.5,
-                    transition: 'fade',
+                    hash: true,
+                    history: true,
+                    slideNumber: "c/t",
+                    showSlideNumber: "speaker",
                     plugins: [RevealNotes, RevealZoom]
                 });
             }
+            
         });
     </script>
 </body>

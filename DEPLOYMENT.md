@@ -75,10 +75,11 @@ window.addEventListener('DOMContentLoaded', function() {
         // Fallback config if tokens fail to load
         console.warn('STRTGY_REVEAL_CONFIG not loaded, using fallback');
         Reveal.initialize({
-            width: 1920,
-            height: 1080,
-            margin: 0.08,
-            transition: 'fade',
+            // Viewport uses Reveal.js defaults (960x700)
+            hash: true,
+            history: true,
+            slideNumber: "c/t",
+            showSlideNumber: "speaker",
             plugins: [RevealNotes, RevealZoom]
         });
     }
