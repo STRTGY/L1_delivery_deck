@@ -220,12 +220,18 @@ body,
 
 .reveal p {
     /* font-size definido en _tokens.css (0.8em desde tokens) */
-    line-height: 1.5;
+    line-height: 1.65;
     color: var(--strtgy-gray-300);
 }
 
 .reveal strong {
     color: var(--strtgy-accent);
+}
+
+/* List item spacing for better readability */
+.reveal ul li,
+.reveal ol li {
+    margin-bottom: 0.6em;
 }
 
 

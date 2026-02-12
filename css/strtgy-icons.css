@@ -1,0 +1,306 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * STRTGY ICON SYSTEM
+ * Sistema de íconos SVG para presentaciones
+ * 
+ * Versión: 1.0
+ * Última actualización: Enero 2026
+ * ═══════════════════════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE ICON CLASS
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SIZE MODIFIERS (50% larger for better visibility)
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--sm {
+    width: 72px;
+    height: 72px;
+}
+
+.strtgy-icon--md {
+    width: 120px;
+    height: 120px;
+}
+
+.strtgy-icon--lg {
+    width: 180px;
+    height: 180px;
+}
+
+.strtgy-icon--xl {
+    width: 270px;
+    height: 270px;
+}
+
+.strtgy-icon--hero {
+    width: 420px;
+    height: 420px;
+}
+
+/* Tamaño responsivo (se ajusta al contenedor) */
+.strtgy-icon--responsive {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   STRATEGY ICONS
+   Objetivos, planificación, transformación
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--target {
+    background-image: url('../icons/strategy/icon-target.svg');
+}
+
+.strtgy-icon--portal {
+    background-image: url('../icons/strategy/icon-hexagonal-portal.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ANALYTICS ICONS
+   Dashboards, métricas, análisis predictivo
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--dashboard {
+    background-image: url('../icons/analytics/icon-dashboard.svg');
+}
+
+.strtgy-icon--dashboard-vector {
+    background-image: url('../icons/analytics/icon-dashboard-vector.svg');
+}
+
+.strtgy-icon--predictive {
+    background-image: url('../icons/analytics/icon-predictive-wave.svg');
+}
+
+.strtgy-icon--calculator {
+    background-image: url('../icons/analytics/icon-calculator.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GROWTH ICONS
+   Innovación, lanzamiento, velocidad
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--rocket {
+    background-image: url('../icons/growth/icon-rocket.svg');
+}
+
+.strtgy-icon--lightning {
+    background-image: url('../icons/growth/icon-lightning-network.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RISK ICONS
+   Alertas, gestión de riesgos
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--warning {
+    background-image: url('../icons/risk/icon-warning.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   POSITIONING ICONS
+   Ubicación, expansión geográfica
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--location {
+    background-image: url('../icons/positioning/icon-location-pin.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TIME ICONS
+   Reloj, temporizador, cronología
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--clock {
+    background-image: url('../icons/time/icon-clock.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FINANCE ICONS
+   Dinero, inversión, pérdidas, ganancias
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--money-loss {
+    background-image: url('../icons/finance/icon-money-loss.svg');
+}
+
+.strtgy-icon--money-bag {
+    background-image: url('../icons/finance/icon-money-bag.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   STATUS ICONS
+   Estados, validación, errores
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--cross {
+    background-image: url('../icons/status/icon-cross.svg');
+}
+
+.strtgy-icon--check {
+    background-image: url('../icons/status/icon-check.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   IDEAS ICONS
+   Innovación, soluciones, creatividad
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--lightbulb {
+    background-image: url('../icons/ideas/icon-lightbulb.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   MEDIA ICONS
+   Podcast, audio, video, contenido
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--microphone {
+    background-image: url('../icons/media/icon-microphone.svg');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GEOINTELLIGENCE ICONS
+   Mapas, capas, datos geoespaciales
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--atractores {
+    background-image: url('../icons/geointelligence/atractores.png');
+}
+
+.strtgy-icon--competencia {
+    background-image: url('../icons/geointelligence/competencia.png');
+}
+
+.strtgy-icon--demographics {
+    background-image: url('../icons/geointelligence/demographics.png');
+}
+
+.strtgy-icon--nse {
+    background-image: url('../icons/geointelligence/nse.png');
+}
+
+.strtgy-icon--vivienda {
+    background-image: url('../icons/geointelligence/vivienda.png');
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATION MODIFIERS
+   ═══════════════════════════════════════════════════════════════ */
+
+.strtgy-icon--animated {
+    animation: strtgy-icon-float 3s ease-in-out infinite;
+}
+
+.strtgy-icon--pulse {
+    animation: strtgy-icon-pulse 2s ease-in-out infinite;
+}
+
+.strtgy-icon--spin {
+    animation: strtgy-icon-spin 8s linear infinite;
+}
+
+@keyframes strtgy-icon-float {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-8px); 
+    }
+}
+
+@keyframes strtgy-icon-pulse {
+    0%, 100% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes strtgy-icon-spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL MODIFIERS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Sombra de brillo (glow) */
+.strtgy-icon--glow {
+    filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.4));
+}
+
+/* Efecto hover con escala */
+.strtgy-icon--hoverable {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.strtgy-icon--hoverable:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 20px rgba(0, 212, 170, 0.3));
+}
+
+/* Opacidad reducida */
+.strtgy-icon--muted {
+    opacity: 0.5;
+}
+
+/* Invertir colores (para fondos claros) */
+.strtgy-icon--inverted {
+    filter: invert(1);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   LAYOUT HELPERS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Centrar ícono en contenedor */
+.strtgy-icon--centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Margen inferior para uso en cards */
+.strtgy-icon--mb {
+    margin-bottom: 1em;
+}
