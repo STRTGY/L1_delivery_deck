@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_710c2e01c90a467ae87395c2a5656318 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; top: 10px; left: 50px; width: 500px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                padding: 10px; font-size:16px; font-weight: bold;">
+        Zonas de Oportunidad - Mercado Subatendido Letrimex
+        <div style="font-size: 11px; font-weight: normal; color: #666; margin-top: 4px;">
+            Zonas con alta demanda industrial pero baja presencia competitiva
+        </div>
+    </div>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; width: 220px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                padding: 10px; font-size:13px;">
+        <p style="margin: 0 0 5px 0; font-weight: bold;">Oportunidad de Mercado</p>
+        <p style="margin: 2px;"><span style="background-color: #1a9850; padding: 2px 8px; border-radius: 50%;">●</span> Alto - Demanda alta, poca competencia</p>
+        <p style="margin: 2px;"><span style="background-color: #fee08b; padding: 2px 8px; border-radius: 50%;">●</span> Medio - Demanda moderada</p>
+        <p style="margin: 2px;"><span style="background-color: #fc8d59; padding: 2px 8px; border-radius: 50%;">●</span> Bajo - Mercado saturado</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_710c2e01c90a467ae87395c2a5656318" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_710c2e01c90a467ae87395c2a5656318 = L.map(
+                "map_710c2e01c90a467ae87395c2a5656318",
+                {
+                    center: [25.6714, -100.3094],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_23de92fe48ce82490d62486c10c618a1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_23de92fe48ce82490d62486c10c618a1.addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+            var circle_marker_7822b397b9371447d2df012a5c45475b = L.circleMarker(
+                [25.69378893069777, -100.32498306138449],
+                {"bubblingMouseEvents": true, "color": "#999999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_afd5bbc7274198d1173cf0318730d319 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3cc305732e0b75c4365d5a056d83b5d7 = $(`<div id="html_3cc305732e0b75c4365d5a056d83b5d7" style="width: 100.0%; height: 100.0%;"><b>Gap: Muy Alto</b><br>Demanda: 224<br>Dist Lugon: 10.8 km</div>`)[0];
+                popup_afd5bbc7274198d1173cf0318730d319.setContent(html_3cc305732e0b75c4365d5a056d83b5d7);
+            
+        
+
+        circle_marker_7822b397b9371447d2df012a5c45475b.bindPopup(popup_afd5bbc7274198d1173cf0318730d319)
+        ;
+
+        
+    
+    
+            circle_marker_7822b397b9371447d2df012a5c45475b.bindTooltip(
+                `<div>
+                     Oportunidad Muy Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b996f51f3d03787d7837b759d01e2d0 = L.circleMarker(
+                [25.73184834954267, -100.34310334552003],
+                {"bubblingMouseEvents": true, "color": "#999999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_7a3aae6ebae993a2d1c2c85915ba0e25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_345c6ebb3446ab3ba81748339e7e5f19 = $(`<div id="html_345c6ebb3446ab3ba81748339e7e5f19" style="width: 100.0%; height: 100.0%;"><b>Gap: Muy Alto</b><br>Demanda: 191<br>Dist Lugon: 7.5 km</div>`)[0];
+                popup_7a3aae6ebae993a2d1c2c85915ba0e25.setContent(html_345c6ebb3446ab3ba81748339e7e5f19);
+            
+        
+
+        circle_marker_1b996f51f3d03787d7837b759d01e2d0.bindPopup(popup_7a3aae6ebae993a2d1c2c85915ba0e25)
+        ;
+
+        
+    
+    
+            circle_marker_1b996f51f3d03787d7837b759d01e2d0.bindTooltip(
+                `<div>
+                     Oportunidad Muy Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb4bb36cbac317a963896e4e39d305fb = L.circleMarker(
+                [25.76045300919511, -100.3854251483434],
+                {"bubblingMouseEvents": true, "color": "#999999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_d44d444a53a2953f5e091d0ca94b6454 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6e9da8218f6a72c367b5a516bbd165b = $(`<div id="html_b6e9da8218f6a72c367b5a516bbd165b" style="width: 100.0%; height: 100.0%;"><b>Gap: Muy Alto</b><br>Demanda: 184<br>Dist Lugon: 8.8 km</div>`)[0];
+                popup_d44d444a53a2953f5e091d0ca94b6454.setContent(html_b6e9da8218f6a72c367b5a516bbd165b);
+            
+        
+
+        circle_marker_bb4bb36cbac317a963896e4e39d305fb.bindPopup(popup_d44d444a53a2953f5e091d0ca94b6454)
+        ;
+
+        
+    
+    
+            circle_marker_bb4bb36cbac317a963896e4e39d305fb.bindTooltip(
+                `<div>
+                     Oportunidad Muy Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae590727734695dbd31c159ef31599a4 = L.circleMarker(
+                [25.679482777106227, -100.30384229289298],
+                {"bubblingMouseEvents": true, "color": "#999999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_6cb3b968eb7a7356cb9b3d25ffa8158a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f53733c038b1985d6ab9c31dad9dcb6e = $(`<div id="html_f53733c038b1985d6ab9c31dad9dcb6e" style="width: 100.0%; height: 100.0%;"><b>Gap: Muy Alto</b><br>Demanda: 163<br>Dist Lugon: 12.1 km</div>`)[0];
+                popup_6cb3b968eb7a7356cb9b3d25ffa8158a.setContent(html_f53733c038b1985d6ab9c31dad9dcb6e);
+            
+        
+
+        circle_marker_ae590727734695dbd31c159ef31599a4.bindPopup(popup_6cb3b968eb7a7356cb9b3d25ffa8158a)
+        ;
+
+        
+    
+    
+            circle_marker_ae590727734695dbd31c159ef31599a4.bindTooltip(
+                `<div>
+                     Oportunidad Muy Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed1c55cc1accc0bb7cf4171ab643ea3d = L.circleMarker(
+                [25.68892647563794, -100.27967066664856],
+                {"bubblingMouseEvents": true, "color": "#999999", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_02b3e107b775f83103e20847cf75ce26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6397f2fbf89d0351ddad5f9542a10035 = $(`<div id="html_6397f2fbf89d0351ddad5f9542a10035" style="width: 100.0%; height: 100.0%;"><b>Gap: Muy Alto</b><br>Demanda: 162<br>Dist Lugon: 11.3 km</div>`)[0];
+                popup_02b3e107b775f83103e20847cf75ce26.setContent(html_6397f2fbf89d0351ddad5f9542a10035);
+            
+        
+
+        circle_marker_ed1c55cc1accc0bb7cf4171ab643ea3d.bindPopup(popup_02b3e107b775f83103e20847cf75ce26)
+        ;
+
+        
+    
+    
+            circle_marker_ed1c55cc1accc0bb7cf4171ab643ea3d.bindTooltip(
+                `<div>
+                     Oportunidad Muy Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_091c61d5466f937901e103a86d59d2c1 = L.circleMarker(
+                [25.70323574060082, -100.3008082194148],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_3d26be289c7808a17bad573083f1026a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fea2d1d1f311963e4b96d5d06a88a53 = $(`<div id="html_4fea2d1d1f311963e4b96d5d06a88a53" style="width: 100.0%; height: 100.0%;"><b>Gap: Alto</b><br>Demanda: 110<br>Dist Lugon: 9.5 km</div>`)[0];
+                popup_3d26be289c7808a17bad573083f1026a.setContent(html_4fea2d1d1f311963e4b96d5d06a88a53);
+            
+        
+
+        circle_marker_091c61d5466f937901e103a86d59d2c1.bindPopup(popup_3d26be289c7808a17bad573083f1026a)
+        ;
+
+        
+    
+    
+            circle_marker_091c61d5466f937901e103a86d59d2c1.bindTooltip(
+                `<div>
+                     Oportunidad Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54b4a7e5601f3ca5395f411831033fee = L.circleMarker(
+                [25.7172278660778, -100.20714764389268],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_b940b78fc97a4221e0c241f7b40f6d10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11150e21a382a036fae747359a4e56aa = $(`<div id="html_11150e21a382a036fae747359a4e56aa" style="width: 100.0%; height: 100.0%;"><b>Gap: Alto</b><br>Demanda: 98<br>Dist Lugon: 12.5 km</div>`)[0];
+                popup_b940b78fc97a4221e0c241f7b40f6d10.setContent(html_11150e21a382a036fae747359a4e56aa);
+            
+        
+
+        circle_marker_54b4a7e5601f3ca5395f411831033fee.bindPopup(popup_b940b78fc97a4221e0c241f7b40f6d10)
+        ;
+
+        
+    
+    
+            circle_marker_54b4a7e5601f3ca5395f411831033fee.bindTooltip(
+                `<div>
+                     Oportunidad Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_629f53d0fedbdbd77e1b1c7d7fcd6dce = L.circleMarker(
+                [25.67003413469116, -100.32801254765116],
+                {"bubblingMouseEvents": true, "color": "#1a9850", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1a9850", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_ac7cba1ca44899ec679444624b475522 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d633f6ad10a0296d442740cd1d054dbc = $(`<div id="html_d633f6ad10a0296d442740cd1d054dbc" style="width: 100.0%; height: 100.0%;"><b>Gap: Alto</b><br>Demanda: 97<br>Dist Lugon: 13.4 km</div>`)[0];
+                popup_ac7cba1ca44899ec679444624b475522.setContent(html_d633f6ad10a0296d442740cd1d054dbc);
+            
+        
+
+        circle_marker_629f53d0fedbdbd77e1b1c7d7fcd6dce.bindPopup(popup_ac7cba1ca44899ec679444624b475522)
+        ;
+
+        
+    
+    
+            circle_marker_629f53d0fedbdbd77e1b1c7d7fcd6dce.bindTooltip(
+                `<div>
+                     Oportunidad Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e489f1495ff8253649b49079ca874f2 = L.circleMarker(
+                [25.684337175521303, -100.34915652394244],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_598cf4a1f2dec12398b963718c3c0979 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ff9070c3313b82cd1e66458c1ab38fc = $(`<div id="html_8ff9070c3313b82cd1e66458c1ab38fc" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 95<br>Dist Lugon: 12.5 km</div>`)[0];
+                popup_598cf4a1f2dec12398b963718c3c0979.setContent(html_8ff9070c3313b82cd1e66458c1ab38fc);
+            
+        
+
+        circle_marker_0e489f1495ff8253649b49079ca874f2.bindPopup(popup_598cf4a1f2dec12398b963718c3c0979)
+        ;
+
+        
+    
+    
+            circle_marker_0e489f1495ff8253649b49079ca874f2.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1254dd0f873077dee883a66cd80852c3 = L.circleMarker(
+                [25.66973460445478, -100.2132490699254],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_7f973dcc084bcb6ce6539e887d1e41a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_397cfe3331ab31755c70980efd8069bd = $(`<div id="html_397cfe3331ab31755c70980efd8069bd" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 94<br>Dist Lugon: 16.0 km</div>`)[0];
+                popup_7f973dcc084bcb6ce6539e887d1e41a6.setContent(html_397cfe3331ab31755c70980efd8069bd);
+            
+        
+
+        circle_marker_1254dd0f873077dee883a66cd80852c3.bindPopup(popup_7f973dcc084bcb6ce6539e887d1e41a6)
+        ;
+
+        
+    
+    
+            circle_marker_1254dd0f873077dee883a66cd80852c3.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_285705ae1533b69672729fc76aed72e8 = L.circleMarker(
+                [25.684533706926835, -100.46399558847553],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_8637f3707a64e278e4dd29983675268b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13af231ae89b223eead8aa0745ddbabb = $(`<div id="html_13af231ae89b223eead8aa0745ddbabb" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 93<br>Dist Lugon: 19.8 km</div>`)[0];
+                popup_8637f3707a64e278e4dd29983675268b.setContent(html_13af231ae89b223eead8aa0745ddbabb);
+            
+        
+
+        circle_marker_285705ae1533b69672729fc76aed72e8.bindPopup(popup_8637f3707a64e278e4dd29983675268b)
+        ;
+
+        
+    
+    
+            circle_marker_285705ae1533b69672729fc76aed72e8.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d12dfe1955523bf5f1ee98106e3567f9 = L.circleMarker(
+                [25.65572912564205, -100.30687523683407],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_eadad8cc0704138e7e4278ac4ccad4d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c4735ea10531416cb18d902f913711b = $(`<div id="html_1c4735ea10531416cb18d902f913711b" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 89<br>Dist Lugon: 14.8 km</div>`)[0];
+                popup_eadad8cc0704138e7e4278ac4ccad4d4.setContent(html_1c4735ea10531416cb18d902f913711b);
+            
+        
+
+        circle_marker_d12dfe1955523bf5f1ee98106e3567f9.bindPopup(popup_eadad8cc0704138e7e4278ac4ccad4d4)
+        ;
+
+        
+    
+    
+            circle_marker_d12dfe1955523bf5f1ee98106e3567f9.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30f68964a16f68df55c36cf62847398a = L.circleMarker(
+                [25.72239530867094, -100.36728460165315],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_fccb1fdbc87900a929cf55c620078bbe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_162287ddda6b45d6f54c6ffb64a42a2a = $(`<div id="html_162287ddda6b45d6f54c6ffb64a42a2a" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 87<br>Dist Lugon: 9.8 km</div>`)[0];
+                popup_fccb1fdbc87900a929cf55c620078bbe.setContent(html_162287ddda6b45d6f54c6ffb64a42a2a);
+            
+        
+
+        circle_marker_30f68964a16f68df55c36cf62847398a.bindPopup(popup_fccb1fdbc87900a929cf55c620078bbe)
+        ;
+
+        
+    
+    
+            circle_marker_30f68964a16f68df55c36cf62847398a.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd24a48b654dfc983294ee13f4651df8 = L.circleMarker(
+                [25.67461524794092, -100.25853979086452],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_4627e7baea26f9b0aa0f28935958f0d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6eb129a4c8ec7d2fdd2ba4bab9b7eccd = $(`<div id="html_6eb129a4c8ec7d2fdd2ba4bab9b7eccd" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 86<br>Dist Lugon: 13.4 km</div>`)[0];
+                popup_4627e7baea26f9b0aa0f28935958f0d3.setContent(html_6eb129a4c8ec7d2fdd2ba4bab9b7eccd);
+            
+        
+
+        circle_marker_dd24a48b654dfc983294ee13f4651df8.bindPopup(popup_4627e7baea26f9b0aa0f28935958f0d3)
+        ;
+
+        
+    
+    
+            circle_marker_dd24a48b654dfc983294ee13f4651df8.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_987757a47b0ecab1d466300628bce1c9 = L.circleMarker(
+                [25.717543034634406, -100.32195244657198],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_c5bd0deb2a29f9c9d589722061293585 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29a50b20bc7a1314f05c83f6ef1ebdfc = $(`<div id="html_29a50b20bc7a1314f05c83f6ef1ebdfc" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 83<br>Dist Lugon: 8.1 km</div>`)[0];
+                popup_c5bd0deb2a29f9c9d589722061293585.setContent(html_29a50b20bc7a1314f05c83f6ef1ebdfc);
+            
+        
+
+        circle_marker_987757a47b0ecab1d466300628bce1c9.bindPopup(popup_c5bd0deb2a29f9c9d589722061293585)
+        ;
+
+        
+    
+    
+            circle_marker_987757a47b0ecab1d466300628bce1c9.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_04004f29b4c7a8c9eaf0acef4b358905 = L.circleMarker(
+                [25.79824054821367, -100.28866061784252],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_0a9a74c92763519b045a7a6ab6ce58ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_048e2abcda9b23b937f3558ec6b0d9f5 = $(`<div id="html_048e2abcda9b23b937f3558ec6b0d9f5" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 81<br>Dist Lugon: 1.8 km</div>`)[0];
+                popup_0a9a74c92763519b045a7a6ab6ce58ee.setContent(html_048e2abcda9b23b937f3558ec6b0d9f5);
+            
+        
+
+        circle_marker_04004f29b4c7a8c9eaf0acef4b358905.bindPopup(popup_0a9a74c92763519b045a7a6ab6ce58ee)
+        ;
+
+        
+    
+    
+            circle_marker_04004f29b4c7a8c9eaf0acef4b358905.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e1835e8acf4ad7734d432fd2a9991b5 = L.circleMarker(
+                [25.665174658036403, -100.28270819563276],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_fbfee79823d82693da3d01b530168487 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e3c4453e58fb76347f57319fdb5c19d = $(`<div id="html_9e3c4453e58fb76347f57319fdb5c19d" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 78<br>Dist Lugon: 13.9 km</div>`)[0];
+                popup_fbfee79823d82693da3d01b530168487.setContent(html_9e3c4453e58fb76347f57319fdb5c19d);
+            
+        
+
+        circle_marker_0e1835e8acf4ad7734d432fd2a9991b5.bindPopup(popup_fbfee79823d82693da3d01b530168487)
+        ;
+
+        
+    
+    
+            circle_marker_0e1835e8acf4ad7734d432fd2a9991b5.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b6e9179cda50788f882b34a7546a09e8 = L.circleMarker(
+                [25.70809311061749, -100.34613049850743],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_5d0a8c5a628c7951440fc8d5d81067d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e7d758ca3f6b68c680dff9e8d4bc56e = $(`<div id="html_5e7d758ca3f6b68c680dff9e8d4bc56e" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 77<br>Dist Lugon: 9.9 km</div>`)[0];
+                popup_5d0a8c5a628c7951440fc8d5d81067d8.setContent(html_5e7d758ca3f6b68c680dff9e8d4bc56e);
+            
+        
+
+        circle_marker_b6e9179cda50788f882b34a7546a09e8.bindPopup(popup_5d0a8c5a628c7951440fc8d5d81067d8)
+        ;
+
+        
+    
+    
+            circle_marker_b6e9179cda50788f882b34a7546a09e8.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f6a2f8f7c2fdf1adfa7ba880c4d91f5 = L.circleMarker(
+                [25.66058055259065, -100.35218142243804],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_5708f69c77b643f1e825f874ead332b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_48233e92f0ef9445f9f52fe49d574293 = $(`<div id="html_48233e92f0ef9445f9f52fe49d574293" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 68<br>Dist Lugon: 15.0 km</div>`)[0];
+                popup_5708f69c77b643f1e825f874ead332b9.setContent(html_48233e92f0ef9445f9f52fe49d574293);
+            
+        
+
+        circle_marker_2f6a2f8f7c2fdf1adfa7ba880c4d91f5.bindPopup(popup_5708f69c77b643f1e825f874ead332b9)
+        ;
+
+        
+    
+    
+            circle_marker_2f6a2f8f7c2fdf1adfa7ba880c4d91f5.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0306f6e02459ba3c7d690659aca6526 = L.circleMarker(
+                [25.750739570344702, -100.29473668139026],
+                {"bubblingMouseEvents": true, "color": "#fee08b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee08b", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+        var popup_51849d0314f6e0c140989a655cdfaefa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dbd546d1a1f4d6c3fbc241a7bbae4d8a = $(`<div id="html_dbd546d1a1f4d6c3fbc241a7bbae4d8a" style="width: 100.0%; height: 100.0%;"><b>Gap: Medio</b><br>Demanda: 67<br>Dist Lugon: 4.4 km</div>`)[0];
+                popup_51849d0314f6e0c140989a655cdfaefa.setContent(html_dbd546d1a1f4d6c3fbc241a7bbae4d8a);
+            
+        
+
+        circle_marker_b0306f6e02459ba3c7d690659aca6526.bindPopup(popup_51849d0314f6e0c140989a655cdfaefa)
+        ;
+
+        
+    
+    
+            circle_marker_b0306f6e02459ba3c7d690659aca6526.bindTooltip(
+                `<div>
+                     Oportunidad Medio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_344ad3baee4630feb1732cf12991c013 = L.marker(
+                [25.789467, -100.303421],
+                {
+}
+            ).addTo(map_710c2e01c90a467ae87395c2a5656318);
+        
+    
+            var icon_fdbd827faa7e67e7216a070b4d6a771b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c8e300c376ac67b3410b32b11317658 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f311500ee24879d2cf2cea0ef2d8a72 = $(`<div id="html_1f311500ee24879d2cf2cea0ef2d8a72" style="width: 100.0%; height: 100.0%;"><b>LETRIMEX</b><br>General Escobedo</div>`)[0];
+                popup_1c8e300c376ac67b3410b32b11317658.setContent(html_1f311500ee24879d2cf2cea0ef2d8a72);
+            
+        
+
+        marker_344ad3baee4630feb1732cf12991c013.bindPopup(popup_1c8e300c376ac67b3410b32b11317658)
+        ;
+
+        
+    
+    
+            marker_344ad3baee4630feb1732cf12991c013.bindTooltip(
+                `<div>
+                     Letrimex - General Escobedo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_344ad3baee4630feb1732cf12991c013.setIcon(icon_fdbd827faa7e67e7216a070b4d6a771b);
+            
+</script>
+</html>

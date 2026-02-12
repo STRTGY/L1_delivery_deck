@@ -1,0 +1,3 @@
+# Deployment helper scripts (not needed on GitHub Pages)
+prepare_deploy.sh
+fix_paths.py
